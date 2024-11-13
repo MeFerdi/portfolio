@@ -51,8 +51,8 @@ main {
 /* Circle container */
 .circle-container {
     position: relative;
-    width: 250px;
-    height: 250px;
+    width: 300px;
+    height: 300px;
     border-radius: 50%;
     background: radial-gradient(circle, rgba(0, 0, 0, 0.6) 20%, transparent 70%);
     display: flex;
@@ -65,11 +65,11 @@ main {
 
 /* Image inside the circle */
 .circle-container img {
-    width: 180px;
-    height: 180px;
+    width: 250px;
+    height: 250px;
     border-radius: 50%;
     object-fit: cover;
-    border: 5px solid #fff;
+    border: 5px solid #2a8156;
 }
 
 /* Introduction text */
