@@ -47,6 +47,40 @@ main {
     flex-direction: column;
     align-items: center;
 }
+/* Header logo setup */
+.logo {
+    display: flex;
+    align-items: center;
+    font-size: 4rem;
+    color: #f5f5f5;
+    text-decoration: none;
+}
+
+.logo-background {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px; /* Adjust size as needed */
+    height: 100px;
+    border-radius: 50%; /* Circular background */
+    background-color: #979393; /* Optional background color for the circle */
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.5); /* White shadow effect */
+    margin-right: 10px; /* Space between the logo image and text */
+}
+
+.logo-img {
+    width: 60px; /* Adjust size as needed */
+    height: 60px;
+    border-radius: 50%; /* Circular image */
+    object-fit: cover;
+}
+
+.logo:hover {
+    color: #4ade80; /* Optional hover effect */
+}
+
+
 
 /* Circle container */
 .circle-container {
