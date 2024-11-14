@@ -126,7 +126,7 @@ main {
 
 /* Outer Ring Styling */
 .ring {
-    width: 500px;  /* Outer ring size */
+    width: 500px; /* Outer ring size */
     height: 500px;
     border: 2px solid rgba(255, 255, 255, 0.3);
     border-radius: 50%;
@@ -136,9 +136,9 @@ main {
     transform: translate(-50%, -50%);
 }
 
-/* Inner Ring Styling (Smaller than outer ring) */
+/* Inner Ring Styling */
 .inner-ring {
-    width: 350px;  /* Smaller size for inner ring */
+    width: 350px; /* Smaller size for inner ring */
     height: 350px;
     border: 2px solid rgba(255, 255, 255, 0.3);
     border-radius: 50%;
@@ -148,19 +148,11 @@ main {
     transform: translate(-50%, -50%);
 }
 
-/* Expertise Card Container (Outer Cards) */
-.expertise-card-container {
-    position: relative;
-    width: 350px;  /* Match outer ring size */
-    height: 350px;
-    transform: rotate(0deg);
-}
-
 /* Expertise Card Styling (Outer Cards) */
 .expertise-card {
     position: absolute;
-    width: 120px;
-    height: 120px;
+    width: 70px;
+    height: 70px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -171,34 +163,29 @@ main {
     padding: 0.5rem;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     text-align: center;
-    transform-origin: center -200px;  /* Adjust based on ring radius */
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transform-origin: center -200px; /* Adjust based on ring radius */
 }
-
-.expertise-card {
-    transform: rotate(calc(120deg * var(--i))) translateY(-200px) rotate(calc(-120deg * var(--i)));  /* Adjust rotation for each card */
-}
-
-/* Icon Styling */
-.icon {
+.expertise-icon {
     width: 40px;
     height: 40px;
     margin-bottom: 0.5rem;
 }
-
-/* Tool Card Styling (Inner Ring Cards) */
-.tools-container {
-    position: relative;
-    width: 350px;  /* Match inner ring size */
-    height: 350px;
-    transform: rotate(0deg);
+.icon {
+    width: 40px; /* Keep icon size consistent */
+    height: 40px; /* Keep icon size consistent */
+    margin-bottom: 0.5rem;
 }
 
+.expertise-card {
+    transform: rotate(calc(150deg * var(--i))) translateY(-250px) rotate(calc(-150deg * var(--i))); /* Adjust rotation for each card */
+}
+
+/* Tool Card Styling (Inner Ring Cards) */
 .tool-card {
     position: absolute;
-    width: 70px;  /* Smaller card size for tools */
+    width: 70px; /* Smaller card size for tools */
     height: 70px;
-    display: flex;
+    /* display: flex; */
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -208,12 +195,10 @@ main {
     padding: 0.5rem;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     text-align: center;
-    transform-origin: center -150px;  /* Adjust based on inner ring radius */
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .tool-card {
-    transform: rotate(calc(120deg * var(--i))) translateY(-150px) rotate(calc(-120deg * var(--i)));  /* Adjust rotation for each card */
+    transform: rotate(calc(90deg * var(--i))) translateY(-150px) rotate(calc(-90deg * var(--i))); /* Adjust rotation for each card */
 }
 
 /* Tool Icon Styling */
