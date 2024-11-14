@@ -79,6 +79,48 @@ main {
 .logo:hover {
     color: #4ade80; /* Optional hover effect */
 }
+/* Project Container */
+.project-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+/* Vertical Tree Styling */
+.vertical-tree {
+    width: 10px; /* Width of the tree */
+    height: 300px; /* Height of the tree */
+    background-color: #4ade80; /* Light green color for the tree */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Project Card Styling */
+.project-card {
+    width: 150px; /* Width of each card */
+    height: 100px; /* Height of each card */
+    background-color: #333; /* Dark background for cards */
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.left-card {
+    margin-right: 20px; /* Space between left cards and tree */
+}
+
+.right-card {
+    margin-left: 20px; /* Space between right card and tree */
+}
+
+/* Header and Footer Styles */
+.header, .footer {
+    text-align: center;
+}
 
 
 
@@ -321,6 +363,71 @@ main {
 .timeline-item p {
     margin: 5px 0 0;
     color: #cbd5e0; /* Lighter text for details */
+}
+/* Timeline container */
+.timeline {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.timeline:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 100%;
+    background-color: #3d6c7a;
+}
+
+/* Timeline item styling */
+.timeline-item {
+    position: relative;
+    width: 45%;
+    padding: 15px;
+    margin: 20px 0;
+    background: #47797c;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Left side item styling */
+.timeline-item[data-side="left"] {
+    left: 0;
+    text-align: right;
+}
+
+/* Right side item styling */
+.timeline-item[data-side="right"] {
+    left: 55%;
+    text-align: left;
+}
+
+/* Arrow indicators for timeline items */
+.timeline-item[data-side="left"]:after {
+    content: '';
+    position: absolute;
+    top: 15px;
+    right: -10px;
+    width: 0;
+    height: 0;
+    border: 5px solid transparent;
+    border-left-color: #f9f9f9;
+}
+
+.timeline-item[data-side="right"]:after {
+    content: '';
+    position: absolute;
+    top: 15px;
+    left: -10px;
+    width: 0;
+    height: 0;
+    border: 5px solid transparent;
+    border-right-color: #f9f9f9;
 }
 
 /* Optional: Add media query for mobile responsiveness */
