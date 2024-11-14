@@ -12,6 +12,50 @@ html, body {
     display: flex;
     flex-direction: column;
 }
+/* Header content with flex alignment */
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Action buttons positioned on the top-right of the page */
+.action-buttons {
+    position: absolute; /* Absolute positioning */
+    top: 1rem; /* Distance from top */
+    right: 1rem; /* Distance from right */
+    display: flex;
+    gap: 1rem;
+}
+
+/* Style for the buttons */
+.btn {
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.btn--primary {
+    background-color: #4ade80;
+    color: #1a1a1a;
+    transition: background-color 0.3s ease;
+}
+
+.btn--primary:hover {
+    background-color: #34d399;
+}
+
+.btn--secondary {
+    background-color: #333;
+    color: #f5f5f5;
+    transition: background-color 0.3s ease;
+}
+
+.btn--secondary:hover {
+    background-color: #555;
+}
+
 
 /* Body Setup */
 body {
@@ -429,6 +473,19 @@ main {
     border: 5px solid transparent;
     border-right-color: #f9f9f9;
 }
+/* Cursor circle */
+#cursor {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: rgb(81, 113, 121);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    pointer-events: none; /* Ensures it doesn't interfere with clickable elements */
+    transform: translate(-50%, -50%); /* Centers the circle on the cursor */
+    transition: transform 0.1s ease;
+}
+
 
 /* Optional: Add media query for mobile responsiveness */
 @media (max-width: 768px) {
@@ -491,6 +548,9 @@ main {
     background-color: #4ade80;
     color: #1a1a1a;
 }
+/* footer {
+    margin-top: 300px;
+} */
 
 /* Button pop-up animation */
 @keyframes buttonPopUp {
