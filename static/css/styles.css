@@ -51,7 +51,7 @@ main {
 .logo {
     display: flex;
     align-items: center;
-    font-size: 4rem;
+    font-size: 1rem;
     color: #f5f5f5;
     text-decoration: none;
 }
@@ -59,10 +59,10 @@ main {
 .logo-background {
     position: relative;
     display: flex;
-    justify-content: center;
+    justify-content: centesr;
     align-items: center;
-    width: 100px; /* Adjust size as needed */
-    height: 100px;
+    width: 50px; /* Adjust size as needed */
+    height: 50px;
     border-radius: 50%; /* Circular background */
     background-color: #979393; /* Optional background color for the circle */
     box-shadow: 0 4px 10px rgba(255, 255, 255, 0.5); /* White shadow effect */
@@ -70,8 +70,8 @@ main {
 }
 
 .logo-img {
-    width: 60px; /* Adjust size as needed */
-    height: 60px;
+    width: 55px; /* Adjust size as needed */
+    height: 55px;
     border-radius: 50%; /* Circular image */
     object-fit: cover;
 }
@@ -114,6 +114,119 @@ main {
     opacity: 0; /* Initially hidden */
     transform: translateY(20px); /* Initially moved down */
     animation: appearText 1s 1s forwards; /* Text animation */
+}
+/* Centering the content */
+#content {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Outer Ring Styling */
+.ring {
+    width: 500px;  /* Outer ring size */
+    height: 500px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Inner Ring Styling (Smaller than outer ring) */
+.inner-ring {
+    width: 350px;  /* Smaller size for inner ring */
+    height: 350px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Expertise Card Container (Outer Cards) */
+.expertise-card-container {
+    position: relative;
+    width: 500px;  /* Match outer ring size */
+    height: 500px;
+    transform: rotate(0deg);
+}
+
+/* Expertise Card Styling (Outer Cards) */
+.expertise-card {
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #f5f5f5;
+    background-color: #333;
+    border-radius: 8px;
+    padding: 0.5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    transform-origin: center -200px;  /* Adjust based on ring radius */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.expertise-card {
+    transform: rotate(calc(120deg * var(--i))) translateY(-200px) rotate(calc(-120deg * var(--i)));  /* Adjust rotation for each card */
+}
+
+/* Icon Styling */
+.icon {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 0.5rem;
+}
+
+/* Tool Card Styling (Inner Ring Cards) */
+.tools-container {
+    position: relative;
+    width: 350px;  /* Match inner ring size */
+    height: 350px;
+    transform: rotate(0deg);
+}
+
+.tool-card {
+    position: absolute;
+    width: 70px;  /* Smaller card size for tools */
+    height: 70px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #f5f5f5;
+    background-color: #444;
+    border-radius: 8px;
+    padding: 0.5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    transform-origin: center -150px;  /* Adjust based on inner ring radius */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tool-card {
+    transform: rotate(calc(120deg * var(--i))) translateY(-150px) rotate(calc(-120deg * var(--i)));  /* Adjust rotation for each card */
+}
+
+/* Tool Icon Styling */
+.tool-icon {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 0.5rem;
+}
+
+/* Hover Effects for Tool Cards */
+.tool-card:hover {
+    transform: scale(1.1) rotate(calc(var(--i) * 120deg)) translateY(-150px) rotate(calc(-120deg * var(--i)));
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
 }
 
 /* Circle animation */

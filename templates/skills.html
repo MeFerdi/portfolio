@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Ferdynand's Expertise</title>
+    <title>Ferdynand's Skills</title>
     <link rel="stylesheet" href="/static/css/styles.css">
     <link rel="icon" type="image/png" href="favicon.png">
 </head>
@@ -25,18 +25,50 @@
         </div>
     </header>
 
-    <!-- Expertise Section -->
-    <main id="content" class="p-10">
-        <section id="expertise">
-            <h2 class="text-2xl">My Expertise</h2>
-            <ul class="list-disc pl-5">
-                <li>Software Development</li>
-                <li>Technical Writing</li>
-                <li>Research & Discovery</li>
-            </ul>
-            <a href="contact.html" class="btn btn--primary">Contact Me</a>
+    <main id="content" class="flex justify-center items-center min-h-screen">
+        <section id="expertise" class="relative">
+            <!-- Outer Ring -->
+            <div class="ring"></div>
+    
+            <!-- Inner Ring (for programming languages and tools) -->
+            <div class="inner-ring"></div>
+    
+            <!-- Outer Expertise Cards -->
+            <div class="expertise-card-container">
+                <div class="expertise-card" style="--i: 0;">
+                    <img src="/static/icons/code-icon.svg" alt="Code Icon" class="icon">
+                    <h3>Software Development</h3>
+                </div>
+                <div class="expertise-card" style="--i: 1;">
+                    <img src="/static/icons/write-icon.svg" alt="Writing Icon" class="icon">
+                    <h3>Technical Writing</h3>
+                </div>
+                <div class="expertise-card" style="--i: 2;">
+                    <img src="/static/icons/research-icon.svg" alt="Research Icon" class="icon">
+                    <h3>Research & Discovery</h3>
+                </div>
+            </div>
+    
+            <!-- Inner Tools/Programming Languages (using icons) -->
+            <div class="tools-container">
+                <div class="tool-card" style="--i: 0;">
+                    <img src="/static/icons/javascript-icon.svg" alt="JavaScript Icon" class="tool-icon">
+                    <h3>JavaScript</h3>
+                </div>
+                <div class="tool-card" style="--i: 1;">
+                    <img src="/static/icons/python-icon.svg" alt="Python Icon" class="tool-icon">
+                    <h3>Python</h3>
+                </div>
+                <div class="tool-card" style="--i: 2;">
+                    <img src="/static/icons/go-icon.svg" alt="Go Icon" class="tool-icon">
+                    <h3>Go</h3>
+                </div>
+                <!-- Add more tools/languages as necessary -->
+            </div>
         </section>
-    </main>
+    </main>     
+    
+    
 
     <!-- Footer -->
     <footer class="bg-gray-800 text-center p-5">
