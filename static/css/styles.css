@@ -151,8 +151,8 @@ main {
 /* Expertise Card Container (Outer Cards) */
 .expertise-card-container {
     position: relative;
-    width: 500px;  /* Match outer ring size */
-    height: 500px;
+    width: 350px;  /* Match outer ring size */
+    height: 350px;
     transform: rotate(0deg);
 }
 
