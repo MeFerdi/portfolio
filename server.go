@@ -28,9 +28,6 @@ func main() {
 	http.HandleFunc("/skills", func(w http.ResponseWriter, r *http.Request) {
 		renderTemplate(w, "skills.html", nil)
 	})
-	http.HandleFunc("/experience", func(w http.ResponseWriter, r *http.Request) {
-		renderTemplate(w, "experience.html", nil)
-	})
 	http.HandleFunc("/contact", func(w http.ResponseWriter, r *http.Request) {
 		renderTemplate(w, "contact.html", nil)
 	})
