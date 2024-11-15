@@ -1,0 +1,1308 @@
+/* General Reset */
+
+/* /static/css/styles.css */
+
+*, ::before, ::after {
+  --tw-border-spacing-x: 0;
+  --tw-border-spacing-y: 0;
+  --tw-translate-x: 0;
+  --tw-translate-y: 0;
+  --tw-rotate: 0;
+  --tw-skew-x: 0;
+  --tw-skew-y: 0;
+  --tw-scale-x: 1;
+  --tw-scale-y: 1;
+  --tw-pan-x:  ;
+  --tw-pan-y:  ;
+  --tw-pinch-zoom:  ;
+  --tw-scroll-snap-strictness: proximity;
+  --tw-gradient-from-position:  ;
+  --tw-gradient-via-position:  ;
+  --tw-gradient-to-position:  ;
+  --tw-ordinal:  ;
+  --tw-slashed-zero:  ;
+  --tw-numeric-figure:  ;
+  --tw-numeric-spacing:  ;
+  --tw-numeric-fraction:  ;
+  --tw-ring-inset:  ;
+  --tw-ring-offset-width: 0px;
+  --tw-ring-offset-color: #fff;
+  --tw-ring-color: rgb(59 130 246 / 0.5);
+  --tw-ring-offset-shadow: 0 0 #0000;
+  --tw-ring-shadow: 0 0 #0000;
+  --tw-shadow: 0 0 #0000;
+  --tw-shadow-colored: 0 0 #0000;
+  --tw-blur:  ;
+  --tw-brightness:  ;
+  --tw-contrast:  ;
+  --tw-grayscale:  ;
+  --tw-hue-rotate:  ;
+  --tw-invert:  ;
+  --tw-saturate:  ;
+  --tw-sepia:  ;
+  --tw-drop-shadow:  ;
+  --tw-backdrop-blur:  ;
+  --tw-backdrop-brightness:  ;
+  --tw-backdrop-contrast:  ;
+  --tw-backdrop-grayscale:  ;
+  --tw-backdrop-hue-rotate:  ;
+  --tw-backdrop-invert:  ;
+  --tw-backdrop-opacity:  ;
+  --tw-backdrop-saturate:  ;
+  --tw-backdrop-sepia:  ;
+  --tw-contain-size:  ;
+  --tw-contain-layout:  ;
+  --tw-contain-paint:  ;
+  --tw-contain-style:  ;
+}
+
+::backdrop {
+  --tw-border-spacing-x: 0;
+  --tw-border-spacing-y: 0;
+  --tw-translate-x: 0;
+  --tw-translate-y: 0;
+  --tw-rotate: 0;
+  --tw-skew-x: 0;
+  --tw-skew-y: 0;
+  --tw-scale-x: 1;
+  --tw-scale-y: 1;
+  --tw-pan-x:  ;
+  --tw-pan-y:  ;
+  --tw-pinch-zoom:  ;
+  --tw-scroll-snap-strictness: proximity;
+  --tw-gradient-from-position:  ;
+  --tw-gradient-via-position:  ;
+  --tw-gradient-to-position:  ;
+  --tw-ordinal:  ;
+  --tw-slashed-zero:  ;
+  --tw-numeric-figure:  ;
+  --tw-numeric-spacing:  ;
+  --tw-numeric-fraction:  ;
+  --tw-ring-inset:  ;
+  --tw-ring-offset-width: 0px;
+  --tw-ring-offset-color: #fff;
+  --tw-ring-color: rgb(59 130 246 / 0.5);
+  --tw-ring-offset-shadow: 0 0 #0000;
+  --tw-ring-shadow: 0 0 #0000;
+  --tw-shadow: 0 0 #0000;
+  --tw-shadow-colored: 0 0 #0000;
+  --tw-blur:  ;
+  --tw-brightness:  ;
+  --tw-contrast:  ;
+  --tw-grayscale:  ;
+  --tw-hue-rotate:  ;
+  --tw-invert:  ;
+  --tw-saturate:  ;
+  --tw-sepia:  ;
+  --tw-drop-shadow:  ;
+  --tw-backdrop-blur:  ;
+  --tw-backdrop-brightness:  ;
+  --tw-backdrop-contrast:  ;
+  --tw-backdrop-grayscale:  ;
+  --tw-backdrop-hue-rotate:  ;
+  --tw-backdrop-invert:  ;
+  --tw-backdrop-opacity:  ;
+  --tw-backdrop-saturate:  ;
+  --tw-backdrop-sepia:  ;
+  --tw-contain-size:  ;
+  --tw-contain-layout:  ;
+  --tw-contain-paint:  ;
+  --tw-contain-style:  ;
+}
+
+/* ! tailwindcss v3.4.15 | MIT License | https://tailwindcss.com */
+
+/*
+1. Prevent padding and border from affecting element width. (https://github.com/mozdevs/cssremedy/issues/4)
+2. Allow adding a border to an element by just adding a border-width. (https://github.com/tailwindcss/tailwindcss/pull/116)
+*/
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  /* 1 */
+  border-width: 0;
+  /* 2 */
+  border-style: solid;
+  /* 2 */
+  border-color: #e5e7eb;
+  /* 2 */
+}
+
+::before,
+::after {
+  --tw-content: '';
+}
+
+/*
+1. Use a consistent sensible line-height in all browsers.
+2. Prevent adjustments of font size after orientation changes in iOS.
+3. Use a more readable tab size.
+4. Use the user's configured `sans` font-family by default.
+5. Use the user's configured `sans` font-feature-settings by default.
+6. Use the user's configured `sans` font-variation-settings by default.
+7. Disable tap highlights on iOS
+*/
+
+html,
+:host {
+  line-height: 1.5;
+  /* 1 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */
+  -moz-tab-size: 4;
+  /* 3 */
+  -o-tab-size: 4;
+     tab-size: 4;
+  /* 3 */
+  font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  /* 4 */
+  font-feature-settings: normal;
+  /* 5 */
+  font-variation-settings: normal;
+  /* 6 */
+  -webkit-tap-highlight-color: transparent;
+  /* 7 */
+}
+
+/*
+1. Remove the margin in all browsers.
+2. Inherit line-height from `html` so users can set them as a class directly on the `html` element.
+*/
+
+body {
+  margin: 0;
+  /* 1 */
+  line-height: inherit;
+  /* 2 */
+}
+
+/*
+1. Add the correct height in Firefox.
+2. Correct the inheritance of border color in Firefox. (https://bugzilla.mozilla.org/show_bug.cgi?id=190655)
+3. Ensure horizontal rules are visible by default.
+*/
+
+hr {
+  height: 0;
+  /* 1 */
+  color: inherit;
+  /* 2 */
+  border-top-width: 1px;
+  /* 3 */
+}
+
+/*
+Add the correct text decoration in Chrome, Edge, and Safari.
+*/
+
+abbr:where([title]) {
+  -webkit-text-decoration: underline dotted;
+          text-decoration: underline dotted;
+}
+
+/*
+Remove the default font size and weight for headings.
+*/
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+/*
+Reset links to optimize for opt-in styling instead of opt-out.
+*/
+
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+/*
+Add the correct font weight in Edge and Safari.
+*/
+
+b,
+strong {
+  font-weight: bolder;
+}
+
+/*
+1. Use the user's configured `mono` font-family by default.
+2. Use the user's configured `mono` font-feature-settings by default.
+3. Use the user's configured `mono` font-variation-settings by default.
+4. Correct the odd `em` font sizing in all browsers.
+*/
+
+code,
+kbd,
+samp,
+pre {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  /* 1 */
+  font-feature-settings: normal;
+  /* 2 */
+  font-variation-settings: normal;
+  /* 3 */
+  font-size: 1em;
+  /* 4 */
+}
+
+/*
+Add the correct font size in all browsers.
+*/
+
+small {
+  font-size: 80%;
+}
+
+/*
+Prevent `sub` and `sup` elements from affecting the line height in all browsers.
+*/
+
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+/*
+1. Remove text indentation from table contents in Chrome and Safari. (https://bugs.chromium.org/p/chromium/issues/detail?id=999088, https://bugs.webkit.org/show_bug.cgi?id=201297)
+2. Correct table border color inheritance in all Chrome and Safari. (https://bugs.chromium.org/p/chromium/issues/detail?id=935729, https://bugs.webkit.org/show_bug.cgi?id=195016)
+3. Remove gaps between table borders by default.
+*/
+
+table {
+  text-indent: 0;
+  /* 1 */
+  border-color: inherit;
+  /* 2 */
+  border-collapse: collapse;
+  /* 3 */
+}
+
+/*
+1. Change the font styles in all browsers.
+2. Remove the margin in Firefox and Safari.
+3. Remove default padding in all browsers.
+*/
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit;
+  /* 1 */
+  font-feature-settings: inherit;
+  /* 1 */
+  font-variation-settings: inherit;
+  /* 1 */
+  font-size: 100%;
+  /* 1 */
+  font-weight: inherit;
+  /* 1 */
+  line-height: inherit;
+  /* 1 */
+  letter-spacing: inherit;
+  /* 1 */
+  color: inherit;
+  /* 1 */
+  margin: 0;
+  /* 2 */
+  padding: 0;
+  /* 3 */
+}
+
+/*
+Remove the inheritance of text transform in Edge and Firefox.
+*/
+
+button,
+select {
+  text-transform: none;
+}
+
+/*
+1. Correct the inability to style clickable types in iOS and Safari.
+2. Remove default button styles.
+*/
+
+button,
+input:where([type='button']),
+input:where([type='reset']),
+input:where([type='submit']) {
+  -webkit-appearance: button;
+  /* 1 */
+  background-color: transparent;
+  /* 2 */
+  background-image: none;
+  /* 2 */
+}
+
+/*
+Use the modern Firefox focus style for all focusable elements.
+*/
+
+:-moz-focusring {
+  outline: auto;
+}
+
+/*
+Remove the additional `:invalid` styles in Firefox. (https://github.com/mozilla/gecko-dev/blob/2f9eacd9d3d995c937b4251a5557d95d494c9be1/layout/style/res/forms.css#L728-L737)
+*/
+
+:-moz-ui-invalid {
+  box-shadow: none;
+}
+
+/*
+Add the correct vertical alignment in Chrome and Firefox.
+*/
+
+progress {
+  vertical-align: baseline;
+}
+
+/*
+Correct the cursor style of increment and decrement buttons in Safari.
+*/
+
+::-webkit-inner-spin-button,
+::-webkit-outer-spin-button {
+  height: auto;
+}
+
+/*
+1. Correct the odd appearance in Chrome and Safari.
+2. Correct the outline style in Safari.
+*/
+
+[type='search'] {
+  -webkit-appearance: textfield;
+  /* 1 */
+  outline-offset: -2px;
+  /* 2 */
+}
+
+/*
+Remove the inner padding in Chrome and Safari on macOS.
+*/
+
+::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/*
+1. Correct the inability to style clickable types in iOS and Safari.
+2. Change font properties to `inherit` in Safari.
+*/
+
+::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  /* 1 */
+  font: inherit;
+  /* 2 */
+}
+
+/*
+Add the correct display in Chrome and Safari.
+*/
+
+summary {
+  display: list-item;
+}
+
+/*
+Removes the default spacing and border for appropriate elements.
+*/
+
+blockquote,
+dl,
+dd,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hr,
+figure,
+p,
+pre {
+  margin: 0;
+}
+
+fieldset {
+  margin: 0;
+  padding: 0;
+}
+
+legend {
+  padding: 0;
+}
+
+ol,
+ul,
+menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/*
+Reset default styling for dialogs.
+*/
+
+dialog {
+  padding: 0;
+}
+
+/*
+Prevent resizing textareas horizontally by default.
+*/
+
+textarea {
+  resize: vertical;
+}
+
+/*
+1. Reset the default placeholder opacity in Firefox. (https://github.com/tailwindlabs/tailwindcss/issues/3300)
+2. Set the default placeholder color to the user's configured gray 400 color.
+*/
+
+input::-moz-placeholder, textarea::-moz-placeholder {
+  opacity: 1;
+  /* 1 */
+  color: #9ca3af;
+  /* 2 */
+}
+
+input::placeholder,
+textarea::placeholder {
+  opacity: 1;
+  /* 1 */
+  color: #9ca3af;
+  /* 2 */
+}
+
+/*
+Set the default cursor for buttons.
+*/
+
+button,
+[role="button"] {
+  cursor: pointer;
+}
+
+/*
+Make sure disabled buttons don't get the pointer cursor.
+*/
+
+:disabled {
+  cursor: default;
+}
+
+/*
+1. Make replaced elements `display: block` by default. (https://github.com/mozdevs/cssremedy/issues/14)
+2. Add `vertical-align: middle` to align replaced elements more sensibly by default. (https://github.com/jensimmons/cssremedy/issues/14#issuecomment-634934210)
+   This can trigger a poorly considered lint error in some tools but is included by design.
+*/
+
+img,
+svg,
+video,
+canvas,
+audio,
+iframe,
+embed,
+object {
+  display: block;
+  /* 1 */
+  vertical-align: middle;
+  /* 2 */
+}
+
+/*
+Constrain images and videos to the parent width and preserve their intrinsic aspect ratio. (https://github.com/mozdevs/cssremedy/issues/14)
+*/
+
+img,
+video {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Make elements with the HTML hidden attribute stay hidden by default */
+
+[hidden]:where(:not([hidden="until-found"])) {
+  display: none;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header content with flex alignment */
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Action buttons positioned on the top-right of the page */
+
+.action-buttons {
+  position: absolute;
+  /* Absolute positioning */
+  top: 1rem;
+  /* Distance from top */
+  right: 1rem;
+  /* Distance from right */
+  display: flex;
+  gap: 1rem;
+}
+
+/* Style for the buttons */
+
+.btn {
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.btn--primary {
+  background-color: #4ade80;
+  color: #1a1a1a;
+  transition: background-color 0.3s ease;
+}
+
+.btn--primary:hover {
+  background-color: #34d399;
+}
+
+.btn--secondary {
+  background-color: #333;
+  color: #f5f5f5;
+  transition: background-color 0.3s ease;
+}
+
+.btn--secondary:hover {
+  background-color: #555;
+}
+
+/* Body Setup */
+
+body {
+  background-color: #1a1a1a;
+  /* Dark grey */
+  color: #f5f5f5;
+  /* Light text */
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  /* Full viewport height */
+  overflow: hidden;
+}
+
+/* Header */
+
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 1rem;
+}
+
+.home-button a {
+  font-size: 2rem;
+  color: #f5f5f5;
+  text-decoration: none;
+}
+
+/* Main Content */
+
+main {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Header logo setup */
+
+.logo {
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+  color: #f5f5f5;
+  text-decoration: none;
+}
+
+.logo-background {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  /* Adjust size as needed */
+  height: 50px;
+  border-radius: 50%;
+  /* Circular background */
+  background-color: #979393;
+  /* Optional background color for the circle */
+  box-shadow: 0 4px 10px rgba(255, 255, 255, 0.5);
+  /* White shadow effect */
+  margin-right: 10px;
+  /* Space between the logo image and text */
+}
+
+.logo-img {
+  width: 55px;
+  /* Adjust size as needed */
+  height: 55px;
+  border-radius: 50%;
+  /* Circular image */
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.logo:hover {
+  color: #4ade80;
+  /* Optional hover effect */
+}
+
+/* Contact Form Section */
+
+.contact-form-section {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: #32353b;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  color: #f5f5f5;
+  text-align: center;
+}
+
+.contact-form-section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: #4ade80;
+}
+
+.contact-form-section p {
+  font-size: 1rem;
+  color: #cbd5e0;
+  margin-bottom: 1.5rem;
+}
+
+.contact-form-section form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.contact-form-section label {
+  font-size: 0.9rem;
+  color: #cbd5e0;
+  text-align: left;
+}
+
+.contact-form-section input[type="text"],
+.contact-form-section input[type="email"],
+.contact-form-section textarea {
+  width: 100%;
+  padding: 0.75rem;
+  background-color: #3f4550;
+  color: #f5f5f5;
+  border: 1px solid #718096;
+  border-radius: 4px;
+  font-size: 1rem;
+  transition: border-color 0.3s;
+}
+
+.contact-form-section input:focus,
+.contact-form-section textarea:focus {
+  border-color: #4ade80;
+  outline: none;
+}
+
+.contact-form-section button {
+  padding: 0.75rem;
+  background-color: #4ade80;
+  color: #2d3748;
+  font-weight: bold;
+  font-size: 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.contact-form-section button:hover {
+  background-color: #38a169;
+}
+
+/* Responsive Design for Smaller Screens */
+
+@media (max-width: 600px) {
+  .contact-form-section {
+    padding: 1.5rem;
+  }
+
+  .contact-form-section h2 {
+    font-size: 1.5rem;
+  }
+
+  .contact-form-section p {
+    font-size: 0.95rem;
+  }
+}
+
+/* Project Container */
+
+.project-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+/* Vertical Tree Styling */
+
+.vertical-tree {
+  width: 10px;
+  /* Width of the tree */
+  height: 300px;
+  /* Height of the tree */
+  background-color: #4ade80;
+  /* Light green color for the tree */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Project Card Styling */
+
+.project-card {
+  width: 150px;
+  /* Width of each card */
+  height: 100px;
+  /* Height of each card */
+  background-color: #333;
+  /* Dark background for cards */
+  border-radius: 8px;
+  padding: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+.left-card {
+  margin-right: 20px;
+  /* Space between left cards and tree */
+}
+
+.right-card {
+  margin-left: 20px;
+  /* Space between right card and tree */
+}
+
+/* Header and Footer Styles */
+
+.header, .footer {
+  text-align: center;
+}
+
+/* Circle container */
+
+.circle-container {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(0, 0, 0, 0.6) 20%, transparent 70%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  /* Initially hidden */
+  transform: scale(0);
+  /* Initially scaled down */
+  animation: appearCircle 1s forwards;
+  /* Circle animation */
+}
+
+/* Image inside the circle */
+
+.circle-container img {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border: 5px solid #2a8156;
+}
+
+/* Introduction text */
+
+.intro-text {
+  text-align: center;
+  font-size: 1.5rem;
+  margin-top: 20px;
+  opacity: 0;
+  /* Initially hidden */
+  transform: translateY(20px);
+  /* Initially moved down */
+  animation: appearText 1s 1s forwards;
+  /* Text animation */
+}
+
+/* Centering the content */
+
+#content {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* Outer Ring Styling */
+
+.ring {
+  width: 500px;
+  /* Outer ring size */
+  height: 500px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Inner Ring Styling */
+
+.inner-ring {
+  width: 350px;
+  /* Smaller size for inner ring */
+  height: 350px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Expertise Card Styling (Outer Cards) */
+
+.expertise-card {
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #f5f5f5;
+  background-color: #333;
+  border-radius: 8px;
+  padding: 0.5rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  transform-origin: center -200px;
+  /* Adjust based on ring radius */
+}
+
+.expertise-icon {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 0.5rem;
+}
+
+.icon {
+  width: 40px;
+  /* Keep icon size consistent */
+  height: 40px;
+  /* Keep icon size consistent */
+  margin-bottom: 0.5rem;
+}
+
+.expertise-card {
+  transform: rotate(calc(150deg * var(--i))) translateY(-250px) rotate(calc(-150deg * var(--i)));
+  /* Adjust rotation for each card */
+}
+
+/* Tool Card Styling (Inner Ring Cards) */
+
+.tool-card {
+  position: absolute;
+  width: 70px;
+  /* Smaller card size for tools */
+  height: 70px;
+  /* display: flex; */
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #f5f5f5;
+  background-color: #444;
+  border-radius: 8px;
+  padding: 0.5rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  transform: rotate(calc(90deg * var(--i))) translateY(-150px) rotate(calc(-90deg * var(--i)));
+  /* Adjust rotation for each card */
+}
+
+/* Tool Icon Styling */
+
+.tool-icon {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 0.5rem;
+}
+
+/* Hover Effects for Tool Cards */
+
+.tool-card:hover {
+  transform: scale(1.1) rotate(calc(var(--i) * 120deg)) translateY(-150px) rotate(calc(-120deg * var(--i)));
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+}
+
+/* Circle animation */
+
+@keyframes appearCircle {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Text animation */
+
+@keyframes appearText {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.timeline {
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 30px 0;
+}
+
+.timeline::after {
+  content: '';
+  position: absolute;
+  width: 6px;
+  background-color: #4ade80;
+  /* Light green line for contrast */
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -3px;
+}
+
+/* Position the timeline items */
+
+.timeline-item {
+  padding: 20px;
+  background-color: #2d3748;
+  /* Dark background for items */
+  border-radius: 6px;
+  margin-bottom: 20px;
+  position: relative;
+  width: 45%;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  /* Make it appear as if it's coming from the line */
+  transform: translateX(20px);
+}
+
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: #4ade80;
+  /* Light green circle */
+  top: 20px;
+  left: -9px;
+  border: 4px solid #1a202c;
+  /* Dark border for contrast */
+}
+
+/* Make it a speech bubble effect */
+
+.timeline-item.left {
+  left: 0;
+  transform: translateX(0);
+  /* Cards on the left side */
+}
+
+.timeline-item.right {
+  left: 50%;
+  transform: translateX(-100%);
+  /* Cards on the right side */
+}
+
+.timeline-item.left::after,
+.timeline-item.right::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 10px solid #2d3748;
+  /* Triangle pointing towards the timeline */
+  top: 15px;
+}
+
+.timeline-item.left::after {
+  left: -10px;
+  /* Left-side speech bubble */
+}
+
+.timeline-item.right::after {
+  right: -10px;
+  /* Right-side speech bubble */
+}
+
+.timeline-item h3 {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #f5f5f5;
+  /* Light text */
+}
+
+.timeline-item p {
+  margin: 5px 0 0;
+  color: #cbd5e0;
+  /* Lighter text for details */
+}
+
+/* Timeline container */
+
+.timeline {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.timeline:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  height: 100%;
+  background-color: #3d6c7a;
+}
+
+/* Timeline item styling */
+
+.timeline-item {
+  position: relative;
+  width: 45%;
+  padding: 15px;
+  margin: 20px 0;
+  background: #47797c;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Left side item styling */
+
+.timeline-item[data-side="left"] {
+  left: 0;
+  text-align: right;
+}
+
+/* Right side item styling */
+
+.timeline-item[data-side="right"] {
+  left: 55%;
+  text-align: left;
+}
+
+/* Arrow indicators for timeline items */
+
+.timeline-item[data-side="left"]:after {
+  content: '';
+  position: absolute;
+  top: 15px;
+  right: -10px;
+  width: 0;
+  height: 0;
+  border: 5px solid transparent;
+  border-left-color: #f9f9f9;
+}
+
+.timeline-item[data-side="right"]:after {
+  content: '';
+  position: absolute;
+  top: 15px;
+  left: -10px;
+  width: 0;
+  height: 0;
+  border: 5px solid transparent;
+  border-right-color: #f9f9f9;
+}
+
+/* Cursor circle */
+
+#cursor {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: rgb(81, 113, 121);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  pointer-events: none;
+  /* Ensures it doesn't interfere with clickable elements */
+  transform: translate(-50%, -50%);
+  /* Centers the circle on the cursor */
+  transition: transform 0.1s ease;
+}
+
+/* Optional: Add media query for mobile responsiveness */
+
+@media (max-width: 768px) {
+  .timeline-item {
+    width: 90%;
+  }
+
+  .timeline-item.left,
+    .timeline-item.right {
+    left: 0;
+  }
+
+  .timeline::after {
+    left: 0;
+    margin-left: 0;
+  }
+}
+
+/* Vertical Buttons */
+
+.vertical-buttons {
+  position: fixed;
+  left: 20px;
+  /* Positioned to the left */
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.vertical-buttons a {
+  display: inline-block;
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  /* Oval shape */
+  text-align: center;
+  text-decoration: none;
+  background-color: #333;
+  color: #f5f5f5;
+  transition: background-color 0.3s ease;
+  opacity: 0;
+  /* Initially hidden */
+  transform: translateX(-50px);
+  /* Slide-in effect */
+  animation: buttonPopUp 1s forwards;
+}
+
+/* Sequential Button Animation */
+
+.vertical-buttons a:nth-child(1) {
+  animation-delay: 0.2s;
+}
+
+.vertical-buttons a:nth-child(2) {
+  animation-delay: 0.4s;
+}
+
+.vertical-buttons a:nth-child(3) {
+  animation-delay: 0.6s;
+}
+
+.vertical-buttons a:nth-child(4) {
+  animation-delay: 0.8s;
+}
+
+.vertical-buttons a:hover {
+  background-color: #4ade80;
+  color: #1a1a1a;
+}
+
+/* footer {
+    margin-top: 300px;
+} */
+
+/* Button pop-up animation */
+
+@keyframes buttonPopUp {
+  0% {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
