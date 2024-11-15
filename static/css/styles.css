@@ -244,6 +244,43 @@ main {
     border-radius: 50%;
     object-fit: cover;
 } */
+/* Layout for Blog Cards Section */
+.blog-cards-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 1.5rem; /* Space between cards */
+    margin-top: 1.5rem;
+}
+
+.blog-card {
+    background-color: #2d3748;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    width: 100%; /* Full width within flex item */
+    max-width: 300px; /* Restrict the maximum width */
+    color: white;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.blog-card h3 a {
+    color: #38b2ac; /* Teal color for links */
+    text-decoration: none;
+}
+
+.blog-card h3 a:hover {
+    text-decoration: underline;
+}
+
+.blog-card p {
+    margin-top: 0.5rem;
+    line-height: 1.6;
+}
+
+.blog-card:hover {
+    transform: translateY(-5px); /* Hover lift effect */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Hover shadow */
+}
 
 .about-card {
     background-color: #2d3748;
