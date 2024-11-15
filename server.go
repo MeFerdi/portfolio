@@ -45,7 +45,7 @@ func contactHandler(w http.ResponseWriter, r *http.Request) {
 		m.SetBody("text/plain", fmt.Sprintf("Name: %s\nEmail: %s\nMessage: %s", name, email, message))
 
 		// Set up the SMTP server
-		d := gomail.NewDialer("smtp.example.com", 587, "your-email@example.com", "your-email-password")
+		d := gomail.NewDialer("gmail.com", 587, "ferdinandodhis254@gmail.com", "123456")
 
 		// Send the email
 		if err := d.DialAndSend(m); err != nil {
@@ -74,15 +74,19 @@ func aboutHandler(w http.ResponseWriter, r *http.Request) {
 func experienceHandler(w http.ResponseWriter, r *http.Request) {
 	renderTemplate(w, "experience.html", nil)
 }
+
 func skillsHandler(w http.ResponseWriter, r *http.Request) {
 	renderTemplate(w, "skills.html", nil)
 }
+
 func projectHandler(w http.ResponseWriter, r *http.Request) {
 	renderTemplate(w, "project.html", nil)
 }
+
 func blogHandler(w http.ResponseWriter, r *http.Request) {
 	renderTemplate(w, "blog.html", nil)
 }
+
 func main() {
 	http.HandleFunc("/", homeHandler)
 	http.HandleFunc("/contact", contactHandler)
