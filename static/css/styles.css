@@ -213,6 +213,70 @@ main {
         font-size: 0.95rem;
     }
 }
+/* Layout for About Section */
+.about-section {
+    display: flex;
+    align-items: center;
+    padding: 2rem;
+    color: white;
+}
+
+/* .image-container {
+    position: relative;
+    margin-right: 2rem;
+}
+
+.image-container::before {
+    content: "";
+    position: absolute;
+    top: -8px;
+    left: -8px;
+    width: 100%;
+    height: 100%;
+    border: 4px solid teal;
+    border-radius: 50%;
+    transform: scale(1.1);
+} */
+
+/* .profile-image {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    object-fit: cover;
+} */
+
+.about-card {
+    background-color: #2d3748;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    max-width: 600px;
+}
+
+.about-card h2 {
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+}
+
+.about-card p {
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.skills-link {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    color: teal;
+    text-decoration: none;
+    border: 2px solid teal;
+    border-radius: 8px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.skills-link:hover {
+    background-color: teal;
+    color: white;
+}
 
 /* Project Container */
 .project-container {
