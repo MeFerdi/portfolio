@@ -5,6 +5,7 @@ import (
 	"html/template"
 	"log"
 	"net/http"
+	"os"
 
 	"gopkg.in/gomail.v2"
 )
@@ -24,6 +25,7 @@ func homeHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 // Contact Page Handler
+// Contact Page Handler
 func contactHandler(w http.ResponseWriter, r *http.Request) {
 	if r.Method == http.MethodPost {
 		// Parse form data
@@ -39,13 +41,13 @@ func contactHandler(w http.ResponseWriter, r *http.Request) {
 
 		// Configure email settings
 		m := gomail.NewMessage()
-		m.SetHeader("From", "your-email@example.com")
+		m.SetHeader("From", os.Getenv("SMTP_EMAIL"))
 		m.SetHeader("To", "destination-email@example.com")
 		m.SetHeader("Subject", "New Contact Form Submission")
 		m.SetBody("text/plain", fmt.Sprintf("Name: %s\nEmail: %s\nMessage: %s", name, email, message))
 
-		// Set up the SMTP server
-		d := gomail.NewDialer("gmail.com", 587, "ferdinandodhis254@gmail.com", "123456")
+		// Set up the SMTP server using environment variables
+		d := gomail.NewDialer("smtp.gmail.com", 587, os.Getenv("SMTP_EMAIL"), os.Getenv("SMTP_PASSWORD"))
 
 		// Send the email
 		if err := d.DialAndSend(m); err != nil {
@@ -60,11 +62,6 @@ func contactHandler(w http.ResponseWriter, r *http.Request) {
 		renderTemplate(w, "contact.html", nil)
 	}
 }
-
-// // Thank You Page Handler
-// func thankYouHandler(w http.ResponseWriter, r *http.Request) {
-// 	renderTemplate(w, "thank-you.html", nil)
-// }
 
 // Additional Page Handlers
 func aboutHandler(w http.ResponseWriter, r *http.Request) {
