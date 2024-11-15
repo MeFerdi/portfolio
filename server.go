@@ -5,6 +5,8 @@ import (
 	"html/template"
 	"log"
 	"net/http"
+
+	"gopkg.in/gomail.v2"
 )
 
 var templates = template.Must(template.ParseGlob("./templates/*.html"))
@@ -16,6 +18,12 @@ func renderTemplate(w http.ResponseWriter, tmpl string, data interface{}) {
 	}
 }
 
+// Home Page Handler
+func homeHandler(w http.ResponseWriter, r *http.Request) {
+	renderTemplate(w, "index.html", nil)
+}
+
+// Contact Page Handler
 func contactHandler(w http.ResponseWriter, r *http.Request) {
 	if r.Method == http.MethodPost {
 		// Parse form data
@@ -29,27 +37,61 @@ func contactHandler(w http.ResponseWriter, r *http.Request) {
 		email := r.FormValue("email")
 		message := r.FormValue("message")
 
-		// Log form data for now (or send an email/store in a database)
-		log.Printf("Received contact form submission: Name=%s, Email=%s, Message=%s\n", name, email, message)
+		// Configure email settings
+		m := gomail.NewMessage()
+		m.SetHeader("From", "your-email@example.com")
+		m.SetHeader("To", "destination-email@example.com")
+		m.SetHeader("Subject", "New Contact Form Submission")
+		m.SetBody("text/plain", fmt.Sprintf("Name: %s\nEmail: %s\nMessage: %s", name, email, message))
 
-		// Send a response or redirect to a thank you page
+		// Set up the SMTP server
+		d := gomail.NewDialer("smtp.example.com", 587, "your-email@example.com", "your-email-password")
+
+		// Send the email
+		if err := d.DialAndSend(m); err != nil {
+			log.Println("Failed to send email:", err)
+			http.Error(w, "Failed to send email", http.StatusInternalServerError)
+			return
+		}
+
+		// Redirect to thank-you page after successful submission
 		http.Redirect(w, r, "/thank-you", http.StatusSeeOther)
 	} else {
-		// Render contact page if accessed with GET
 		renderTemplate(w, "contact.html", nil)
 	}
 }
 
-func thankYouHandler(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprintf(w, "<html><body><h1>Thank You!</h1><p>Thank you for reaching out, %s. I'll get back to you soon!</p></body></html>", r.URL.Query().Get("name"))
+// // Thank You Page Handler
+// func thankYouHandler(w http.ResponseWriter, r *http.Request) {
+// 	renderTemplate(w, "thank-you.html", nil)
+// }
+
+// Additional Page Handlers
+func aboutHandler(w http.ResponseWriter, r *http.Request) {
+	renderTemplate(w, "about.html", nil)
 }
 
+func experienceHandler(w http.ResponseWriter, r *http.Request) {
+	renderTemplate(w, "experience.html", nil)
+}
+func skillsHandler(w http.ResponseWriter, r *http.Request) {
+	renderTemplate(w, "skills.html", nil)
+}
+func projectHandler(w http.ResponseWriter, r *http.Request) {
+	renderTemplate(w, "project.html", nil)
+}
+func blogHandler(w http.ResponseWriter, r *http.Request) {
+	renderTemplate(w, "blog.html", nil)
+}
 func main() {
-	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-		renderTemplate(w, "index.html", nil)
-	})
+	http.HandleFunc("/", homeHandler)
 	http.HandleFunc("/contact", contactHandler)
-	http.HandleFunc("/thank-you", thankYouHandler)
+	// http.HandleFunc("/thank-you", thankYouHandler)
+	http.HandleFunc("/about", aboutHandler)
+	http.HandleFunc("/project", projectHandler)
+	http.HandleFunc("/skills", skillsHandler)
+	http.HandleFunc("/blog", blogHandler)
+	http.HandleFunc("/experience", experienceHandler)
 
 	// Serve static files
 	fs := http.FileServer(http.Dir("static"))
