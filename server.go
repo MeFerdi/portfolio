@@ -9,7 +9,7 @@ import (
 	"gopkg.in/gomail.v2"
 )
 
-var templates = template.Must(template.ParseGlob("./templates/*.html"))
+var templates = template.Must(template.ParseGlob("./*.html"))
 
 func renderTemplate(w http.ResponseWriter, tmpl string, data interface{}) {
 	err := templates.ExecuteTemplate(w, tmpl, data)
