@@ -753,34 +753,28 @@ main {
     }
 }
 /* Responsive Design for Smaller Screens */
-/* @media (max-width: 600px) {  
-    .contact-form-section { padding :1.5rem;}   
-    .contact-form-section h2 { font-size :1.5rem;}   
-    .contact-form-section p { font-size :0.95rem;}   
-    .action-buttons { position:absolute ; top:.75rem ; right:.75rem ; flex-direction:column;} /* Stack buttons vertically on mobile */   
-   /* ?.action-buttons .btn { width:auto;} /* Allow buttons to take full width on mobile */   
-/*}
-/*
-@media (max-width: 480px) {
-
-    .btn {
-        padding :0.4rem 0.8rem ; 
-        font-size :0.9rem ;
-    }
- 
-    .logo-img { 
-        width :40px ; 
-        height :40px ; 
-    }
- 
-    .logo { 
-        font-size :0.8rem ; 
-    }
- 
- }
-/* Responsive Design for Smaller Screens */
 @media (max-width: 768px) {
-    
+    .about-card,
+    .blog-card,
+    .project-card,
+    .timeline-item {
+        width: 90%; /* Full width within container on mobile */
+        margin: 0 auto 20px; /* Center and add space between items */
+        padding: 1rem; /* Adjust padding for smaller screens */
+    }
+
+    .about-card h2,
+    .blog-card h3,
+    .project-card h3 {
+        font-size: 1.5rem; /* Adjust heading size for smaller screens */
+    }
+
+    .about-card p,
+    .blog-card p,
+    .project-card p {
+        font-size: 0.9rem; /* Adjust paragraph size for smaller screens */
+    }
+
     .header-content {
         flex-direction: column; /* Stack header content vertically */
         align-items: flex-start; /* Align items to start */
@@ -801,30 +795,40 @@ main {
         gap: 0.5rem; /* Reduce gap for smaller screens */
         flex-wrap: wrap; /* Allow buttons to wrap if needed */
     }
+}
 
-   .contact-form-section,
-   .about-card,
-   .blog-card,
-   .project-card,
-   .timeline-item {
-       width: 90%; /* Full width within container on mobile */
-       margin-bottom: 20px; /* Space between items */
-       padding-left :10px; 
-       padding-right :10px; 
-       box-shadow:none; 
-   }
+@media (max-width: 480px) {
+    .about-card,
+    .blog-card,
+    .project-card,
+    .timeline-item {
+        width: 100%; /* Full width within container on very small screens */
+        padding: 0.5rem; /* Adjust padding for very small screens */
+    }
 
-   .contact-form-section h2,
-   .about-card h2,
-   .blog-card h3,
-   .project-card h3 {
-       font-size: 1.5rem; /* Adjust heading size for smaller screens */
-   }
+    .about-card h2,
+    .blog-card h3,
+    .project-card h3 {
+        font-size: 1.25rem; /* Adjust heading size for very small screens */
+    }
 
-   .contact-form-section p,
-   .about-card p,
-   .blog-card p,
-   .project-card p {
-       font-size: 0.9rem; /* Adjust paragraph size for smaller screens */
-   }
-} 
+    .about-card p,
+    .blog-card p,
+    .project-card p {
+        font-size: 0.8rem; /* Adjust paragraph size for very small screens */
+    }
+
+    .btn {
+        padding: 0.4rem 0.8rem; 
+        font-size: 0.9rem;
+    }
+
+    .logo-img { 
+        width: 40px; 
+        height: 40px; 
+    }
+
+    .logo { 
+        font-size: 0.8rem; 
+    }
+}
