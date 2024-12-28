@@ -10,10 +10,15 @@ import (
 	"gopkg.in/gomail.v2"
 )
 
-var templates = template.Must(template.ParseGlob("./*.html"))
-
 func renderTemplate(w http.ResponseWriter, tmpl string, data interface{}) {
-	err := templates.ExecuteTemplate(w, tmpl, data)
+	var err error
+	var t *template.Template
+	if tmpl == "index.html" {
+		t = template.Must(template.ParseFiles(tmpl))
+	} else {
+		t = template.Must(template.ParseFiles("templates/" + tmpl))
+	}
+	err = t.ExecuteTemplate(w, tmpl, data)
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 	}
@@ -24,7 +29,6 @@ func homeHandler(w http.ResponseWriter, r *http.Request) {
 	renderTemplate(w, "index.html", nil)
 }
 
-// Contact Page Handler
 // Contact Page Handler
 func contactHandler(w http.ResponseWriter, r *http.Request) {
 	if r.Method == http.MethodPost {
@@ -87,7 +91,6 @@ func blogHandler(w http.ResponseWriter, r *http.Request) {
 func main() {
 	http.HandleFunc("/", homeHandler)
 	http.HandleFunc("/contact", contactHandler)
-	// http.HandleFunc("/thank-you", thankYouHandler)
 	http.HandleFunc("/about", aboutHandler)
 	http.HandleFunc("/project", projectHandler)
 	http.HandleFunc("/skills", skillsHandler)
@@ -98,6 +101,6 @@ func main() {
 	fs := http.FileServer(http.Dir("static"))
 	http.Handle("/static/", http.StripPrefix("/static/", fs))
 
-	log.Println("Server running on http://localhost:8080")
-	log.Fatal(http.ListenAndServe(":8080", nil))
+	log.Println("Server running on http://localhost:8090")
+	log.Fatal(http.ListenAndServe(":8090", nil))
 }
