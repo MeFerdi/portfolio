@@ -39,7 +39,7 @@
             <div class="timeline">
                 <div class="timeline-item">
                     <h3>Apprentice Software Developer</h3>
-                    <p>Zone01 Kisumu (Apr 2024 - Present)</p>
+                    <p>Zone01 Kisumu (Apr 2024 - Present) <span id="experience-duration"></span></p>
                     <p>Collaborating on software development projects, learning backend technologies, and contributing to full-stack solutions.</p>
                 </div>
             </div>
@@ -52,5 +52,20 @@
     <footer class="footer">
         &copy; 2024 Ferdynand. All rights reserved.
     </footer>
+    <script src="/static/js/main.js"></script>
+    <script>
+        function calculateExperienceDuration(startDate) {
+            const start = new Date(startDate);
+            const now = new Date();
+            const diff = now - start;
+            const months = Math.floor(diff / (1000 * 60 * 60 * 24 * 30));
+            return months;
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const duration = calculateExperienceDuration('2024-04-01');
+            document.getElementById('experience-duration').textContent = `(${duration} months)`;
+        });
+    </script>
 </body>
 </html>
