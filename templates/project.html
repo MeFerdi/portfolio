@@ -88,8 +88,16 @@
     </main>
 
     <!-- Footer -->
-    <footer class="footer">
-        &copy; 2025 Ferdynand. All rights reserved.
+    <footer class="bg-gray-800 text-center p-5">
+        &copy; <span id="current-year"></span> Ferdynand. All rights reserved.
     </footer>
+    <script src="/static/js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const yearSpan = document.getElementById('current-year');
+            const currentYear = new Date().getFullYear();
+            yearSpan.textContent = currentYear;
+        });
+    </script>
 </body>
 </html>
