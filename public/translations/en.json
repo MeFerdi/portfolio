@@ -1,0 +1,81 @@
+{
+    "general": {
+        "name": "Ferdynand Odhiambo",
+        "headline": "Full Stack Software Developer",
+        "about": [
+            "Hey there! 👋",
+            "Ferdynand Odhiambo is a Full Stack Software Developer with over two years of experience in the tech industry, specializing in web development, integration engineering, AI, and machine learning. Proficient in Python, Django, Go, and JavaScript, he designs and delivers innovative, scalable solutions, including an AI-driven talent-matching system that optimizes task allocation based on skills and availability. His expertise includes architecting and optimizing databases with PostgreSQL and SQLite, complemented by rigorous testing using FastAPI and Swagger to ensure high-quality, robust deliverables."
+        ],
+        "socials": {
+            "email": "oferdinandddev112@gmail.com",
+            "linkedin": "https://www.linkedin.com/in/ferdynand-odhiambo",
+            "github": "https://github.com/MeFerdi"
+        }
+    },
+    "experiences": [
+        {
+            "title": "Full Stack Software Developer",
+            "company": "Zone01 Kisumu",
+            "href": "",
+            "startDate": "April 2024",
+            "endDate": "Present",
+            "description": "Developing and maintaining full-stack web applications, working with modern technologies to deliver high-quality software solutions.",
+            "logo": "/logos/Zone01_Logo.png",
+            "skills": ["JavaScript", "React", "Node.js", "Python", "Go", "PostgreSQL", "Docker", "Git"]
+        }
+    ],
+    "education": [
+        {
+            "subject": "Software Engineering",
+            "degree": "Diploma in Software Engineering",
+            "university": "African Leadership Accelerator", 
+            "href": "",
+            "startDate": "2022", 
+            "endDate": "2023", 
+            "description": "Mastering core programming fundamentals using technologies and programming languages i.e C, Python, Git, Docker, MySQL e.t.c."
+        },
+        {
+            "subject": "Advanced Backend Development",
+            "degree": "Cerfiticate in Software Engineering",
+            "university": "African Leadership Accelerator", 
+            "href": "",
+            "startDate": "June, 2025", 
+            "endDate": "Present", 
+            "description": "Learning advanced backend development concepts such System and database design, testing, devops and technologies such as Python, Advanced SQL, Docker, Jest, Django, REST framework e.t.c. Applying them in real-world projects."
+        }
+    ],
+    "volunteering": [
+        {
+            "position": "Position Name",
+            "event": "Event Name",
+            "organisation": "Organisation Name",
+            "href": "",
+            "startDate": "2022",
+            "endDate": "NOW",
+            "description": "Short description of your role at the event."
+        }
+    ],
+    "projects": [
+        {
+            "name": "two-column-portfolio",
+            "framework": "next.js",
+            "description": "A simple two-column portfolio template that is easy and quick to customize for your own purposes. Mobile friendly.",
+            "href": "https://github.com/karlgrossmann/two-column-portfolio",
+            "stars": "0"
+        },
+       {
+            "name": "example-project",
+            "framework": "javascript",
+            "description": "Short description of your project.",
+            "href": "",
+            "stars": "2,712"
+       },
+       {
+        "name": "example-project-2",
+        "framework": "flutter",
+        "description": "Short description of your project.",
+        "href": "",
+        "stars": "1,999"
+        } 
+    ]
+}
