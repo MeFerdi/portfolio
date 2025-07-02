@@ -29,6 +29,11 @@ func homeHandler(w http.ResponseWriter, r *http.Request) {
 	renderTemplate(w, "index.html", nil)
 }
 
+// Maintenance Mode Handler - redirects all other routes to home
+func maintenanceHandler(w http.ResponseWriter, r *http.Request) {
+	http.Redirect(w, r, "/", http.StatusTemporaryRedirect)
+}
+
 // Contact Page Handler
 func contactHandler(w http.ResponseWriter, r *http.Request) {
 	if r.Method == http.MethodPost {
@@ -90,17 +95,19 @@ func blogHandler(w http.ResponseWriter, r *http.Request) {
 
 func main() {
 	http.HandleFunc("/", homeHandler)
-	http.HandleFunc("/contact", contactHandler)
-	http.HandleFunc("/about", aboutHandler)
-	http.HandleFunc("/project", projectHandler)
-	http.HandleFunc("/skills", skillsHandler)
-	http.HandleFunc("/blog", blogHandler)
-	http.HandleFunc("/experience", experienceHandler)
+
+	// During maintenance mode, redirect all other routes to home
+	http.HandleFunc("/contact", maintenanceHandler)
+	http.HandleFunc("/about", maintenanceHandler)
+	http.HandleFunc("/project", maintenanceHandler)
+	http.HandleFunc("/skills", maintenanceHandler)
+	http.HandleFunc("/blog", maintenanceHandler)
+	http.HandleFunc("/experience", maintenanceHandler)
 
 	// Serve static files
 	fs := http.FileServer(http.Dir("static"))
 	http.Handle("/static/", http.StripPrefix("/static/", fs))
 
-	log.Println("Server running on http://localhost:8090")
+	log.Println("Server running in maintenance mode on http://localhost:8090")
 	log.Fatal(http.ListenAndServe(":8090", nil))
 }
