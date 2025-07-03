@@ -7,7 +7,8 @@ import {
     BriefcaseIcon, 
     AcademicCapIcon, 
     HeartIcon, 
-    RocketLaunchIcon 
+    RocketLaunchIcon,
+    DocumentTextIcon
 } from '@heroicons/react/24/outline';
 
 const Navigation = () => {
@@ -40,18 +41,18 @@ const Navigation = () => {
             description: 'Academic background'
         },
         { 
-            id: 'volunteering', 
-            name: 'Volunteering', 
-            href: '#volunteering', 
-            icon: HeartIcon,
-            description: 'Community involvement'
-        },
-        { 
             id: 'projects', 
             name: 'Projects', 
             href: '#projects', 
             icon: RocketLaunchIcon,
             description: 'Things I\'ve built'
+        },
+        { 
+            id: 'publications', 
+            name: 'Publications', 
+            href: '#publications', 
+            icon: DocumentTextIcon,
+            description: 'Articles I\'ve written'
         }
     ];
 
