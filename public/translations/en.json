@@ -44,38 +44,51 @@
             "description": "Learning advanced backend development concepts such System and database design, testing, devops and technologies such as Python, Advanced SQL, Docker, Jest, Django, REST framework e.t.c. Applying them in real-world projects."
         }
     ],
-    "volunteering": [
-        {
-            "position": "Position Name",
-            "event": "Event Name",
-            "organisation": "Organisation Name",
-            "href": "",
-            "startDate": "2022",
-            "endDate": "NOW",
-            "description": "Short description of your role at the event."
-        }
-    ],
     "projects": [
         {
-            "name": "two-column-portfolio",
-            "framework": "next.js",
-            "description": "A simple two-column portfolio template that is easy and quick to customize for your own purposes. Mobile friendly.",
-            "href": "https://github.com/karlgrossmann/two-column-portfolio",
-            "stars": "0"
+            "name": "PointaFam",
+            "technologies used": ["Go", "JavaScript", "HTML & CSS"],
+            "description": "A web application that helps farmers and agribusinesses to connect with each other and with buyers.",
+            "href": "https://github.com/karlgrossmann/two-column-portfolio"
         },
        {
-            "name": "example-project",
-            "framework": "javascript",
-            "description": "Short description of your project.",
-            "href": "",
-            "stars": "2,712"
+            "name": "AI Talent Match",
+            "technologies used": ["Python", "Celery", "OpenAI", "Redis"],
+            "description": "The application entails an automated talent-task matching system that pairs talent to tasks based on their skills rating and availability",
+            "href": ""
        },
        {
-        "name": "example-project-2",
-        "framework": "flutter",
+        "name": "LandSnap",
+        "framework": ["Python", "Django", "Javascript"],
         "description": "Short description of your project.",
         "href": "",
         "stars": "1,999"
         } 
+    ],
+    "publications": [
+        {
+            "title": "Building Scalable Web Applications with Go",
+            "publication": "Medium",
+            "date": "December 2024",
+            "description": "A comprehensive guide on developing high-performance web applications using Go, covering best practices, architecture patterns, and optimization techniques.",
+            "href": "https://medium.com/@ferdynand/building-scalable-web-applications-go",
+            "tags": ["Go", "Web Development", "Architecture", "Performance"]
+        },
+        {
+            "title": "AI-Powered Talent Matching: A Machine Learning Approach",
+            "publication": "Dev.to",
+            "date": "November 2024",
+            "description": "Exploring how machine learning algorithms can be used to create intelligent talent-task matching systems, including implementation details and real-world results.",
+            "href": "https://dev.to/ferdynand/ai-powered-talent-matching",
+            "tags": ["AI", "Machine Learning", "Python", "OpenAI"]
+        },
+        {
+            "title": "Database Optimization Strategies for Django Applications",
+            "publication": "Hashnode",
+            "date": "October 2024",
+            "description": "Deep dive into PostgreSQL optimization techniques specifically for Django applications, covering query optimization, indexing strategies, and performance monitoring.",
+            "href": "https://ferdynand.hashnode.dev/database-optimization-django",
+            "tags": ["Django", "PostgreSQL", "Database", "Optimization"]
+        }
     ]
 }
