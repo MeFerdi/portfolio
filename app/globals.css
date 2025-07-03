@@ -431,6 +431,147 @@
       grid-template-columns: repeat(3, 1fr);
     }
   }
+
+  /* Publications Container Structure */
+  .publications-container {
+    /* Invisible container - guides positioning without visual presence */
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    /* No visible styling - purely structural */
+  }
+
+  .publications-grid {
+    /* Single column layout with proper spacing */
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    align-items: start;
+    justify-items: stretch;
+  }
+
+  .publication-wrapper {
+    /* Individual publication card wrapper */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    isolation: isolate;
+    position: relative;
+  }
+
+  /* Responsive breakpoints for publications */
+
+  /* Small mobile (320px+) */
+  @media (min-width: 20rem) {
+    .publications-grid {
+      gap: 2.5rem;
+    }
+  }
+
+  /* Large mobile/small tablet (480px+) */
+  @media (min-width: 30rem) {
+    .publications-grid {
+      gap: 3rem;
+      max-width: 600px;
+    }
+  }
+
+  /* Tablet (640px+) */
+  @media (min-width: 40rem) {
+    .publications-grid {
+      gap: 3.5rem;
+      max-width: 700px;
+    }
+  }
+
+  /* Large tablet (768px+) */
+  @media (min-width: 48rem) {
+    .publications-grid {
+      gap: 4rem;
+      max-width: 750px;
+    }
+  }
+
+  /* Desktop (1024px+) */
+  @media (min-width: 64rem) {
+    .publications-grid {
+      gap: 4.5rem;
+      max-width: 800px;
+    }
+  }
+
+  /* Large desktop (1280px+) */
+  @media (min-width: 80rem) {
+    .publications-grid {
+      gap: 5rem;
+      max-width: 850px;
+    }
+  }
+
+  /* Extra large desktop (1536px+) */
+  @media (min-width: 96rem) {
+    .publications-grid {
+      gap: 5.5rem;
+      max-width: 900px;
+    }
+  }
+
+  /* Ensure no overlapping on hover */
+  .publication-wrapper:hover {
+    z-index: 10;
+  }
+
+  /* Legacy publication grid (keeping for compatibility) */
+  .publication-grid {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    align-items: start;
+  }
+
+  .publication-card {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    min-height: 280px;
+    max-height: 350px;
+    position: relative;
+    isolation: isolate;
+  }
+
+  /* Ensure no overlapping on hover */
+  .publication-card:hover {
+    z-index: 10;
+  }
+
+  /* Responsive improvements for publication cards */
+  @media (max-width: 768px) {
+    .publication-grid {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+    
+    .publication-card {
+      min-height: 240px;
+      max-height: 320px;
+    }
+  }
+
+  @media (min-width: 769px) and (max-width: 1024px) {
+    .publication-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 1025px) {
+    .publication-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
 }
 
 /* Keyframe animations */
