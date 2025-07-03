@@ -15,9 +15,48 @@ function ProjectItem(props) {
     const isPopular = starCount > 100 && starCount <= 1000;
     const hasStars = starCount > 0;
     
+    // Get the main framework/technology from various possible props
+    const getMainFramework = () => {
+        // Check for 'framework' prop (could be string or array)
+        if (props.framework) {
+            if (Array.isArray(props.framework)) {
+                return props.framework[0]; // Take the first one
+            }
+            return props.framework;
+        }
+        
+        // Check for 'lib' prop
+        if (props.lib) {
+            if (Array.isArray(props.lib)) {
+                return props.lib[0];
+            }
+            return props.lib;
+        }
+        
+        // Check for 'technologies' prop (passed from 'technologies used')
+        if (props.technologies) {
+            if (Array.isArray(props.technologies)) {
+                return props.technologies[0];
+            }
+            return props.technologies;
+        }
+        
+        // Check for 'technologies used' prop
+        if (props['technologies used']) {
+            if (Array.isArray(props['technologies used'])) {
+                return props['technologies used'][0];
+            }
+            return props['technologies used'];
+        }
+        
+        return '';
+    };
+    
     // Get framework icon and color
     const getFrameworkInfo = (framework) => {
-        const fw = framework?.toLowerCase() || '';
+        if (!framework) return { color: 'text-primary', bg: 'bg-primary/10', border: 'border-primary/20' };
+        
+        const fw = framework.toLowerCase();
         if (fw.includes('next') || fw.includes('react')) {
             return { color: 'text-blue-500', bg: 'bg-blue-500/10', border: 'border-blue-500/20' };
         } else if (fw.includes('vue')) {
@@ -26,7 +65,7 @@ function ProjectItem(props) {
             return { color: 'text-cyan-500', bg: 'bg-cyan-500/10', border: 'border-cyan-500/20' };
         } else if (fw.includes('javascript')) {
             return { color: 'text-yellow-500', bg: 'bg-yellow-500/10', border: 'border-yellow-500/20' };
-        } else if (fw.includes('python')) {
+        } else if (fw.includes('python') || fw.includes('django')) {
             return { color: 'text-indigo-500', bg: 'bg-indigo-500/10', border: 'border-indigo-500/20' };
         } else if (fw.includes('go')) {
             return { color: 'text-teal-500', bg: 'bg-teal-500/10', border: 'border-teal-500/20' };
@@ -34,7 +73,8 @@ function ProjectItem(props) {
         return { color: 'text-primary', bg: 'bg-primary/10', border: 'border-primary/20' };
     };
 
-    const frameworkInfo = getFrameworkInfo(props.lib);
+    const mainFramework = getMainFramework();
+    const frameworkInfo = getFrameworkInfo(mainFramework);
     
     return (
         <article 
@@ -108,11 +148,11 @@ function ProjectItem(props) {
 
                 {/* Framework and technologies */}
                 <div className="flex items-center justify-between">
-                    {props.lib && (
+                    {mainFramework && (
                         <div className={`inline-flex items-center gap-2.5 px-4 py-2 rounded-lg ${frameworkInfo.bg} ${frameworkInfo.color} border ${frameworkInfo.border}`}>
                             <GlobeAltIcon className="w-4 h-4" />
                             <span className="text-sm font-semibold uppercase tracking-wider">
-                                {props.lib}
+                                {mainFramework}
                             </span>
                         </div>
                     )}
