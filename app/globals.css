@@ -84,6 +84,12 @@
     font-family: var(--font-inter), system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
     line-height: 1.6;
     letter-spacing: -0.01em;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  /* Smooth theme transitions for all elements */
+  * {
+    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
   }
 
   /* Typography Hierarchy */
@@ -572,162 +578,374 @@
       grid-template-columns: repeat(3, 1fr);
     }
   }
-}
 
-/* Keyframe animations */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
+  /* Stacked Publications Layout */
+  .publications-stacked {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    perspective: 1000px;
   }
-  to {
+
+  .publication-stack-item {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    transform-origin: center center;
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+  }
+
+  /* Dynamic z-index will be applied via inline styles */
+
+  /* Stack effect styles - all cards visible with different transforms */
+  .publication-stack-item.stack-1 {
+    transform: translateY(0px) scale(1) rotateX(0deg);
+    opacity: 1;
+    z-index: 100;
+  }
+
+  .publication-stack-item.stack-2 {
+    transform: translateY(-15px) scale(0.95) rotateX(2deg);
+    opacity: 0.8;
+    z-index: 90;
+  }
+
+  .publication-stack-item.stack-3 {
+    transform: translateY(-30px) scale(0.9) rotateX(4deg);
+    opacity: 0.6;
+    z-index: 80;
+  }
+
+  .publication-stack-item.stack-4 {
+    transform: translateY(-45px) scale(0.85) rotateX(6deg);
+    opacity: 0.4;
+    z-index: 70;
+  }
+
+  .publication-stack-item.stack-5 {
+    transform: translateY(-60px) scale(0.8) rotateX(8deg);
+    opacity: 0.2;
+    z-index: 60;
+  }
+
+  .publication-stack-item.fade-out {
+    transform: translateY(-80px) scale(0.7) rotateX(10deg);
+    opacity: 0;
+    pointer-events: none;
+    z-index: 50;
+  }
+
+  /* Hover effects for stacked cards */
+  .publication-stack-item:hover {
+    transform: translateY(-5px) scale(1.02) !important;
+    z-index: 200 !important;
+  }
+
+  /* Responsive adjustments for stacked layout */
+  @media (max-width: 768px) {
+    .publications-stacked {
+      perspective: 800px;
+    }
+    
+    .publication-stack-item.stack-2 {
+      transform: translateY(-10px) scale(0.97) rotateX(1deg);
+    }
+
+    .publication-stack-item.stack-3 {
+      transform: translateY(-20px) scale(0.94) rotateX(2deg);
+    }
+
+    .publication-stack-item.stack-4 {
+      transform: translateY(-30px) scale(0.91) rotateX(3deg);
+    }
+
+    .publication-stack-item.stack-5 {
+      transform: translateY(-40px) scale(0.88) rotateX(4deg);
+    }
+
+    .publication-stack-item.fade-out {
+      transform: translateY(-50px) scale(0.85) rotateX(5deg);
+    }
+  }
+
+  /* Enhanced Project Animations */
+  @keyframes scaleHover {
+    from {
+      transform: scale(1);
+    }
+    to {
+      transform: scale(1.02);
+    }
+  }
+
+  @keyframes slideInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px) scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+
+  @keyframes bounceIn {
+    0% {
+      opacity: 0;
+      transform: scale(0.8);
+    }
+    50% {
+      transform: scale(1.05);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  @keyframes shimmer {
+    0% {
+      background-position: -200% 0;
+    }
+    100% {
+      background-position: 200% 0;
+    }
+  }
+
+  /* Utility classes for enhanced project components */
+  .animate-scale-hover {
+    animation: scaleHover 0.3s ease-out forwards;
+  }
+
+  .animate-slide-in-up {
+    animation: slideInUp 0.5s ease-out forwards;
+  }
+
+  .animate-bounce-in {
+    animation: bounceIn 0.6s ease-out forwards;
+  }
+
+  .shimmer-effect {
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.1),
+      transparent
+    );
+    background-size: 200% 100%;
+    animation: shimmer 2s infinite;
+  }
+
+  /* Enhanced line-clamp utilities */
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .line-clamp-4 {
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  /* Backdrop blur enhancement for better card effects */
+  .backdrop-blur-enhanced {
+    backdrop-filter: blur(12px) saturate(1.2);
+    -webkit-backdrop-filter: blur(12px) saturate(1.2);
+  }
+
+  /* Custom shadow for project cards */
+  .shadow-project {
+    box-shadow: 
+      0 4px 6px -1px rgba(0, 0, 0, 0.1),
+      0 2px 4px -1px rgba(0, 0, 0, 0.06),
+      0 0 0 1px rgba(0, 0, 0, 0.05);
+  }
+
+  .shadow-project-hover {
+    box-shadow: 
+      0 20px 25px -5px rgba(0, 0, 0, 0.1),
+      0 10px 10px -5px rgba(0, 0, 0, 0.04),
+      0 0 0 1px rgba(var(--primary), 0.1);
+  }
+
+  /* Print styles */
+  @media print {
+    .no-print {
+      display: none !important;
+    }
+    
+    body {
+      color: black;
+      background-color: white;
+    }
+    
+    a {
+      text-decoration: underline;
+    }
+    
+    a[href^="http"]:after {
+      content: " (" attr(href) ")";
+    }
+  }
+
+  /* Project Execution Theme Styles */
+  .project-execution-card {
+    position: relative;
+    isolation: isolate;
+  }
+
+  .project-execution-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 1.5rem;
+    padding: 1px;
+    background: linear-gradient(45deg, transparent, hsl(var(--primary) / 0.1), transparent);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+  }
+
+  .project-execution-card:hover::before {
     opacity: 1;
   }
-}
 
-@keyframes slideUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
+  /* Responsive project grid enhancements */
+  @media (max-width: 640px) {
+    .project-execution-card {
+      margin-bottom: 1rem;
+    }
+    
+    .projects-grid {
+      gap: 1.5rem;
+      padding: 0 0.5rem;
+    }
   }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
 
-@keyframes slideDown {
-  from {
-    opacity: 0;
-    transform: translateY(-20px);
+  @media (min-width: 641px) and (max-width: 768px) {
+    .projects-grid {
+      gap: 2rem;
+      max-width: 600px;
+    }
   }
-  to {
-    opacity: 1;
-    transform: translateY(0);
+
+  @media (min-width: 769px) and (max-width: 1024px) {
+    .projects-grid {
+      max-width: 700px;
+      gap: 2.5rem;
+    }
   }
-}
 
-/* Enhanced Project Animations */
-@keyframes scaleHover {
-  from {
-    transform: scale(1);
+  /* Interactive link enhancements */
+  .project-execution-card a[href]:not([href=""]) {
+    cursor: pointer;
+    outline: none;
   }
-  to {
-    transform: scale(1.02);
+
+  .project-execution-card a[href=""]:not([href]),
+  .project-execution-card a:not([href]) {
+    cursor: default;
+    pointer-events: none;
+    opacity: 0.7;
   }
-}
 
-@keyframes slideInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px) scale(0.95);
+  /* Project status animations */
+  @keyframes executionPulse {
+    0%, 100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 0.7;
+      transform: scale(1.05);
+    }
   }
-  to {
-    opacity: 1;
-    transform: translateY(0) scale(1);
+
+  @keyframes progressBar {
+    0% {
+      width: 0%;
+    }
+    100% {
+      width: 100%;
+    }
   }
-}
 
-@keyframes bounceIn {
-  0% {
-    opacity: 0;
-    transform: scale(0.8);
+  .project-execution-card:hover .animate-pulse {
+    animation: executionPulse 1.5s ease-in-out infinite;
   }
-  50% {
-    transform: scale(1.05);
+
+  /* Enhanced mobile responsiveness */
+  @media (max-width: 480px) {
+    .project-execution-card {
+      border-radius: 1rem;
+      min-height: 240px;
+    }
+    
+    .project-execution-card .relative {
+      padding: 1rem;
+    }
+    
+    .project-execution-card h3 {
+      font-size: 1rem;
+      line-height: 1.4;
+    }
+    
+    .project-execution-card p {
+      font-size: 0.875rem;
+      line-height: 1.5;
+    }
   }
-  100% {
-    opacity: 1;
-    transform: scale(1);
+
+  /* Touch targets for mobile */
+  @media (max-width: 768px) {
+    .project-execution-card a,
+    .project-execution-card button {
+      min-height: 44px;
+      min-width: 44px;
+    }
+    
+    .project-execution-card .group\/launch {
+      padding: 0.75rem;
+    }
+    
+    .project-execution-card .group\/cta {
+      padding: 0.75rem 1rem;
+      font-size: 0.875rem;
+    }
   }
-}
 
-@keyframes shimmer {
-  0% {
-    background-position: -200% 0;
+  /* Accessibility improvements */
+  @media (prefers-reduced-motion: reduce) {
+    .project-execution-card,
+    .project-execution-card * {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
   }
-  100% {
-    background-position: 200% 0;
-  }
-}
 
-/* Utility classes for enhanced project components */
-.animate-scale-hover {
-  animation: scaleHover 0.3s ease-out forwards;
-}
-
-.animate-slide-in-up {
-  animation: slideInUp 0.5s ease-out forwards;
-}
-
-.animate-bounce-in {
-  animation: bounceIn 0.6s ease-out forwards;
-}
-
-.shimmer-effect {
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(255, 255, 255, 0.1),
-    transparent
-  );
-  background-size: 200% 100%;
-  animation: shimmer 2s infinite;
-}
-
-/* Enhanced line-clamp utilities */
-.line-clamp-2 {
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-}
-
-.line-clamp-4 {
-  display: -webkit-box;
-  -webkit-line-clamp: 4;
-  line-clamp: 4;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-}
-
-/* Backdrop blur enhancement for better card effects */
-.backdrop-blur-enhanced {
-  backdrop-filter: blur(12px) saturate(1.2);
-  -webkit-backdrop-filter: blur(12px) saturate(1.2);
-}
-
-/* Custom shadow for project cards */
-.shadow-project {
-  box-shadow: 
-    0 4px 6px -1px rgba(0, 0, 0, 0.1),
-    0 2px 4px -1px rgba(0, 0, 0, 0.06),
-    0 0 0 1px rgba(0, 0, 0, 0.05);
-}
-
-.shadow-project-hover {
-  box-shadow: 
-    0 20px 25px -5px rgba(0, 0, 0, 0.1),
-    0 10px 10px -5px rgba(0, 0, 0, 0.04),
-    0 0 0 1px rgba(var(--primary), 0.1);
-}
-
-/* Print styles */
-@media print {
-  .no-print {
-    display: none !important;
-  }
-  
-  body {
-    color: black;
-    background-color: white;
-  }
-  
-  a {
-    text-decoration: underline;
-  }
-  
-  a[href^="http"]:after {
-    content: " (" attr(href) ")";
+  /* High contrast mode support */
+  @media (prefers-contrast: high) {
+    .project-execution-card {
+      border-width: 2px;
+      border-color: hsl(var(--foreground));
+    }
+    
+    .project-execution-card:hover {
+      background: hsl(var(--background));
+      border-color: hsl(var(--primary));
+    }
   }
 }
