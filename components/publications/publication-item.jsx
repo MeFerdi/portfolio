@@ -1,33 +1,25 @@
 import React from "react";
-import { HeartIcon, CalendarIcon, BuildingOffice2Icon } from '@heroicons/react/24/outline';
+import { DocumentTextIcon, CalendarIcon, LinkIcon } from '@heroicons/react/24/outline';
 
-// Helper functions
-function checkEndDate(props) {
-    return props.endDate && props.endDate.trim() !== '';
-}
-
-function formatEndDate(endDate) {
-    if (!endDate) return '';
+// Helper function to format date
+function formatDate(dateString) {
+    if (!dateString) return '';
     
-    // Handle common variations of "current" status
-    const currentVariations = ['NOW', 'CURRENT', 'Present', 'present', 'now', 'current'];
-    if (currentVariations.includes(endDate)) {
-        return 'Present';
+    // Try to parse the date and format it nicely
+    const date = new Date(dateString + ' 1, 2024'); // Add day for parsing
+    if (isNaN(date.getTime())) {
+        return dateString; // Return original if parsing fails
     }
     
-    return endDate;
+    return date.toLocaleDateString('en-US', { 
+        year: 'numeric', 
+        month: 'long' 
+    });
 }
 
-function isCurrentVolunteering(props) {
-    if (!props.endDate) return false;
-    
-    const currentVariations = ['NOW', 'CURRENT', 'Present', 'present', 'now', 'current'];
-    return currentVariations.includes(props.endDate);
-}
-
-function VolunteeringItem(props) {
+function PublicationItem(props) {
     return (
-        <div className="group relative overflow-hidden rounded-xl border border-border/40 bg-card hover:bg-card/80 transition-all duration-300 hover:shadow-medium hover:border-border/60">
+        <article className="group relative overflow-hidden rounded-xl border border-border/40 bg-card hover:bg-card/80 transition-all duration-300 hover:shadow-medium hover:border-border/60">
             {/* Background gradient effect */}
             <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             
@@ -38,18 +30,12 @@ function VolunteeringItem(props) {
                     <div className="flex items-center gap-2 text-muted-foreground text-sm lg:basis-1/4 lg:flex-col lg:items-start">
                         <CalendarIcon className="w-4 h-4 text-primary lg:hidden" />
                         <div className="flex items-center gap-1">
-                            <span className="font-medium">{props.startDate}</span>
-                            {checkEndDate(props) && (
-                                <>
-                                    <span className="text-muted-foreground/60">—</span>
-                                    <span className="font-medium">{formatEndDate(props.endDate)}</span>
-                                </>
-                            )}
+                            <span className="font-medium">{formatDate(props.date)}</span>
                         </div>
                         <div className="hidden lg:block">
-                            <span className="inline-flex items-center gap-1 px-2 py-1 rounded-full bg-pink-500/10 text-pink-600 text-xs font-medium">
-                                <HeartIcon className="w-3 h-3" />
-                                Volunteering
+                            <span className="inline-flex items-center gap-1 px-2 py-1 rounded-full bg-blue-500/10 text-blue-600 text-xs font-medium">
+                                <DocumentTextIcon className="w-3 h-3" />
+                                Publication
                             </span>
                         </div>
                     </div>
@@ -57,7 +43,7 @@ function VolunteeringItem(props) {
                     {/* Content Section */}
                     <div className="lg:basis-3/4 space-y-3">
                         
-                        {/* Position and Event */}
+                        {/* Title and Publication */}
                         <div>
                             {props.href ? (
                                 <a 
@@ -67,11 +53,11 @@ function VolunteeringItem(props) {
                                     className="inline-flex items-start gap-2 group/link"
                                 >
                                     <div>
-                                        <h3 className="text-lg font-semibold text-foreground group-hover/link:text-primary transition-colors duration-200">
-                                            {props.position}
+                                        <h3 className="text-lg font-semibold text-foreground group-hover/link:text-primary transition-colors duration-200 leading-tight">
+                                            {props.title}
                                         </h3>
                                         <p className="text-sm text-primary font-medium">
-                                            {props.event}
+                                            Published on {props.publication}
                                         </p>
                                     </div>
                                     <svg 
@@ -85,20 +71,20 @@ function VolunteeringItem(props) {
                                 </a>
                             ) : (
                                 <div>
-                                    <h3 className="text-lg font-semibold text-foreground">
-                                        {props.position}
+                                    <h3 className="text-lg font-semibold text-foreground leading-tight">
+                                        {props.title}
                                     </h3>
                                     <p className="text-sm text-primary font-medium">
-                                        {props.event}
+                                        Published on {props.publication}
                                     </p>
                                 </div>
                             )}
                         </div>
 
-                        {/* Organisation */}
+                        {/* Publication Platform */}
                         <div className="flex items-center gap-2 text-muted-foreground">
-                            <BuildingOffice2Icon className="w-4 h-4 text-primary" />
-                            <span className="font-medium">{props.organisation}</span>
+                            <LinkIcon className="w-4 h-4 text-primary" />
+                            <span className="font-medium">{props.publication}</span>
                         </div>
 
                         {/* Description */}
@@ -108,20 +94,34 @@ function VolunteeringItem(props) {
                             </p>
                         )}
 
-                        {/* Current Volunteering Indicator */}
-                        {isCurrentVolunteering(props) && (
-                            <div className="flex items-center gap-2 mt-3">
-                                <span className="inline-flex items-center gap-1 px-2 py-1 rounded-full bg-green-500/10 text-green-600 text-xs font-medium">
-                                    <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-                                    Current Volunteer
+                        {/* Tags */}
+                        {props.tags && props.tags.length > 0 && (
+                            <div className="flex flex-wrap gap-2 mt-4">
+                                {props.tags.map((tag, index) => (
+                                    <span 
+                                        key={index}
+                                        className="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-primary/10 text-primary hover:bg-primary/20 transition-colors"
+                                    >
+                                        {tag}
+                                    </span>
+                                ))}
+                            </div>
+                        )}
+
+                        {/* Read Article CTA */}
+                        {props.href && (
+                            <div className="pt-2">
+                                <span className="inline-flex items-center gap-1 text-sm font-medium text-primary group-hover:text-primary/80 transition-colors">
+                                    <DocumentTextIcon className="w-4 h-4" />
+                                    Read Article
                                 </span>
                             </div>
                         )}
                     </div>
                 </div>
             </div>
-        </div>
+        </article>
     )
 }
 
-export default VolunteeringItem
+export default PublicationItem

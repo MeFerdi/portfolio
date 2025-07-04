@@ -117,8 +117,12 @@ const Projects = (props) => {
                                         <ProjectItem
                                             name={project.name}
                                             lib={project.framework}
+                                            framework={project.framework}
+                                            technologies={project['technologies used']}
                                             description={project.description}
                                             href={project.href}
+                                            github={project.github}
+                                            stars={project.stars}
                                         />
                                     </div>
                                 ))}
