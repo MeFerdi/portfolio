@@ -26,15 +26,6 @@
     ],
     "education": [
         {
-            "subject": "Software Engineering",
-            "degree": "Diploma in Software Engineering",
-            "university": "African Leadership Accelerator", 
-            "href": "",
-            "startDate": "2022", 
-            "endDate": "2023", 
-            "description": "Mastering core programming fundamentals using technologies and programming languages i.e C, Python, Git, Docker, MySQL e.t.c."
-        },
-        {
             "subject": "Advanced Backend Development",
             "degree": "Certificate in Software Engineering",
             "university": "African Leadership Accelerator", 
@@ -42,6 +33,15 @@
             "startDate": "June, 2025", 
             "endDate": "Present", 
             "description": "Learning advanced backend development concepts such System and database design, testing, devops and technologies such as Python, Advanced SQL, Docker, Jest, Django, REST framework e.t.c. Applying them in real-world projects."
+        },
+        {
+            "subject": "Software Engineering",
+            "degree": "Diploma in Software Engineering",
+            "university": "African Leadership Accelerator", 
+            "href": "",
+            "startDate": "2022", 
+            "endDate": "2023", 
+            "description": "Mastering core programming fundamentals using technologies and programming languages i.e C, Python, Git, Docker, MySQL e.t.c."
         }
     ],
     "projects": [
@@ -49,46 +49,56 @@
             "name": "PointaFam",
             "technologies used": ["Go", "JavaScript", "HTML & CSS"],
             "description": "A web application that helps farmers and agribusinesses to connect with each other and with buyers.",
-            "href": "https://github.com/karlgrossmann/two-column-portfolio"
+            "href": "",
+            "github": "https://github.com/MeFerdi/pointa-fam"
         },
        {
             "name": "AI Talent Match",
             "technologies used": ["Python", "Celery", "OpenAI", "Redis"],
             "description": "The application entails an automated talent-task matching system that pairs talent to tasks based on their skills rating and availability",
-            "href": ""
+            "href": "",
+            "github": "https://github.com/MeFerdi/talent-match"
        },
        {
         "name": "LandSnap",
         "framework": ["Python", "Django", "Javascript"],
-        "description": "Short description of your project.",
+        "description": "LandSnap is a Django-based web application designed to analyze land changes over time using comparative image analysis. It leverages advanced computer vision algorithms to detect and visualize differences between two aerial images of the same location taken at different times. ",
         "href": "",
-        "stars": "1,999"
+        "github": "https://github.com/MeFerdi/landsnap"
         } 
     ],
     "publications": [
         {
-            "title": "Building Scalable Web Applications with Go",
+            "title": "Rewiring Your Mind: A Journey to Personal Transformation",
             "publication": "Medium",
-            "date": "December 2024",
-            "description": "A comprehensive guide on developing high-performance web applications using Go, covering best practices, architecture patterns, and optimization techniques.",
-            "href": "https://medium.com/@ferdynand/building-scalable-web-applications-go",
-            "tags": ["Go", "Web Development", "Architecture", "Performance"]
+            "date": "Nov 16, 2023",
+            "description": "Understanding the Mind’s Wiring",
+            "href": "https://medium.com/@ferdinandtheDev/rewiring-your-mind-a-journey-to-personal-transformation-b1972f99a70e",
+            "tags": ["Personal Development"]
         },
         {
-            "title": "AI-Powered Talent Matching: A Machine Learning Approach",
+            "title": "Leveraging Axios Interceptors in Next.js ",
             "publication": "Dev.to",
-            "date": "November 2024",
-            "description": "Exploring how machine learning algorithms can be used to create intelligent talent-task matching systems, including implementation details and real-world results.",
-            "href": "https://dev.to/ferdynand/ai-powered-talent-matching",
-            "tags": ["AI", "Machine Learning", "Python", "OpenAI"]
+            "date": "June 15, 2025",
+            "description": "This article will guide you through implementing request interceptors in Axios to manage authentication tokens, ensuring secure communication with your backend.",
+            "href": "https://dev.to/ferdinandodhiambo/leveraging-axios-interceptors-in-nextjs-4hi",
+            "tags": ["Web development", "Nextjs", "Frontend"]
         },
         {
-            "title": "Database Optimization Strategies for Django Applications",
-            "publication": "Hashnode",
-            "date": "October 2024",
-            "description": "Deep dive into PostgreSQL optimization techniques specifically for Django applications, covering query optimization, indexing strategies, and performance monitoring.",
-            "href": "https://ferdynand.hashnode.dev/database-optimization-django",
-            "tags": ["Django", "PostgreSQL", "Database", "Optimization"]
+            "title": "Mastering CORS in Golang: A Comprehensive Guide.",
+            "publication": "Dev.to",
+            "date": "Sep 4, 2024",
+            "description": "This comprehensive guide aims to demystify golang cors implementation, providing developers with the knowledge and tools to handle cross-origin requests effectively.",
+            "href": "https://dev.to/ferdinandodhiambo/mastering-cors-in-golang-a-comprehensive-guide-25h2",
+            "tags": ["Security", "Go", "Optimization"]
+        },
+        {
+            "title": "Cache Invalidation: The Silent Performance Killer.",
+            "publication": "Dev.to",
+            "date": "Mar 21, 2025",
+            "description": "Let’s break it down, explore why it matters, and learn how to tame this silent performance killer.",
+            "href": "https://dev.to/ferdinandodhiambo/cache-invalidation-the-silent-performance-killer-1fl8",
+            "tags": ["Computer Science", "Database", "Redis", "Web development"]
         }
     ]
 }
