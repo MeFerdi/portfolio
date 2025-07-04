@@ -17,7 +17,7 @@ primary_region = 'lhr'
   force_https = true
   auto_stop_machines = 'stop'
   auto_start_machines = true
-  min_machines_running = 0
+  min_machines_running = 1
   processes = ['app']
 
   [[http_service.checks]]
@@ -25,7 +25,7 @@ primary_region = 'lhr'
     interval = "30s"
     method = "GET"
     timeout = "5s"
-    path = "/"
+    path = "/api/health"
 
 [[vm]]
   memory = '1gb'
