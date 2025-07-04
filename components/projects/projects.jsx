@@ -121,6 +121,7 @@ const Projects = (props) => {
                                             technologies={project['technologies used']}
                                             description={project.description}
                                             href={project.href}
+                                            github={project.github}
                                             stars={project.stars}
                                         />
                                     </div>
