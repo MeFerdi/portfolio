@@ -9,7 +9,15 @@ WORKDIR /app
 
 # Install dependencies based on the preferred package manager
 COPY package.json package-lock.json* ./
-RUN npm ci --only=production
+# Install ALL dependencies (including dev dependencies) for building
+RUN npm ci
+
+# Install only production dependencies for the final runtime image
+FROM base AS production-deps
+RUN apk add --no-cache libc6-compat
+WORKDIR /app
+COPY package.json package-lock.json* ./
+RUN npm ci --only=production && npm cache clean --force
 
 # Rebuild the source code only when needed
 FROM base AS builder
@@ -31,7 +39,7 @@ ENV NODE_ENV=production
 RUN addgroup --system --gid 1001 nodejs
 RUN adduser --system --uid 1001 nextjs
 
-# Copy the standalone build
+# Copy the public folder from the project
 COPY --from=builder /app/public ./public
 
 # Set the correct permission for prerender cache
