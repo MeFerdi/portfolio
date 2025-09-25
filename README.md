@@ -6,7 +6,7 @@ This portfolio serves as a comprehensive showcase of my skills, experiences, and
 
 Welcome to the personal portfolio of **Ferdynand Odhiambo**! This modern, responsive portfolio showcases my skills, experience, projects, and publications, offering a comprehensive glimpse into my journey as a passionate Full Stack Software Developer.
 
-## 🌟 Live Demo
+## Live Demo
 
 Visit the live portfolio: [ferdportfolio.fly.dev](https://ferdportfolio.fly.dev)
 
@@ -174,16 +174,14 @@ For detailed deployment instructions, see [DEPLOYMENT.md](DEPLOYMENT.md).
 
 This project is open source and available under the [MIT License](LICENSE).
 
----
 
-## 📬 Contact
+## Contact
 
 **Ferdynand Odhiambo**
-- 📧 Email: oferdinandddev112@gmail.com
-- 💼 LinkedIn: [ferdynand-odhiambo](https://www.linkedin.com/in/ferdynand-odhiambo)
-- 🐱 GitHub: [MeFerdi](https://github.com/MeFerdi)
-- 🌐 Portfolio: [ferdportfolio.fly.dev](https://ferdportfolio.fly.dev)
+- Email: oferdinandddev112@gmail.com
+- LinkedIn: [ferdynand-odhiambo](https://www.linkedin.com/in/ferdynand-odhiambo)
+- GitHub: [MeFerdi](https://github.com/MeFerdi)
+- Portfolio: [ferdportfolio.fly.dev](https://ferdportfolio.fly.dev)
 
----
 
-*Built with ❤️ using Next.js and deployed on Fly.io*
+*Built with using Next.js and deployed on Fly.io*
