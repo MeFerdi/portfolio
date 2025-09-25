@@ -1,4 +1,6 @@
-# Ferdynand Odhiamb## About
+# Ferdynand Odhiamb0
+
+## About
 
 This portfolio serves as a comprehensive showcase of my skills, experiences, and projects I've worked on. Built with modern web technologies, it features a clean, professional design with smooth animations and interactive elements. The portfolio includes sections for my professional experience, education, featured projects, and technical publications. Portfolio
 
