@@ -1,4 +1,4 @@
-# Ferdynand Odhiamb0
+# Ferdynand Odhiambo
 
 ## About
 
