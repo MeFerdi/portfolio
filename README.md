@@ -53,27 +53,27 @@ This portfolio is built using cutting-edge web development technologies:
 
 ## Features
 
-### **🎨 Design & User Experience**
+### ** Design & User Experience**
 - **Modern UI/UX** - Clean, professional design with intuitive navigation
 - **Light/Dark Mode** - Seamless theme switching with sun/moon toggle icons
 - **Responsive Layout** - Mobile-first design that works on all devices
 - **Smooth Animations** - Engaging hover effects and page transitions
 - **Accessibility** - WCAG compliant with keyboard navigation support
 
-### **📱 Interactive Components**
+### ** Interactive Components**
 - **Project Showcase** - Stacked card layout with live demos and GitHub links
 - **Publications Gallery** - Navigable publication cards with external links
 - **Experience Timeline** - Professional experience with skills and achievements
 - **Education Section** - Academic background and certifications
 - **Social Integration** - Direct links to LinkedIn, GitHub, and email
 
-### **⚡ Performance Features**
+### ** Performance Features**
 - **Fast Loading** - Optimized bundle size and image loading
 - **SEO Optimized** - Meta tags and structured data for search engines
 - **Progressive Enhancement** - Works without JavaScript for core functionality
 - **Health Monitoring** - Built-in health check endpoint for deployment monitoring
 
-### **🔧 Developer Experience**
+### ** Developer Experience**
 - **Component-Based** - Modular React components for maintainability
 - **Type Safety** - JSX with proper prop validation
 - **Hot Reloading** - Instant development feedback
