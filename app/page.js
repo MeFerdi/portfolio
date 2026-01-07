@@ -1,9 +1,9 @@
 import React from 'react';
-import Header from "@/components/header";
-import Navigation from "@/components/navigation";
-import ExperienceList from "@/components/experiences/experience-list";
-import ProjectList from "@/components/projects/project-list";
-import Footer from "@/components/footer";
+import Header from "../components/header";
+import Navigation from "../components/navigation";
+import ExperienceList from "../components/experiences/experience-list";
+import ProjectList from "../components/projects/project-list";
+import Footer from "../components/footer";
 import {promises as fs} from 'fs';
 
 export default async function Home() {
