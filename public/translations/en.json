@@ -14,12 +14,29 @@
     },
     "experiences": [
         {
+            "title": "Freelance Backend Engineer",
+            "company": "LD Talent",
+            "startDate": "October 2025",
+            "endDate": "Present",
+            "description": "Working on developing and manintaining internal system for managing talents and jobs",
+            "skills": ["Python", "Testing", "Microservices"]
+
+        },
+        {
             "title": "Full Stack Software Developer",
             "company": "Zone01 Kisumu",
             "startDate": "April 2024",
             "endDate": "Present",
             "description": "Developing and maintaining full-stack web applications, working with modern technologies to deliver high-quality software solutions.",
             "skills": ["JavaScript", "React", "Node.js", "Python", "Go", "PostgreSQL", "Docker", "Git"]
+        },
+        {
+            "title": "Junior Maverick",
+            "company": "Payd HQ",
+            "startDate": "June 2025",
+            "endDate": "October 2025",
+            "description": "Learning hands on by developing financial systems with a close guidance from senior engineers.",
+            "skills": ["Go", "Vue.js", "System Design", "Data Modelling", "PostgreSQL"]
         }
     ],
     
@@ -44,14 +61,6 @@
      } 
     ],
     "publications": [
-        {
-            "title": "Rewiring Your Mind: A Journey to Personal Transformation",
-            "publication": "Medium",
-            "date": "Nov 16, 2023",
-            "description": "Understanding the Mind’s Wiring",
-            "href": "https://medium.com/@ferdinandtheDev/rewiring-your-mind-a-journey-to-personal-transformation-b1972f99a70e",
-            "tags": ["Personal Development"]
-        },
         {
             "title": "Leveraging Axios Interceptors in Next.js ",
             "publication": "Dev.to",
