@@ -2,7 +2,7 @@ import React from 'react';
 import Header from "../components/header";
 import Navigation from "../components/navigation";
 import ExperienceList from "../components/experiences/experience-list";
-import ProjectList from "../components/projects/project-list";
+import Projects from "../components/projects/projects";
 import Footer from "../components/footer";
 import {promises as fs} from 'fs';
 
@@ -43,10 +43,7 @@ export default async function Home() {
           </section>
 
           {/* Projects */}
-          <section id="projects" className="scroll-mt-20">
-            <h2 className="text-xl font-semibold mb-6">Projects</h2>
-            <ProjectList data={data.projects} />
-          </section>
+          <Projects data={data.projects} />
 
           {/* Footer */}
           <Footer data={data.general.socials} />
