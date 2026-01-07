@@ -1,40 +1,29 @@
 import React from "react";
-import Navigation from "./navigation";
-import Socials from "./socials";
 import ThemeToggle from "./theme-toggle";
 
 const Header = (props) => {
     return (
-        <div className='lg:fixed h-screen basis-1.5/4 flex flex-col justify-between pb-48 self-center lg:self-auto'>
-            {/* Profile Header */}
-            <div className='space-y-6'>
-                {/* Top row with theme toggle */}
-                <div className="flex justify-end mb-4 lg:mb-6">
-                    <ThemeToggle />
+        <header className="space-y-4">
+            <div className="flex justify-between items-start">
+                <div>
+                    <h1 className="text-3xl font-bold tracking-tight">
+                        {props.data.name}
+                    </h1>
+                    <p className="text-lg text-muted mt-2">
+                        {props.data.headline}
+                    </p>
                 </div>
-                
-                {/* Avatar/Profile Section */}
-                <div className="flex items-center gap-4 mb-6 lg:flex-col lg:items-start lg:gap-4">
-                    {/* Name and Title */}
-                    <div className="flex-1 lg:w-full">
-                        <h1 className='text-4xl lg:text-5xl font-bold subpixel-antialiased tracking-tight text-foreground leading-tight'>
-                            {props.data.name}
-                        </h1>
-                        <h2 className='text-primary pt-2 text-lg lg:text-xl font-semibold tracking-wide'>
-                            {props.data.headline}
-                        </h2>
-                        
-                    </div>
-                </div>
+                <ThemeToggle />
             </div>
-
-            {/* Navigation */}
-            <div className="flex-1 flex items-center lg:items-start">
-                <Navigation />
-            </div>
-             <Socials data={props.data.socials}></Socials>
-
-        </div>
+            <p className="text-sm text-foreground">
+                <a 
+                    href={`mailto:${props.data.socials.email}`} 
+                    className="hover:underline"
+                >
+                    {props.data.socials.email}
+                </a>
+            </p>
+        </header>
     )
 }
 

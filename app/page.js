@@ -1,10 +1,9 @@
 import React from 'react';
-import About from "@/components/about";
-import Education from "@/components/education/education";
-import Experiences from "@/components/experiences/experiences";
 import Header from "@/components/header";
-import Projects from '@/components/projects/projects';
-import Publications from '@/components/publications/publications';
+import Navigation from "@/components/navigation";
+import ExperienceList from "@/components/experiences/experience-list";
+import ProjectList from "@/components/projects/project-list";
+import Footer from "@/components/footer";
 import {promises as fs} from 'fs';
 
 export default async function Home() {
@@ -12,15 +11,45 @@ export default async function Home() {
   const data = JSON.parse(file);
 
   return (
-    <main className="flex min-h-screen flex-col items-center py-24 px-6 lg:px-24">
-      <div className="z-2 w-full max-w-5xl font-mono text-sm flex flex-col lg:flex-row justify-between">
-        <Header data={data.general}></Header>
-        <div className='lg:pl-[50%]'>
-          <About data={data.general}></About>
-          <Experiences data={data.experiences}></Experiences>
-          <Education data={data.education}></Education>
-          <Projects data={data.projects}></Projects>
-          <Publications data={data.publications}></Publications>
+    <main className="bg-background text-foreground">
+      <div className="flex flex-col min-h-screen">
+        {/* Fixed Navigation */}
+        <nav className="sticky top-0 z-50 bg-background border-b border-border">
+          <div className="max-w-3xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" className="text-sm font-semibold">FO</a>
+            <Navigation />
+          </div>
+        </nav>
+
+        {/* Main Content */}
+        <div className="flex-1 max-w-3xl mx-auto w-full px-6 py-12 space-y-16">
+          {/* Header */}
+          <Header data={data.general} />
+
+          {/* About Section */}
+          <section id="about" className="scroll-mt-20">
+            <p className="text-sm leading-relaxed text-foreground mb-6">
+              {data.general.about[1]}
+            </p>
+            <div className="text-sm text-muted">
+              <strong>Focus Areas:</strong> Systems Engineering, Distributed Systems, Networking, Rust, Go, Python, PostgreSQL, Docker, Kubernetes
+            </div>
+          </section>
+
+          {/* Work Experience */}
+          <section id="work" className="scroll-mt-20">
+            <h2 className="text-xl font-semibold mb-6">Work Experience</h2>
+            <ExperienceList data={data.experiences} />
+          </section>
+
+          {/* Projects */}
+          <section id="projects" className="scroll-mt-20">
+            <h2 className="text-xl font-semibold mb-6">Projects</h2>
+            <ProjectList data={data.projects} />
+          </section>
+
+          {/* Footer */}
+          <Footer data={data.general.socials} />
         </div>
       </div>
     </main>

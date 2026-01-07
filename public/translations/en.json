@@ -1,10 +1,10 @@
 {
     "general": {
         "name": "Ferdynand Odhiambo",
-        "headline": "Full Stack Software Developer",
+        "headline": "Backend Engineer",
         "about": [
-            "Hey there! 👋",
-            "Ferdynand Odhiambo is a Full Stack Software Developer with over two years of experience in the tech industry, specializing in web development, integration engineering, AI, and machine learning. Proficient in Python, Django, Go, and JavaScript, he designs and delivers innovative, scalable solutions, including an AI-driven talent-matching system that optimizes task allocation based on skills and availability. His expertise includes architecting and optimizing databases with PostgreSQL and SQLite, complemented by rigorous testing using FastAPI and Swagger to ensure high-quality, robust deliverables."
+            "Hello!",
+            "I'm challenging myself to build tools, low-level systems, and distributed systems—the kind of stuff that powers the internet. Currently learning Rust and diving deep into systems engineering, networking, and high-performance backend development."
         ],
         "socials": {
             "email": "oferdinandddev112@gmail.com",
