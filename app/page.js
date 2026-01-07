@@ -2,7 +2,7 @@ import React from 'react';
 import Header from "../components/header";
 import Navigation from "../components/navigation";
 import ExperienceList from "../components/experiences/experience-list";
-import Projects from "../components/projects/projects";
+import ProjectList from "../components/projects/project-list";
 import Footer from "../components/footer";
 import {promises as fs} from 'fs';
 
@@ -42,8 +42,30 @@ export default async function Home() {
             <ExperienceList data={data.experiences} />
           </section>
 
-          {/* Projects */}
-          <Projects data={data.projects} />
+          {/* Blogs (simple links) */}
+          <section id="blogs" className="scroll-mt-20">
+            <h2 className="text-xl font-semibold mb-6">Blogs</h2>
+            <ul className="space-y-2">
+              {data.publications.filter(p => p.href).map((pub) => (
+                <li key={pub.href}>
+                  <a
+                    href={pub.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-foreground hover:underline"
+                  >
+                    {pub.title}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </section>
+
+          {/* Projects (simple list) */}
+          <section id="projects" className="scroll-mt-20">
+            <h2 className="text-xl font-semibold mb-6">Projects</h2>
+            <ProjectList data={data.projects} />
+          </section>
 
           {/* Footer */}
           <Footer data={data.general.socials} />
