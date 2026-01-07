@@ -1,5 +1,5 @@
 import React from "react";
-import { DocumentTextIcon, CalendarIcon, LinkIcon } from '@heroicons/react/24/outline';
+import { DocumentTextIcon, CalendarIcon, LinkIcon, ArrowTopRightOnSquareIcon } from '@heroicons/react/24/outline';
 
 // Helper function to format date
 function formatDate(dateString) {
@@ -18,6 +18,16 @@ function formatDate(dateString) {
 }
 
 function PublicationItem(props) {
+    const hostLabel = (() => {
+        try {
+            if (!props.href) return '';
+            const url = new URL(props.href);
+            return url.hostname.replace('www.', '');
+        } catch (_) {
+            return props.publication || '';
+        }
+    })();
+
     return (
         <article className="group relative overflow-hidden rounded-xl border border-border/40 bg-card hover:bg-card/80 transition-all duration-300 hover:shadow-medium hover:border-border/60">
             {/* Background gradient effect */}
@@ -44,7 +54,7 @@ function PublicationItem(props) {
                     <div className="lg:basis-3/4 space-y-3">
                         
                         {/* Title and Publication */}
-                        <div>
+                        <div className="flex items-start justify-between gap-3">
                             {props.href ? (
                                 <a 
                                     href={props.href} 
@@ -56,18 +66,11 @@ function PublicationItem(props) {
                                         <h3 className="text-lg font-semibold text-foreground group-hover/link:text-primary transition-colors duration-200 leading-tight">
                                             {props.title}
                                         </h3>
-                                        <p className="text-sm text-primary font-medium">
-                                            Published on {props.publication}
+                                        <p className="text-sm font-medium">
+                                            <span className="text-muted-foreground">Published on </span>
+                                            <span className="text-primary underline decoration-transparent group-hover/link:decoration-primary/50">{props.publication}</span>
                                         </p>
                                     </div>
-                                    <svg 
-                                        className="w-4 h-4 text-muted-foreground group-hover/link:text-primary transition-all duration-200 transform group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5 mt-1" 
-                                        fill="none" 
-                                        stroke="currentColor" 
-                                        viewBox="0 0 24 24"
-                                    >
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                                    </svg>
                                 </a>
                             ) : (
                                 <div>
@@ -78,6 +81,18 @@ function PublicationItem(props) {
                                         Published on {props.publication}
                                     </p>
                                 </div>
+                            )}
+
+                            {props.href && (
+                                <a 
+                                    href={props.href}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="flex items-center justify-center w-8 h-8 rounded-lg bg-primary/10 border border-primary/20 text-primary hover:bg-primary hover:text-primary-foreground transition-colors"
+                                    aria-label={`Open ${props.title}`}
+                                >
+                                    <ArrowTopRightOnSquareIcon className="w-4 h-4" />
+                                </a>
                             )}
                         </div>
 
@@ -111,10 +126,17 @@ function PublicationItem(props) {
                         {/* Read Article CTA */}
                         {props.href && (
                             <div className="pt-2">
-                                <span className="inline-flex items-center gap-1 text-sm font-medium text-primary group-hover:text-primary/80 transition-colors">
+                                <a 
+                                    href={props.href}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    aria-label={`Read ${props.title} on ${hostLabel || props.publication}`}
+                                    className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-primary/10 hover:bg-primary text-primary hover:text-primary-foreground border border-primary/20 hover:border-primary transition-all text-sm font-medium"
+                                >
                                     <DocumentTextIcon className="w-4 h-4" />
-                                    Read Article
-                                </span>
+                                    <span>{props.publication ? `Read on ${props.publication}` : 'Read Article'}</span>
+                                    <ArrowTopRightOnSquareIcon className="w-4 h-4" />
+                                </a>
                             </div>
                         )}
                     </div>

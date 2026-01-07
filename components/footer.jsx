@@ -35,7 +35,7 @@ const Footer = (props) => {
                 </div>
             </div>
             <p className="text-xs text-muted mt-8 pt-8 border-t border-border">
-                Built with Next.js • Deployed on Fly.io
+                Built with Next.js • Deployed on Vercel
             </p>
         </footer>
     );
