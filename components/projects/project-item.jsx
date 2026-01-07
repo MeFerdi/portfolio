@@ -4,7 +4,11 @@ import {
     ArrowTopRightOnSquareIcon, 
     CodeBracketIcon,
     GlobeAltIcon,
-    SparklesIcon
+    SparklesIcon,
+    UsersIcon,
+    BuildingStorefrontIcon,
+    PhotoIcon,
+    ShoppingCartIcon
 } from '@heroicons/react/24/outline';
 import { StarIcon as StarIconSolid, FireIcon } from '@heroicons/react/24/solid';
 
@@ -87,6 +91,22 @@ function ProjectItem(props) {
 
     const mainFramework = getMainFramework();
     const frameworkInfo = getFrameworkInfo(mainFramework);
+
+    // Choose a project-specific icon based on name/description keywords
+    const getProjectIcon = () => {
+        const text = `${props.name || ''} ${props.description || ''}`.toLowerCase();
+        if (text.includes('ai') || text.includes('talent') || text.includes('match')) {
+            return <SparklesIcon className="w-5 h-5 sm:w-6 sm:h-6 text-primary group-hover:scale-110 transition-transform duration-300" />;
+        }
+        if (text.includes('farm') || text.includes('agri') || text.includes('buyer') || text.includes('market')) {
+            return <BuildingStorefrontIcon className="w-5 h-5 sm:w-6 sm:h-6 text-primary group-hover:scale-110 transition-transform duration-300" />;
+        }
+        if (text.includes('image') || text.includes('vision') || text.includes('aerial') || text.includes('land') || text.includes('snap')) {
+            return <PhotoIcon className="w-5 h-5 sm:w-6 sm:h-6 text-primary group-hover:scale-110 transition-transform duration-300" />;
+        }
+        // Fallback icon
+        return <CodeBracketIcon className="w-5 h-5 sm:w-6 sm:h-6 text-primary group-hover:scale-110 transition-transform duration-300" />;
+    };
     
     return (
         <article className="group relative overflow-hidden rounded-3xl border border-border/40 bg-gradient-to-br from-card via-card/90 to-card/70 backdrop-blur-lg transition-all duration-700 hover:shadow-2xl hover:shadow-primary/10 hover:border-primary/50 hover:-translate-y-4 hover:scale-[1.03] project-execution-card">
@@ -108,7 +128,7 @@ function ProjectItem(props) {
                     <div className="flex items-center gap-2 sm:gap-3">
                         {/* Project execution icon */}
                         <div className="relative flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-gradient-to-br from-primary/15 via-primary/10 to-transparent border border-primary/20 group-hover:border-primary/40 transition-all duration-500">
-                            <CodeBracketIcon className="w-5 h-5 sm:w-6 sm:h-6 text-primary group-hover:scale-110 transition-transform duration-300" />
+                            {getProjectIcon()}
                             {/* Execution pulse effect */}
                             <div className="absolute inset-0 rounded-xl bg-primary/20 opacity-0 group-hover:opacity-100 group-hover:animate-ping" />
                         </div>

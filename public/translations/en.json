@@ -16,56 +16,32 @@
         {
             "title": "Full Stack Software Developer",
             "company": "Zone01 Kisumu",
-            "href": "",
             "startDate": "April 2024",
             "endDate": "Present",
             "description": "Developing and maintaining full-stack web applications, working with modern technologies to deliver high-quality software solutions.",
-            "logo": "/logos/Zone01_Logo.png",
             "skills": ["JavaScript", "React", "Node.js", "Python", "Go", "PostgreSQL", "Docker", "Git"]
         }
     ],
-    "education": [
-        {
-            "subject": "Advanced Backend Development",
-            "degree": "Certificate in Software Engineering",
-            "university": "African Leadership Accelerator", 
-            "href": "",
-            "startDate": "June, 2025", 
-            "endDate": "Present", 
-            "description": "Learning advanced backend development concepts such System and database design, testing, devops and technologies such as Python, Advanced SQL, Docker, Jest, Django, REST framework e.t.c. Applying them in real-world projects."
-        },
-        {
-            "subject": "Software Engineering",
-            "degree": "Diploma in Software Engineering",
-            "university": "African Leadership Accelerator", 
-            "href": "",
-            "startDate": "2022", 
-            "endDate": "2023", 
-            "description": "Mastering core programming fundamentals using technologies and programming languages i.e C, Python, Git, Docker, MySQL e.t.c."
-        }
-    ],
+    
     "projects": [
         {
             "name": "PointaFam",
             "technologies used": ["Go", "JavaScript", "HTML & CSS"],
             "description": "A web application that helps farmers and agribusinesses to connect with each other and with buyers.",
-            "href": "",
             "github": "https://github.com/MeFerdi/pointa-fam"
         },
-       {
-            "name": "AI Talent Match",
-            "technologies used": ["Python", "Celery", "OpenAI", "Redis"],
-            "description": "The application entails an automated talent-task matching system that pairs talent to tasks based on their skills rating and availability",
-            "href": "",
-            "github": "https://github.com/MeFerdi/talent-match"
-       },
-       {
-        "name": "LandSnap",
-        "framework": ["Python", "Django", "Javascript"],
-        "description": "LandSnap is a Django-based web application designed to analyze land changes over time using comparative image analysis. It leverages advanced computer vision algorithms to detect and visualize differences between two aerial images of the same location taken at different times. ",
-        "href": "",
-        "github": "https://github.com/MeFerdi/landsnap"
-        } 
+      {
+          "name": "AI Talent Match",
+          "technologies used": ["Python", "Celery", "OpenAI", "Redis"],
+          "description": "The application entails an automated talent-task matching system that pairs talent to tasks based on their skills rating and availability",
+          "github": "https://github.com/MeFerdi/talent-match"
+      },
+    {
+     "name": "LandSnap",
+     "framework": ["Python", "Django", "Javascript"],
+     "description": "LandSnap is a Django-based web application designed to analyze land changes over time using comparative image analysis. It leverages advanced computer vision algorithms to detect and visualize differences between two aerial images of the same location taken at different times. ",
+     "github": "https://github.com/MeFerdi/landsnap"
+     } 
     ],
     "publications": [
         {
