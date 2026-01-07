@@ -10,7 +10,7 @@ const Header = (props) => {
                         {props.data.name}
                     </h1>
                     <p className="text-lg text-muted mt-2">
-                        Senior Backend Developer • Systems Engineering
+                        {props.data.headline}
                     </p>
                 </div>
                 <ThemeToggle />
