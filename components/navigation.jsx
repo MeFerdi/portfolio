@@ -5,6 +5,7 @@ import React from "react";
 const Navigation = () => {
     const links = [
         { label: "Work", href: "#work" },
+        { label: "Blogs", href: "#blogs" },
         { label: "Projects", href: "#projects" },
         { label: "Contact", href: "#contact" },
     ];
