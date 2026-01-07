@@ -25,6 +25,7 @@ const Projects = (props) => {
     };
 
     const sortedProjects = getSortedProjects();
+    const liveCount = sortedProjects.filter(p => p.href && p.href.trim() !== '').length;
 
     return (
         <section 
@@ -65,9 +66,9 @@ const Projects = (props) => {
                             <ViewColumnsIcon className="w-3 h-3 sm:w-4 sm:h-4 text-primary" />
                             <span className="text-foreground font-medium">{props.data.length} Projects</span>
                         </div>
-                        <div className="flex items-center gap-1.5 sm:gap-2 px-2 py-1 sm:px-3 sm:py-1.5 rounded-lg bg-green-500/10 text-green-600 border border-green-500/20">
-                            <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-green-500 animate-pulse" />
-                            <span className="font-medium">All Live</span>
+                        <div className={`flex items-center gap-1.5 sm:gap-2 px-2 py-1 sm:px-3 sm:py-1.5 rounded-lg ${liveCount > 0 ? 'bg-green-500/10 text-green-600 border border-green-500/20' : 'bg-muted border border-border/40 text-muted-foreground'}`}>
+                            <div className={`w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full ${liveCount > 0 ? 'bg-green-500 animate-pulse' : 'bg-muted-foreground'}`} />
+                            <span className="font-medium">{liveCount > 0 ? `${liveCount} Live` : 'Repos Only'}</span>
                         </div>
                     </div>
                 </div>
