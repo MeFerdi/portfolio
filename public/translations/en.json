@@ -45,19 +45,22 @@
             "name": "PointaFam",
             "technologies used": ["Go", "JavaScript", "HTML & CSS"],
             "description": "A web application that helps farmers and agribusinesses to connect with each other and with buyers.",
-            "github": "https://github.com/MeFerdi/pointa-fam"
+                        "github": "https://github.com/MeFerdi/pointa-fam",
+                        "image": ""
         },
       {
           "name": "AI Talent Match",
           "technologies used": ["Python", "Celery", "OpenAI", "Redis"],
           "description": "The application entails an automated talent-task matching system that pairs talent to tasks based on their skills rating and availability",
-          "github": "https://github.com/MeFerdi/talent-match"
+                    "github": "https://github.com/MeFerdi/talent-match",
+                    "image": ""
       },
     {
      "name": "LandSnap",
      "framework": ["Python", "Django", "Javascript"],
      "description": "LandSnap is a Django-based web application designed to analyze land changes over time using comparative image analysis. It leverages advanced computer vision algorithms to detect and visualize differences between two aerial images of the same location taken at different times. ",
-     "github": "https://github.com/MeFerdi/landsnap"
+         "github": "https://github.com/MeFerdi/landsnap",
+         "image": ""
      } 
     ],
     "publications": [

@@ -2,20 +2,30 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Minimal design system - Monochromatic with Dark Mode */
+/* Light/Dark theme system - Colosseum inspired */
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 0 0% 0%;
-    --border: 0 0% 85%;
-    --muted: 0 0% 60%;
+    /* Light mode - bright background */
+    --background: 220 20% 96%;
+    --foreground: 220 25% 12%;
+    --border: 220 18% 80%;
+    --muted: 220 15% 50%;
+    --primary: 162 83% 52%;
+    --primary-foreground: 220 20% 96%;
+    --secondary: 266 83% 70%;
+    --secondary-foreground: 220 20% 96%;
   }
 
   html.dark {
-    --background: 0 0% 8%;
-    --foreground: 0 0% 100%;
-    --border: 0 0% 20%;
-    --muted: 0 0% 45%;
+    /* Dark mode - Solana/Colosseum style */
+    --background: 220 46% 6%;
+    --foreground: 220 26% 96%;
+    --border: 220 22% 20%;
+    --muted: 220 14% 58%;
+    --primary: 162 83% 52%;
+    --primary-foreground: 220 46% 6%;
+    --secondary: 266 83% 70%;
+    --secondary-foreground: 220 46% 6%;
   }
 
   * {
@@ -47,6 +57,19 @@
 
   code {
     font-family: 'Monaco', 'Courier New', monospace;
+  }
+}
+
+@layer utilities {
+  .marquee-vert {
+    animation: marquee-vert 20s linear infinite;
+  }
+  .marquee-vert:hover {
+    animation-play-state: paused;
+  }
+  @keyframes marquee-vert {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-50%); }
   }
 }
 
