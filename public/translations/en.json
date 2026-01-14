@@ -41,13 +41,7 @@
     ],
     
     "projects": [
-        {
-            "name": "PointaFam",
-            "technologies used": ["Go", "JavaScript", "HTML & CSS"],
-            "description": "A web application that helps farmers and agribusinesses to connect with each other and with buyers.",
-                        "github": "https://github.com/MeFerdi/pointa-fam",
-                        "image": ""
-        },
+        
       {
           "name": "AI Talent Match",
           "technologies used": ["Python", "Celery", "OpenAI", "Redis"],
@@ -60,8 +54,24 @@
      "framework": ["Python", "Django", "Javascript"],
      "description": "LandSnap is a Django-based web application designed to analyze land changes over time using comparative image analysis. It leverages advanced computer vision algorithms to detect and visualize differences between two aerial images of the same location taken at different times. ",
          "github": "https://github.com/MeFerdi/landsnap",
-         "image": ""
-     } 
+         "image": "https://github.com/MeFerdi/landsnap/blob/main/screenshots/result.png"
+     },
+     {
+        "name": "A2SV-Tracker",  
+        "framework": ["Python", "Django"],
+        "description": "a2sv-tracker is a Django-based web application designed to streamline and simplify the application process for Africa to Silicon Program. I identified that the manual process of solved assignment submission was leading to frustrations as everyone has full access to the same submission form.",
+              "href": "https://a2sv-tracker.onrender.com/",
+              "github": "https://github.com/MeFerdi/a2sv-tracker",
+              "image": ""
+     },
+     {
+        "name": "Student Dashboard",
+        "framework": ["GraphQL", "Javascript"],
+        "description": "A web application using graphql for query to display 01 talent student progress on an intuitive dashboard",
+               "href": "https://graphql-bay.vercel.app/",
+               "image": "",
+               "github": ""
+     }
     ],
     "publications": [
         {
