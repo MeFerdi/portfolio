@@ -6,6 +6,7 @@ import ProjectList from "../components/projects/project-list";
 import Footer from "../components/footer";
 import TechCarousel from "../components/tech-carousel";
 import BlogCarousel from "../components/blog-carousel";
+import MobileCarouselLauncher from "../components/mobile-carousel-launcher";
 import {promises as fs} from 'fs';
 
 export default async function Home() {
@@ -33,6 +34,9 @@ export default async function Home() {
       <div className="hidden lg:block fixed right-6 top-48 z-30">
         <BlogCarousel items={data.publications || []} />
       </div>
+
+      {/* Mobile launchers - visible below lg */}
+      <MobileCarouselLauncher techItems={techItems} blogItems={data.publications || []} />
 
       <div className="flex flex-col min-h-screen">
         {/* Fixed Navigation */}
