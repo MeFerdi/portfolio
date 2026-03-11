@@ -668,6 +668,15 @@ export default function PortfolioStyles() {
       }
 
       @media (max-width: 640px) {
+        .portfolio-page nav .wrap {
+          height: auto;
+          min-height: 48px;
+          padding-top: 8px;
+          padding-bottom: 8px;
+          align-items: flex-start;
+          gap: 10px;
+          flex-direction: column;
+        }
         .portfolio-page .about-grid,
         .portfolio-page .two-col {
           grid-template-columns: 1fr;
@@ -678,7 +687,14 @@ export default function PortfolioStyles() {
           gap: 8px;
         }
         .portfolio-page .nav-links {
-          display: none;
+          display: flex;
+          flex-wrap: wrap;
+          gap: 10px 14px;
+          width: 100%;
+        }
+        .portfolio-page .nav-links a {
+          font-size: 10px;
+          letter-spacing: 0.08em;
         }
         .portfolio-page .hero-actions,
         .portfolio-page .project-header {
