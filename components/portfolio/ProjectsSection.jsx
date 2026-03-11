@@ -39,7 +39,7 @@ const projects = [
     title: 'Monolith',
     status: 'In progress',
     badgeClass: 'badge-wip',
-    github: 'https://github.com/MeFerdi',
+    github: 'https://github.com/MeFerdi/monolith.git',
     paragraphs: [
       'A local-first personal documentation indexer. Search across local files, Google Drive, Google Docs, and Notion from a single interface — read-only, fast, and entirely on your machine. No cloud sync, no external database, no vendor lock-in.',
       'The interesting problems are in the indexing pipeline: efficiently crawling and re-indexing only changed documents, handling OAuth flows for Drive and Notion without a server, and serving low-latency full-text search from a local embedded index.',
