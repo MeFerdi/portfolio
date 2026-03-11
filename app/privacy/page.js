@@ -46,7 +46,7 @@ export default async function PrivacyStatement() {
                             <section className="card p-8">
                                 <h2 className="text-2xl font-semibold mb-4 text-foreground">Introduction</h2>
                                 <p className="text-muted-foreground leading-relaxed">
-                                    This Privacy Policy describes how Ferdynand Odhiambo ("we," "our," or "us") collects, uses, and shares your personal information when you visit or interact with our portfolio website (the "Service").
+                                    This Privacy Policy describes how Ferdynand Odhiambo (&quot;we,&quot; &quot;our,&quot; or &quot;us&quot;) collects, uses, and shares your personal information when you visit or interact with our portfolio website (the &quot;Service&quot;).
                                 </p>
                             </section>
 
@@ -165,7 +165,7 @@ export default async function PrivacyStatement() {
                             <section className="card p-8">
                                 <h2 className="text-2xl font-semibold mb-4 text-foreground">Changes to This Policy</h2>
                                 <p className="text-muted-foreground">
-                                    We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new policy on this page and updating the "Last updated" date. We encourage you to review this policy periodically for any changes.
+                                    We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new policy on this page and updating the &quot;Last updated&quot; date. We encourage you to review this policy periodically for any changes.
                                 </p>
                             </section>
 
