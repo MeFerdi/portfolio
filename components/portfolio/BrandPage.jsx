@@ -31,10 +31,9 @@ export default function BrandPage() {
           <div className="wrap">
             <div className="hero-eyebrow fi">Brand</div>
             <h1 className="name fi">Kynara Labs</h1>
-            <p className="hero-role fi">Niche products · Energy-focused experimentation</p>
+            <p className="hero-role fi">Niche products</p>
             <p className="hero-bio fi">
-              By the side, I like exploring and building products that solve niche problems,
-              especially in energy. Kynara Labs is where I prototype, test, and ship those ideas.
+              By the side, I like exploring and building products that solve niche problems. Kynara Labs is where I prototype, test, and ship those ideas.
             </p>
             <div className="hero-actions fi">
               <a href="https://kynaralabs.com" target="_blank" rel="noreferrer" className="btn btn-primary">Visit site</a>
