@@ -47,26 +47,45 @@ export default function BrandPage() {
           <div className="wrap">
             <div className="section-label">Products</div>
             <div className="projects-list">
-              <div className="project-card">
-                <div className="project-header">
-                  <div className="project-title-row">
-                    <h3>GridPulse</h3>
-                    <span className="project-badge badge-wip">Building</span>
+              <div className="web-preview-card">
+                <div className="browser-chrome">
+                  <div className="browser-dots">
+                    <span className="browser-dot" />
+                    <span className="browser-dot" />
+                    <span className="browser-dot" />
                   </div>
-                  <div className="project-links-row">
-                    <a href="https://gridpulse-sand.vercel.app/" className="plink" target="_blank" rel="noreferrer">↗ Visit site</a>
-                  </div>
+                  <span className="browser-url">depesa.pages.dev</span>
                 </div>
-                <p>
-                  GridPulse is an energy intelligence platform built for solar financiers,
-                  insurers, and carbon verifiers. It provides real-time grid data,
-                  emissions tracking, and portfolio monitoring through a unified API.
-                </p>
-                <div className="tags">
-                  <span className="tag">Energy Data API</span>
-                  <span className="tag">Grid Intelligence</span>
-                  <span className="tag">Carbon Signals</span>
-                  <span className="tag">Portfolio Monitor</span>
+                <div className="preview-frame-wrap">
+                  <iframe
+                    src="https://depesa.pages.dev"
+                    className="preview-frame"
+                    title="DePesa preview"
+                    loading="lazy"
+                    sandbox="allow-scripts allow-same-origin"
+                  />
+                  <div className="preview-overlay" />
+                </div>
+                <div className="web-card-body">
+                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '8px' }}>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                      <h3 style={{ margin: 0 }}>DePesa</h3>
+                      <span className="project-badge badge-wip">Building</span>
+                    </div>
+                    <a href="https://depesa.pages.dev" className="plink" target="_blank" rel="noreferrer">↗ Visit site</a>
+                  </div>
+                  <p>
+                    DePesa lets M-Pesa users earn yields on Solana through stablecoin investment —
+                    no crypto knowledge required. Users deposit and withdraw directly via M-Pesa,
+                    while DePesa handles everything on-chain behind the scenes.
+                  </p>
+                  <div className="tags">
+                    <span className="tag">Solana</span>
+                    <span className="tag">Stablecoins</span>
+                    <span className="tag">M-Pesa</span>
+                    <span className="tag">DeFi Yields</span>
+                    <span className="tag">Africa</span>
+                  </div>
                 </div>
               </div>
             </div>
