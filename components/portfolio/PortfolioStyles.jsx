@@ -1,26 +1,27 @@
 export default function PortfolioStyles() {
   const css = `
+
       .portfolio-page {
         --bg: #0a0a0a;
-        --bg-warm: #0d0c0b;
-        --surface: #111110;
-        --surface2: #161514;
-        --border: #252421;
-        --border-hi: #3a3835;
-        --phosphor: #e8e4dc;
-        --phosphor-dim: #8a8680;
-        --phosphor-low: #4a4845;
-        --phosphor-off: #252321;
-        --scanline: rgba(0, 0, 0, 0.55);
-        --mono: 'IBM Plex Mono', monospace;
-        --display: 'Special Elite', serif;
-        --max: 780px;
+        --bg-warm: #181818;
+        --surface: #181818;
+        --surface2: #232323;
+        --border: #353535;
+        --border-hi: #555;
+        --phosphor: #fff;
+        --phosphor-dim: #e0e0e0;
+        --phosphor-low: #b0b0b0;
+        --phosphor-off: #888;
+        --scanline: rgba(0, 0, 0, 0.35);
+        --mono: 'Inter', 'IBM Plex Mono', 'Segoe UI', Arial, sans-serif;
+        --display: 'Inter', 'IBM Plex Mono', 'Segoe UI', Arial, sans-serif;
+        --max: 820px;
 
         font-family: var(--mono);
         background: var(--bg);
-        color: var(--phosphor-dim);
-        font-size: 14px;
-        line-height: 1.7;
+        color: var(--phosphor);
+        font-size: 16px;
+        line-height: 1.8;
         -webkit-font-smoothing: antialiased;
         min-height: 100vh;
         position: relative;
@@ -58,14 +59,20 @@ export default function PortfolioStyles() {
         background-repeat: repeat;
       }
 
+
       .portfolio-page a {
-        color: var(--phosphor);
-        text-decoration: none;
+        color: #4ea8ff;
+        text-decoration: underline;
+        outline: none;
+        transition: color 0.2s, box-shadow 0.2s;
       }
 
-      .portfolio-page a:hover {
+      .portfolio-page a:hover,
+      .portfolio-page a:focus {
+        color: #1e90ff;
         text-decoration: underline;
-        opacity: 0.75;
+        outline: 2px solid #1e90ff;
+        outline-offset: 2px;
       }
 
       .portfolio-page .wrap {
@@ -119,19 +126,20 @@ export default function PortfolioStyles() {
         list-style: none;
       }
 
+
       .portfolio-page .nav-links a {
         font-family: var(--mono);
-        font-size: 11px;
-        color: var(--phosphor-low);
+        font-size: 14px;
+        color: var(--phosphor);
         letter-spacing: 0.1em;
         text-transform: lowercase;
         transition: color 0.1s;
+        outline: none;
       }
 
-      .portfolio-page .nav-links a:hover {
-        color: var(--phosphor);
-        text-decoration: none;
-        opacity: 1;
+      .portfolio-page .nav-links a:focus {
+        outline: 2px solid #1e90ff;
+        outline-offset: 2px;
       }
 
       @keyframes flicker {
@@ -169,14 +177,15 @@ export default function PortfolioStyles() {
         margin-bottom: 24px;
       }
 
+
       .portfolio-page h1.name {
         font-family: var(--display);
-        font-size: clamp(40px, 7vw, 62px);
+        font-size: clamp(44px, 7vw, 68px);
         color: var(--phosphor);
         letter-spacing: 0.01em;
-        line-height: 1.05;
-        margin-bottom: 16px;
-        text-shadow: 0 0 30px rgba(232, 228, 220, 0.06);
+        line-height: 1.1;
+        margin-bottom: 18px;
+        text-shadow: 0 0 30px rgba(0,0,0,0.12);
       }
 
       .portfolio-page .hero-role {
@@ -186,12 +195,13 @@ export default function PortfolioStyles() {
         letter-spacing: 0.08em;
       }
 
+
       .portfolio-page .hero-bio {
-        font-size: 14px;
-        color: var(--phosphor-dim);
-        max-width: 520px;
-        line-height: 1.82;
-        margin-bottom: 40px;
+        font-size: 17px;
+        color: var(--phosphor);
+        max-width: 600px;
+        line-height: 1.9;
+        margin-bottom: 44px;
       }
 
       .portfolio-page .hero-bio strong {
@@ -407,11 +417,12 @@ export default function PortfolioStyles() {
         gap: 12px;
       }
 
+
       .portfolio-page .project-card h3 {
         font-family: var(--display);
-        font-size: 17px;
+        font-size: 20px;
         color: var(--phosphor);
-        font-weight: 400;
+        font-weight: 600;
       }
 
       .portfolio-page .project-badge {
@@ -760,11 +771,35 @@ export default function PortfolioStyles() {
         margin-bottom: 8px;
       }
 
+
       .portfolio-page .web-card-body p {
-        font-size: 13px;
-        color: var(--phosphor-dim);
-        line-height: 1.78;
-        margin-bottom: 16px;
+        font-size: 15px;
+        color: var(--phosphor);
+        line-height: 1.85;
+        margin-bottom: 18px;
+      }
+      /* Accessibility: focus outlines for all interactive elements */
+      .portfolio-page button:focus,
+      .portfolio-page [tabindex]:focus {
+        outline: 2px solid #1e90ff;
+        outline-offset: 2px;
+      }
+
+      /* Accessibility: high contrast for tags and badges */
+      .portfolio-page .tag {
+        color: #222;
+        background: #ffe066;
+        border: 1px solid #e6b800;
+      }
+
+      .portfolio-page .project-badge,
+      .portfolio-page .badge-wip,
+      .portfolio-page .badge-next,
+      .portfolio-page .badge-plan,
+      .portfolio-page .badge-done {
+        background: #222;
+        color: #ffe066;
+        border: 1px solid #ffe066;
       }
 
       .portfolio-page .web-card-meta {
