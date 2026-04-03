@@ -177,6 +177,118 @@ export default function ProjectsSection() {
       <div className="wrap">
         <div className="section-label">Projects</div>
         <div className="projects-list">
+          {/* Live preview cards */}
+          <div className="web-preview-card">
+            <div className="browser-chrome">
+              <div className="browser-dots">
+                <span className="browser-dot" />
+                <span className="browser-dot" />
+                <span className="browser-dot" />
+              </div>
+              <span className="browser-url">employa.pages.dev</span>
+            </div>
+            <div className="preview-frame-wrap">
+              <iframe
+                src="https://employa.pages.dev"
+                className="preview-frame"
+                title="Employa preview"
+                loading="lazy"
+                sandbox="allow-scripts allow-same-origin"
+              />
+              <div className="preview-overlay" />
+            </div>
+            <div className="web-card-body">
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '8px' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                  <h3 style={{ margin: 0 }}>Employa</h3>
+                  <span className="project-badge badge-wip">Live</span>
+                </div>
+                <a href="https://employa.pages.dev" className="plink" target="_blank" rel="noreferrer">↗ Visit site</a>
+              </div>
+              <p>WhatsApp-native payout operations for scheduled M-Pesa disbursements. Employa helps finance and operations teams execute M-Pesa disbursements with stronger control, clearer communication, and a more dependable audit trail across every payout cycle.</p>
+              <div className="tags">
+                <span className="tag">M-Pesa</span>
+                <span className="tag">Payouts</span>
+                <span className="tag">Finance Ops</span>
+                <span className="tag">WhatsApp</span>
+              </div>
+            </div>
+          </div>
+          <div className="web-preview-card">
+            <div className="browser-chrome">
+              <div className="browser-dots">
+                <span className="browser-dot" />
+                <span className="browser-dot" />
+                <span className="browser-dot" />
+              </div>
+              <span className="browser-url">depesa.pages.dev</span>
+            </div>
+            <div className="preview-frame-wrap">
+              <iframe
+                src="https://depesa.pages.dev"
+                className="preview-frame"
+                title="DePesa preview"
+                loading="lazy"
+                sandbox="allow-scripts allow-same-origin"
+              />
+              <div className="preview-overlay" />
+            </div>
+            <div className="web-card-body">
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '8px' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                  <h3 style={{ margin: 0 }}>DePesa</h3>
+                  <span className="project-badge badge-wip">Live</span>
+                </div>
+                <a href="https://depesa.pages.dev" className="plink" target="_blank" rel="noreferrer">↗ Visit site</a>
+              </div>
+              <p>DePesa automates contribution proof, gives treasurers a real-time record, and helps savings groups protect value. Group funds stay in a licensed Kenyan bank account, M-Pesa pool, or SACCO channel chosen by the group. Timestamped receipts, dispute logs, and payout confirmations are built in.</p>
+              <div className="tags">
+                <span className="tag">Chama</span>
+                <span className="tag">M-Pesa</span>
+                <span className="tag">Receipts</span>
+                <span className="tag">Dispute Resolution</span>
+                <span className="tag">Finance</span>
+              </div>
+            </div>
+          </div>
+          <div className="web-preview-card">
+            <div className="browser-chrome">
+              <div className="browser-dots">
+                <span className="browser-dot" />
+                <span className="browser-dot" />
+                <span className="browser-dot" />
+              </div>
+              <span className="browser-url">provd.pages.dev</span>
+            </div>
+            <div className="preview-frame-wrap">
+              <iframe
+                src="https://provd.pages.dev"
+                className="preview-frame"
+                title="Provd preview"
+                loading="lazy"
+                sandbox="allow-scripts allow-same-origin"
+              />
+              <div className="preview-overlay" />
+            </div>
+            <div className="web-card-body">
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '8px' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                  <h3 style={{ margin: 0 }}>Provd</h3>
+                  <span className="project-badge badge-wip">Live</span>
+                </div>
+                <a href="https://provd.pages.dev" className="plink" target="_blank" rel="noreferrer">↗ Visit site</a>
+              </div>
+              <p>Provd helps African exchanges, wallets, and OTC desks block repeat fraud before funds move. Query one API call and get network-backed counterparty risk, dispute signals, and recommended actions across P2P stablecoin flows.</p>
+              <div className="tags">
+                <span className="tag">Risk</span>
+                <span className="tag">Fraud</span>
+                <span className="tag">API</span>
+                <span className="tag">P2P</span>
+                <span className="tag">Africa</span>
+              </div>
+            </div>
+          </div>
+          {/* Existing project cards */}
           {projects.map((project) => (
             <div key={project.title} className="project-card">
               <div className="project-header">
