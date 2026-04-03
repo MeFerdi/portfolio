@@ -10,6 +10,30 @@ const webProjects = [
       'Somotéch Africa is a platform dedicated to technology education and innovation across the African continent, connecting learners and builders with resources, opportunities, and community.',
     tags: ['Web', 'Education', 'Africa', 'Tech'],
   },
+  {
+    title: 'Employa',
+    url: 'https://employa.pages.dev',
+    displayUrl: 'employa.pages.dev',
+    description:
+      'WhatsApp-native payout operations for scheduled M-Pesa disbursements. Employa helps finance and operations teams execute M-Pesa disbursements with stronger control, clearer communication, and a more dependable audit trail across every payout cycle.',
+    tags: ['M-Pesa', 'Payouts', 'Finance Ops', 'WhatsApp'],
+  },
+  {
+    title: 'DePesa',
+    url: 'https://depesa.pages.dev',
+    displayUrl: 'depesa.pages.dev',
+    description:
+      'DePesa automates contribution proof, gives treasurers a real-time record, and helps savings groups protect value. Group funds stay in a licensed Kenyan bank account, M-Pesa pool, or SACCO channel chosen by the group. Timestamped receipts, dispute logs, and payout confirmations are built in.',
+    tags: ['Chama', 'M-Pesa', 'Receipts', 'Dispute Resolution', 'Finance'],
+  },
+  {
+    title: 'Provd',
+    url: 'https://provd.pages.dev',
+    displayUrl: 'provd.pages.dev',
+    description:
+      'Provd helps African exchanges, wallets, and OTC desks block repeat fraud before funds move. Query one API call and get network-backed counterparty risk, dispute signals, and recommended actions across P2P stablecoin flows.',
+    tags: ['Risk', 'Fraud', 'API', 'P2P', 'Africa'],
+  },
 ];
 
 export default function WebDevPage() {
