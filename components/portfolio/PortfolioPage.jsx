@@ -1,3 +1,4 @@
+"use client";
 import PortfolioStyles from './PortfolioStyles';
 import Navigation from './Navigation';
 import HeroSection from './HeroSection';
