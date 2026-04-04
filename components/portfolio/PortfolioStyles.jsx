@@ -810,6 +810,37 @@ export default function PortfolioStyles() {
         gap: 12px;
       }
 
+      .compact-project-card {
+        padding: 14px 16px !important;
+        margin-bottom: 0;
+        min-height: unset;
+        border-radius: 8px;
+        box-shadow: 0 1px 8px 0 rgba(0,0,0,0.04);
+      }
+      .compact-project-card .project-header {
+        margin-bottom: 8px;
+      }
+      .compact-project-card h3 {
+        font-size: 1.08rem;
+        margin-bottom: 0;
+      }
+      .compact-project-card .project-badge {
+        font-size: 10px;
+        padding: 2px 7px;
+      }
+      .compact-project-card .plink {
+        font-size: 12px;
+      }
+      .compact-project-card .project-summary {
+        font-size: 0.98rem;
+        color: var(--phosphor-dim, #e0e0e0);
+        margin: 8px 0 10px 0;
+        line-height: 1.6;
+      }
+      .compact-project-card .tags {
+        gap: 4px;
+      }
+
       @media (max-width: 640px) {
         .portfolio-page nav .wrap {
           height: auto;
