@@ -1,6 +1,6 @@
 const experiences = [
   {
-    period: 'Oct 2025 — Present',
+    period: 'Oct 2025 - Present',
     company: 'LD Talent',
     location: 'Remote',
     role: 'Freelance Backend Engineer',
@@ -9,7 +9,7 @@ const experiences = [
     tags: ['Python', 'Microservices', 'Testing'],
   },
   {
-    period: 'Jun 2025 — Oct 2025',
+    period: 'Jun 2025 - Oct 2025',
     company: 'Payd HQ',
     location: 'Nairobi, Kenya',
     role: 'Backend Software Engineer',
@@ -18,12 +18,12 @@ const experiences = [
     tags: ['Go', 'PostgreSQL', 'System Design', 'Data Modelling'],
   },
   {
-    period: 'Apr 2024 — Present',
+    period: 'Apr 2024 - Feb 2026',
     company: 'Zone01 Kisumu',
-    location: 'Kisumu, Kenya — École 42 affiliate',
+    location: 'Kisumu, Kenya',
     role: 'Software Developer',
     description:
-      'Built backend systems for a talent management platform — REST APIs, candidate management, and evaluation workflows. Reduced PostgreSQL query latency by 20% on a high-row-count table by identifying sequential scans with EXPLAIN ANALYZE and adding targeted indexes.',
+      'Built backend systems for a talent management platform - REST APIs, candidate management, and evaluation workflows. Reduced PostgreSQL query latency by 20% on a high-row-count table by identifying sequential scans with EXPLAIN ANALYZE and adding targeted indexes.',
     tags: ['Python', 'Go', 'PostgreSQL', 'Docker', 'Django REST'],
   },
 ];
