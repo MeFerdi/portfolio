@@ -987,15 +987,54 @@ export default function PortfolioStyles() {
         gap: 14px !important;
       }
 
+      .portfolio-page .nav-actions {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        margin-left: auto;
+      }
+
       .portfolio-page .theme-toggle {
         border: 1px solid #cbd5e1;
         background: #ffffff;
         color: #0f172a;
         border-radius: 10px;
-        padding: 7px 10px;
+        width: 38px;
+        height: 38px;
+        padding: 0;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
         font-size: 0.85rem;
         font-weight: 600;
         white-space: nowrap;
+      }
+
+      .portfolio-page .nav-toggle {
+        display: none;
+        width: 38px;
+        height: 38px;
+        border: 1px solid #cbd5e1;
+        background: #ffffff;
+        border-radius: 10px;
+        padding: 8px;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 4px;
+      }
+
+      .portfolio-page .nav-toggle span {
+        display: block;
+        width: 16px;
+        height: 2px;
+        background: #334155;
+        border-radius: 2px;
+      }
+
+      .portfolio-page .mobile-nav-backdrop,
+      .portfolio-page .mobile-nav-card {
+        display: none;
       }
 
       .portfolio-page .nav-links a {
@@ -1218,12 +1257,17 @@ export default function PortfolioStyles() {
       html.dark .portfolio-page .contact-block,
       html.dark .portfolio-page .project-card,
       html.dark .portfolio-page .theme-toggle,
+      html.dark .portfolio-page .nav-toggle,
       html.dark .portfolio-page .btn {
         background: #111827 !important;
       }
 
       html.dark .portfolio-page .theme-toggle {
         color: #ffffff !important;
+      }
+
+      html.dark .portfolio-page .nav-toggle span {
+        background: #e2e8f0;
       }
 
       html.dark .portfolio-page .btn-primary {
@@ -1253,14 +1297,73 @@ export default function PortfolioStyles() {
       @media (max-width: 900px) {
         .portfolio-page nav .wrap {
           height: auto !important;
-          flex-wrap: wrap;
-          row-gap: 10px;
+          flex-wrap: nowrap;
+          row-gap: 0;
           padding-top: 10px;
           padding-bottom: 10px;
         }
 
-        .portfolio-page .theme-toggle {
-          width: 100%;
+        .portfolio-page .nav-links-desktop {
+          display: none;
+        }
+
+        .portfolio-page .nav-toggle {
+          display: inline-flex;
+        }
+
+        .portfolio-page .mobile-nav-backdrop {
+          display: block;
+          position: fixed;
+          inset: 64px 0 0 0;
+          background: rgba(15, 23, 42, 0.22);
+          backdrop-filter: blur(5px);
+          border: 0;
+          padding: 0;
+          margin: 0;
+          z-index: 998;
+        }
+
+        .portfolio-page .mobile-nav-card {
+          position: fixed;
+          top: 76px;
+          left: 14px;
+          right: 14px;
+          background: rgba(255, 255, 255, 0.96);
+          border: 1px solid #e2e8f0;
+          border-radius: 14px;
+          box-shadow: 0 16px 30px rgba(15, 23, 42, 0.18);
+          padding: 12px;
+          z-index: 999;
+          opacity: 0;
+          transform: translateY(-8px);
+          pointer-events: none;
+          transition: opacity 0.2s ease, transform 0.2s ease;
+        }
+
+        .portfolio-page .mobile-nav-card.open {
+          display: block;
+          opacity: 1;
+          transform: translateY(0);
+          pointer-events: auto;
+        }
+
+        .portfolio-page .nav-links-mobile {
+          display: flex;
+          flex-direction: column;
+          gap: 2px;
+          margin: 0;
+          padding: 0;
+        }
+
+        .portfolio-page .nav-links-mobile a {
+          display: block;
+          padding: 10px 10px;
+          border-radius: 8px;
+        }
+
+        html.dark .portfolio-page .mobile-nav-card {
+          background: rgba(17, 24, 39, 0.97);
+          border-color: #334155;
         }
 
         .portfolio-page .projects-grid {
