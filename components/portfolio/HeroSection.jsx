@@ -2,9 +2,8 @@ export default function HeroSection() {
   return (
     <section id="hero">
       <div className="wrap">
-        <div className="hero-eyebrow fi">Nairobi, Kenya</div>
         <h1 className="name fi">Ferdynand<br />Odhiambo</h1>
-        <p className="hero-role fi">Backend Engineer — Go · Python · PostgreSQL</p>
+        <p className="hero-role fi">Backend Engineer - Go · Python · PostgreSQL</p>
         <p className="hero-bio fi">
           Backend engineer specializing in APIs, payment systems, and data pipelines. Proven track record delivering reliable, secure solutions for fintech and high-integrity domains.
         </p>

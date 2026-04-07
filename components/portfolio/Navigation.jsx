@@ -1,17 +1,20 @@
+import ThemeToggle from './ThemeToggle';
+
 export default function Navigation() {
   return (
-    <nav>
+    <nav aria-label="Primary">
       <div className="wrap">
-        <span className="nav-logo">FO</span>
+        <a href="/" className="nav-logo nav-signature">Ferdynand</a>
         <ul className="nav-links">
-          <li><a href="#about">about</a></li>
-          <li><a href="#work">work</a></li>
-          <li><a href="#projects">projects</a></li>
-          <li><a href="/webdev">web dev</a></li>
-          <li><a href="#writing">writing</a></li>
-          <li><a href="/brand">random stuff</a></li>
-          <li><a href="#contact">contact</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#work">Experience</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#writing">Writing</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="/webdev">Web Dev</a></li>
+          <li><a href="/brand">Creative</a></li>
         </ul>
+        <ThemeToggle />
       </div>
     </nav>
   );
