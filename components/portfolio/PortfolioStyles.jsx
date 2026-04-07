@@ -987,11 +987,22 @@ export default function PortfolioStyles() {
         gap: 14px !important;
       }
 
+      .portfolio-page .nav-shell {
+        display: flex;
+        align-items: center;
+      }
+
+      .portfolio-page .nav-links-desktop {
+        margin-left: 42px;
+        flex: 1;
+        justify-content: center;
+      }
+
       .portfolio-page .nav-actions {
         display: inline-flex;
         align-items: center;
         gap: 10px;
-        margin-left: auto;
+        margin-left: 18px;
       }
 
       .portfolio-page .theme-toggle {
