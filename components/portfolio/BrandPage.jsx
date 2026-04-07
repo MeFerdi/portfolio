@@ -1,8 +1,15 @@
+"use client";
+
+import { useState } from 'react';
 import PortfolioStyles from './PortfolioStyles';
 import PortfolioFooter from './PortfolioFooter';
 import ThemeToggle from './ThemeToggle';
 
 export default function BrandPage() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const closeMenu = () => setMenuOpen(false);
+
   return (
     <>
       <a href="#main-content" className="skip-link">Skip to main content</a>
@@ -12,14 +19,38 @@ export default function BrandPage() {
         <div className="glitch-sweep" />
         <div className="glitch-sweep" />
 
-        <nav aria-label="Primary">
-          <div className="wrap">
+        <nav aria-label="Primary" className="site-nav">
+          <div className="wrap nav-shell">
             <a href="/" className="nav-logo nav-signature">Ferdynand</a>
-            <ul className="nav-links">
+
+            <ul className="nav-links nav-links-desktop">
               <li><a href="/">portfolio</a></li>
               <li><a href="https://kynaralabs.com" target="_blank" rel="noreferrer">kynaralabs.com</a></li>
             </ul>
-            <ThemeToggle />
+
+            <div className="nav-actions">
+              <button
+                type="button"
+                className="nav-toggle"
+                aria-label={menuOpen ? 'Close menu' : 'Open menu'}
+                aria-expanded={menuOpen}
+                onClick={() => setMenuOpen((prev) => !prev)}
+              >
+                <span />
+                <span />
+                <span />
+              </button>
+              <ThemeToggle />
+            </div>
+          </div>
+
+          {menuOpen && <button type="button" className="mobile-nav-backdrop" onClick={closeMenu} aria-label="Close menu backdrop" />}
+
+          <div className={`mobile-nav-card${menuOpen ? ' open' : ''}`}>
+            <ul className="nav-links nav-links-mobile">
+              <li><a href="/" onClick={closeMenu}>Portfolio</a></li>
+              <li><a href="https://kynaralabs.com" target="_blank" rel="noreferrer" onClick={closeMenu}>kynaralabs.com</a></li>
+            </ul>
           </div>
         </nav>
 
