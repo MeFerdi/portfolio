@@ -1002,7 +1002,7 @@ export default function PortfolioStyles() {
         display: inline-flex;
         align-items: center;
         gap: 10px;
-        margin-left: 18px;
+        margin-left: auto;
       }
 
       .portfolio-page .theme-toggle {
