@@ -1,0 +1,10 @@
+{
+  "$comment": "Regression floors. A metric below its floor fails the run (exit 1). Skipped metrics are not checked. Floors for retrieval/gate were set from the offline hashing-embedder smoke run; LLM-dependent floors are targets until a live run is recorded.",
+  "recallAtK": 0.85,
+  "mrr": 0.7,
+  "gateAccuracy": 0.85,
+  "statusAccuracy": 0.9,
+  "citationCorrectness": 0.9,
+  "answerContainsRate": 0.85,
+  "faithfulness": 0.9
+}
