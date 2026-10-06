@@ -1,0 +1,47 @@
+{
+  "name": "refund-status",
+  "description": "Customer asks where a refund is, shares contact details, then asks to close the ticket and confirms. Golden path for read tools, PII redaction and a confirmed write.",
+  "customerToken": "tok_amina",
+  "turns": [
+    {
+      "user": "Hi, I cancelled the headset order ord_1002 but haven't got my money back. You can reach me on 0712 345 678 or amina.wanjiru@example.co.ke.",
+      "agentScript": [
+        { "toolCalls": [{ "name": "get_order_status", "input": { "orderId": "ord_1002" } }] },
+        { "toolCalls": [{ "name": "get_refund_status", "input": { "paymentId": "pay_5002" } }] },
+        { "text": "Your refund of KES 8,900 for order ord_1002 (refund re_7001) is pending and is expected by 2026-10-10. We'll keep [PHONE_1] on file for updates." }
+      ],
+      "expect": {
+        "status": 200,
+        "end": "completed",
+        "toolEvents": [
+          { "tool": "get_order_status", "status": "executed" },
+          { "tool": "get_refund_status", "status": "executed" }
+        ],
+        "toolResultsContain": ["\"status\":\"cancelled\"", "\"id\":\"re_7001\"", "\"status\":\"pending\""],
+        "replyContains": ["KES 8,900", "2026-10-10", "0712 345 678"],
+        "modelNeverSees": ["0712 345 678", "amina.wanjiru@example.co.ke"],
+        "pendingActions": 0
+      }
+    },
+    {
+      "user": "OK thanks, that answers it. You can close my ticket.",
+      "agentScript": [
+        { "toolCalls": [{ "name": "mark_ticket_resolved", "input": { "ticketId": "tkt_9001", "resolution": "Refund re_7001 (KES 8,900) pending, expected by 2026-10-10." } }] },
+        { "text": "I've prepared closing ticket tkt_9001. Please confirm in the app." }
+      ],
+      "expect": {
+        "status": 200,
+        "end": "awaiting_confirmation",
+        "toolEvents": [{ "tool": "mark_ticket_resolved", "status": "pending_confirmation" }],
+        "toolResultsContain": ["\"status\":\"pending_confirmation\""],
+        "replyContains": ["confirm"],
+        "modelNeverSees": ["amina.wanjiru@example.co.ke"],
+        "pendingActions": 1
+      },
+      "confirm": { "expectStatus": 200 }
+    }
+  ],
+  "finalState": {
+    "tickets": { "tkt_9001": "resolved" }
+  }
+}
