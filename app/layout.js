@@ -3,7 +3,7 @@ import PWARegister from '../components/portfolio/PWARegister';
 
 export const metadata = {
   title: 'Ferdynand Odhiambo',
-  description: 'My Professional Portfolio application showcasing my work as a developer',
+  description: 'Portfolio of Ferdynand Odhiambo, AI-native product engineer.',
   manifest: '/manifest.webmanifest',
   themeColor: '#1d4ed8',
   appleWebApp: {

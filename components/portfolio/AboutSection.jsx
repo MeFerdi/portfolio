@@ -19,13 +19,21 @@ export default function AboutSection() {
         <div className="about-grid">
           <div className="about-text">
             <p>
-              Backend engineer with strong experience in Go, Python, and distributed systems. Built and shipped payment, data, and automation services for fintech and startups. Skilled in designing resilient systems, troubleshooting failures, and delivering reliable solutions.
+              I am a product engineer with a background in backend development. I have built and maintained
+              Go and Python services for fintech and talent management platforms, including payment event
+              processing, transaction workflows and data pipelines.
+            </p>
+            <p>
+              My current focus is the integration of large language models into production software. I apply
+              the standards expected of financial systems to this work: validated inputs and outputs,
+              controlled access to data and actions, automated testing and measurable results.
             </p>
           </div>
           <div>
-            <StackGroup title="Languages" items={["Go", "Python", "SQL", "Bash"]} />
-            <StackGroup title="Backend" items={["PostgreSQL", "Redis", "Kafka", "Django", "FastAPI", "gRPC"]} />
-            <StackGroup title="Infrastructure" items={["Docker", "Kubernetes", "GitHub Actions"]} />
+            <StackGroup title="AI engineering" items={["LLM integration", "Tool calling", "Structured output", "Retrieval-augmented generation", "pgvector", "Evaluation"]} />
+            <StackGroup title="Backend" items={["Java", "Go", "Python", "Node.js", "PostgreSQL", "Redis", "Kafka"]} />
+            <StackGroup title="Frontend" items={["TypeScript", "React", "Next.js"]} />
+            <StackGroup title="Quality and delivery" items={["Jest", "Playwright", "GitHub Actions", "Docker"]} />
           </div>
         </div>
       </div>

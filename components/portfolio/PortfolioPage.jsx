@@ -5,6 +5,8 @@ import HeroSection from './HeroSection';
 import AboutSection from './AboutSection';
 import ExperienceSection from './ExperienceSection';
 import ProjectsSection from './ProjectsSection';
+import ApproachSection from './ApproachSection';
+import TrainingSection from './TrainingSection';
 import WritingSection from './WritingSection';
 import ContactSection from './ContactSection';
 import PortfolioFooter from './PortfolioFooter';
@@ -18,8 +20,10 @@ export default function PortfolioPage() {
         <Navigation />
         <HeroSection />
         <AboutSection />
-        <ExperienceSection />
         <ProjectsSection />
+        <ApproachSection />
+        <ExperienceSection />
+        <TrainingSection />
         <WritingSection />
         <ContactSection />
         <PortfolioFooter />
