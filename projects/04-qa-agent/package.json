@@ -1,0 +1,40 @@
+{
+  "name": "autonomous-qa-agent",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Deterministic Playwright E2E checks on an e-commerce app; an AI agent diagnoses failures and files structured bug reports to team chat.",
+  "license": "MIT",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "dev": "tsx watch src/index.ts",
+    "start": "node dist/index.js",
+    "storefront": "tsx storefront/server.ts",
+    "diagnosis": "tsx src/index.ts",
+    "e2e": "playwright test",
+    "db:migrate": "tsx scripts/migrate.ts",
+    "typecheck": "tsc --noEmit",
+    "test": "jest",
+    "test:watch": "jest --watch"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.131.0",
+    "@fastify/formbody": "^8.0.2",
+    "fastify": "^5.12.5",
+    "pg": "^8.23.1",
+    "pino": "^10.4.0",
+    "zod": "^4.1.0"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.63.0",
+    "@types/jest": "^30.0.0",
+    "@types/node": "^22.0.0",
+    "@types/pg": "^8.23.1",
+    "jest": "^30.0.0",
+    "ts-jest": "^29.4.0",
+    "tsx": "^4.20.0",
+    "typescript": "~5.9.3"
+  }
+}
