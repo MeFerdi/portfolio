@@ -4,10 +4,10 @@ export default function ContactSection() {
       <div className="wrap">
         <div className="section-label">Contact</div>
         <div className="contact-block">
-          <h2>Open to backend engineering roles.</h2>
+          <h2>Open to AI product engineering roles.</h2>
           <p>
-            Full-time, contract, or freelance. If you are building something that needs solid API design,
-            payment infrastructure, or database work, feel free to reach out directly.
+            Available for full-time, contract and freelance positions, remote or based in Nairobi. Please get
+            in touch by email or LinkedIn.
           </p>
           <div className="contact-links">
             <a href="mailto:oferdinaddev112@gmail.com" className="contact-link"><span className="clabel">email</span>oferdinaddev112@gmail.com</a>

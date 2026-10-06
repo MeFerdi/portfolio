@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>About us | Acme Data Cloud</title>
+  <meta name="description" content="Fallback meta description that should lose to JSON-LD.">
+  <meta property="og:site_name" content="Acme Data Cloud">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      { "@type": "WebSite", "name": "Acme website", "url": "https://acme.example" },
+      {
+        "@type": "Organization",
+        "name": "Acme Data Cloud",
+        "description": "Managed data pipelines for B2B SaaS teams.",
+        "industry": "Software",
+        "numberOfEmployees": { "@type": "QuantitativeValue", "minValue": 120, "maxValue": 180 },
+        "address": { "@type": "PostalAddress", "addressLocality": "Nairobi", "addressCountry": "KE" },
+        "sameAs": ["https://github.com/acme-example", "https://www.linkedin.com/company/acme-example", "https://acme.example/blog"]
+      }
+    ]
+  }
+  </script>
+  <style>body { font-family: sans-serif; }</style>
+</head>
+<body>
+  <nav><a href="/">Home</a> <a href="/careers">Careers</a></nav>
+  <main>
+    <h1>We run your data plumbing</h1>
+    <p>Acme Data Cloud   operates   ingestion and transformation pipelines so product teams can ship analytics features.</p>
+    <h2>Who we serve</h2>
+    <p>Engineering teams at subscription software companies between Series A and Series C.</p>
+    <h2>Open roles</h2>
+    <p>We are hiring platform engineers in Nairobi and remotely.</p>
+    <script>window.analytics = "should not appear in text";</script>
+  </main>
+  <footer><a href="https://x.com/acme_example">Follow us</a> &copy; Acme</footer>
+</body>
+</html>

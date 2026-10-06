@@ -1,0 +1,32 @@
+{
+  "name": "ai-support-agent",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Customer support agent that resolves tickets via backend tools under an explicit read/write permission model, with human confirmation for every write.",
+  "license": "MIT",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "dev": "tsx watch src/index.ts",
+    "start": "node dist/index.js",
+    "typecheck": "tsc --noEmit",
+    "test": "jest",
+    "test:watch": "jest --watch"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.131.0",
+    "fastify": "^5.12.5",
+    "pino": "^10.4.0",
+    "zod": "^4.1.0"
+  },
+  "devDependencies": {
+    "@types/jest": "^30.0.0",
+    "@types/node": "^22.0.0",
+    "jest": "^30.0.0",
+    "ts-jest": "^29.4.0",
+    "tsx": "^4.20.0",
+    "typescript": "~5.9.3"
+  }
+}

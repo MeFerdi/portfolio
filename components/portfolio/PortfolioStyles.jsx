@@ -1215,6 +1215,145 @@ export default function PortfolioStyles() {
         margin-top: auto;
       }
 
+      .portfolio-page .ai-card {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      .portfolio-page .projects-grid > .ai-card:only-child {
+        grid-column: 1 / -1;
+      }
+
+      .portfolio-page .ai-card h3 {
+        margin: 2px 0 0;
+      }
+
+      .portfolio-page .ai-index {
+        font-family: var(--display);
+        font-size: 0.85rem;
+        font-weight: 700;
+        color: #1d4ed8;
+        letter-spacing: 0.04em;
+      }
+
+      .portfolio-page .ai-pattern {
+        margin: 0;
+        font-size: 0.82rem;
+        font-weight: 600;
+        color: #1e3a8a;
+      }
+
+      .portfolio-page .ai-card .project-summary {
+        margin: 2px 0 4px;
+      }
+
+      .portfolio-page .ai-facts {
+        margin: 0 0 6px;
+        display: grid;
+        gap: 6px;
+        border-left: 2px solid #bfdbfe;
+        padding-left: 10px;
+      }
+
+      .portfolio-page .ai-facts dt {
+        font-size: 0.7rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        color: #64748b;
+      }
+
+      .portfolio-page .ai-facts dd {
+        margin: 0;
+        font-size: 0.86rem;
+        color: #334155;
+      }
+
+      .portfolio-page .ai-card .project-link {
+        margin-top: auto;
+        padding-top: 6px;
+      }
+
+      .portfolio-page .section-sublabel {
+        margin: 36px 0 12px;
+        font-size: 1rem;
+        font-weight: 700;
+        color: #475569;
+      }
+
+      .portfolio-page .projects-grid-compact .project-card {
+        padding: 14px;
+      }
+
+      .portfolio-page .projects-grid-compact .project-summary {
+        font-size: 0.9rem;
+      }
+
+      .portfolio-page .approach-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 16px;
+      }
+
+      .portfolio-page .approach-item {
+        padding: 18px;
+        background: #ffffff;
+        border: 1px solid #e2e8f0;
+        border-radius: 12px;
+      }
+
+      .portfolio-page .approach-num {
+        font-size: 0.8rem;
+        font-weight: 700;
+        color: #1d4ed8;
+      }
+
+      .portfolio-page .approach-item h3 {
+        margin: 6px 0 8px;
+        font-size: 1.02rem;
+        color: #0f172a;
+      }
+
+      .portfolio-page .approach-item p {
+        margin: 0;
+        font-size: 0.92rem;
+        line-height: 1.6;
+        color: #334155;
+      }
+
+      html.dark .portfolio-page .ai-index,
+      html.dark .portfolio-page .approach-num {
+        color: #93c5fd;
+      }
+
+      html.dark .portfolio-page .ai-pattern {
+        color: #bfdbfe;
+      }
+
+      html.dark .portfolio-page .ai-facts {
+        border-left-color: #334155;
+      }
+
+      html.dark .portfolio-page .ai-facts dt,
+      html.dark .portfolio-page .section-sublabel {
+        color: #94a3b8;
+      }
+
+      html.dark .portfolio-page .ai-facts dd,
+      html.dark .portfolio-page .approach-item p {
+        color: #cbd5e1;
+      }
+
+      html.dark .portfolio-page .approach-item {
+        background: #111827;
+        border-color: #334155;
+      }
+
+      html.dark .portfolio-page .approach-item h3 {
+        color: #e2e8f0;
+      }
+
       html.dark .portfolio-page {
         --bg: #0b1220 !important;
         --surface: #111827 !important;
@@ -1377,7 +1516,8 @@ export default function PortfolioStyles() {
           border-color: #334155;
         }
 
-        .portfolio-page .projects-grid {
+        .portfolio-page .projects-grid,
+        .portfolio-page .approach-grid {
           grid-template-columns: 1fr;
         }
       }

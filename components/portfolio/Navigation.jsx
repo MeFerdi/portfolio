@@ -15,8 +15,9 @@ export default function Navigation() {
 
         <ul className="nav-links nav-links-desktop">
           <li><a href="#about">About</a></li>
-          <li><a href="#work">Experience</a></li>
           <li><a href="#projects">Projects</a></li>
+          <li><a href="#work">Experience</a></li>
+          <li><a href="#training">Training</a></li>
           <li><a href="#writing">Writing</a></li>
           <li><a href="#contact">Contact</a></li>
           <li><a href="/webdev">Web Dev</a></li>
@@ -44,8 +45,9 @@ export default function Navigation() {
       <div className={`mobile-nav-card${menuOpen ? ' open' : ''}`}>
         <ul className="nav-links nav-links-mobile">
           <li><a href="#about" onClick={closeMenu}>About</a></li>
-          <li><a href="#work" onClick={closeMenu}>Experience</a></li>
           <li><a href="#projects" onClick={closeMenu}>Projects</a></li>
+          <li><a href="#work" onClick={closeMenu}>Experience</a></li>
+          <li><a href="#training" onClick={closeMenu}>Training</a></li>
           <li><a href="#writing" onClick={closeMenu}>Writing</a></li>
           <li><a href="#contact" onClick={closeMenu}>Contact</a></li>
           <li><a href="/webdev" onClick={closeMenu}>Web Dev</a></li>

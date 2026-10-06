@@ -1,0 +1,285 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`Discord message builder renders a diagnosed report 1`] = `
+{
+  "embeds": [
+    {
+      "color": 16149002,
+      "description": "Checkout total is $14.99 lower than the sum of line items.",
+      "fields": [
+        {
+          "inline": true,
+          "name": "File",
+          "value": "\`e2e/checkout.spec.ts\`",
+        },
+        {
+          "inline": true,
+          "name": "Commit",
+          "value": "\`0123456\`",
+        },
+        {
+          "inline": true,
+          "name": "AI confidence",
+          "value": "medium",
+        },
+        {
+          "inline": false,
+          "name": "Likely root cause",
+          "value": "orderTotalCents ignores line quantity, so the second mug is not charged.",
+        },
+        {
+          "inline": false,
+          "name": "Suspected files",
+          "value": "• \`storefront/lib/pricing.ts\` — computes the order total",
+        },
+        {
+          "inline": false,
+          "name": "Suggested next step",
+          "value": "Multiply priceCents by quantity in orderTotalCents and add a unit test for qty > 1.",
+        },
+        {
+          "inline": false,
+          "name": "Assertion error",
+          "value": "\`\`\`Error: expect(locator).toHaveText(expected) failed
+
+Locator: getByTestId('order-total')
+Expected: "$49.97"
+Received: "$34.98"\`\`\`",
+        },
+      ],
+      "footer": {
+        "text": "run run-0001 · retry 0 · 1 hallucinated path(s) removed",
+      },
+      "timestamp": "2026-10-07T09:30:00.000Z",
+      "title": "E2E failure: order total equals the sum of line totals",
+    },
+  ],
+  "username": "QA Agent",
+}
+`;
+
+exports[`Discord message builder renders a report when diagnosis failed 1`] = `
+{
+  "embeds": [
+    {
+      "color": 6976381,
+      "description": "AI diagnosis unavailable (LLM output rejected). Raw failure below.",
+      "fields": [
+        {
+          "inline": true,
+          "name": "File",
+          "value": "\`e2e/checkout.spec.ts\`",
+        },
+        {
+          "inline": true,
+          "name": "Commit",
+          "value": "\`0123456\`",
+        },
+        {
+          "inline": true,
+          "name": "AI confidence",
+          "value": "n/a",
+        },
+        {
+          "inline": false,
+          "name": "Assertion error",
+          "value": "\`\`\`Error: expect(locator).toHaveText(expected) failed
+
+Locator: getByTestId('order-total')
+Expected: "$49.97"
+Received: "$34.98"\`\`\`",
+        },
+      ],
+      "footer": {
+        "text": "run run-0001 · retry 0",
+      },
+      "timestamp": "2026-10-07T09:30:00.000Z",
+      "title": "E2E failure: order total equals the sum of line totals",
+    },
+  ],
+  "username": "QA Agent",
+}
+`;
+
+exports[`Slack message builder renders a diagnosed report 1`] = `
+{
+  "blocks": [
+    {
+      "text": {
+        "text": "E2E failure: order total equals the sum of line totals",
+        "type": "plain_text",
+      },
+      "type": "header",
+    },
+    {
+      "fields": [
+        {
+          "text": "*Test*
+chromium › checkout.spec.ts › checkout › order total equals the sum of line totals",
+          "type": "mrkdwn",
+        },
+        {
+          "text": "*File*
+\`e2e/checkout.spec.ts\`",
+          "type": "mrkdwn",
+        },
+        {
+          "text": "*Commit*
+\`0123456\`",
+          "type": "mrkdwn",
+        },
+        {
+          "text": "*AI confidence*
+medium",
+          "type": "mrkdwn",
+        },
+      ],
+      "type": "section",
+    },
+    {
+      "text": {
+        "text": "*Summary*
+Checkout total is $14.99 lower than the sum of line items.",
+        "type": "mrkdwn",
+      },
+      "type": "section",
+    },
+    {
+      "text": {
+        "text": "*Likely root cause*
+orderTotalCents ignores line quantity, so the second mug is not charged.",
+        "type": "mrkdwn",
+      },
+      "type": "section",
+    },
+    {
+      "text": {
+        "text": "*Suspected files*
+• \`storefront/lib/pricing.ts\` — computes the order total",
+        "type": "mrkdwn",
+      },
+      "type": "section",
+    },
+    {
+      "text": {
+        "text": "*Suggested next step*
+Multiply priceCents by quantity in orderTotalCents and add a unit test for qty > 1.",
+        "type": "mrkdwn",
+      },
+      "type": "section",
+    },
+    {
+      "type": "divider",
+    },
+    {
+      "text": {
+        "text": "*Assertion error*
+\`\`\`Error: expect(locator).toHaveText(expected) failed
+
+Locator: getByTestId('order-total')
+Expected: "$49.97"
+Received: "$34.98"\`\`\`",
+        "type": "mrkdwn",
+      },
+      "type": "section",
+    },
+    {
+      "elements": [
+        {
+          "text": "run \`run-0001\` · retry 0 · 2026-10-07T09:30:00.000Z",
+          "type": "mrkdwn",
+        },
+        {
+          "text": "trace: \`/repo/test-results/checkout/trace.zip\`",
+          "type": "mrkdwn",
+        },
+        {
+          "text": "1 suggested path(s) not found in the repo were removed; confidence lowered.",
+          "type": "mrkdwn",
+        },
+      ],
+      "type": "context",
+    },
+  ],
+  "text": "E2E failure: order total equals the sum of line totals. Checkout total is $14.99 lower than the sum of line items.",
+}
+`;
+
+exports[`Slack message builder renders a report when diagnosis failed 1`] = `
+{
+  "blocks": [
+    {
+      "text": {
+        "text": "E2E failure: order total equals the sum of line totals",
+        "type": "plain_text",
+      },
+      "type": "header",
+    },
+    {
+      "fields": [
+        {
+          "text": "*Test*
+chromium › checkout.spec.ts › checkout › order total equals the sum of line totals",
+          "type": "mrkdwn",
+        },
+        {
+          "text": "*File*
+\`e2e/checkout.spec.ts\`",
+          "type": "mrkdwn",
+        },
+        {
+          "text": "*Commit*
+\`0123456\`",
+          "type": "mrkdwn",
+        },
+        {
+          "text": "*AI confidence*
+n/a",
+          "type": "mrkdwn",
+        },
+      ],
+      "type": "section",
+    },
+    {
+      "text": {
+        "text": ":warning: *AI diagnosis unavailable* (LLM output rejected). Raw failure below.",
+        "type": "mrkdwn",
+      },
+      "type": "section",
+    },
+    {
+      "type": "divider",
+    },
+    {
+      "text": {
+        "text": "*Assertion error*
+\`\`\`Error: expect(locator).toHaveText(expected) failed
+
+Locator: getByTestId('order-total')
+Expected: "$49.97"
+Received: "$34.98"\`\`\`",
+        "type": "mrkdwn",
+      },
+      "type": "section",
+    },
+    {
+      "elements": [
+        {
+          "text": "run \`run-0001\` · retry 0 · 2026-10-07T09:30:00.000Z",
+          "type": "mrkdwn",
+        },
+        {
+          "text": "trace: \`/repo/test-results/checkout/trace.zip\`",
+          "type": "mrkdwn",
+        },
+      ],
+      "type": "context",
+    },
+  ],
+  "text": "E2E failure: order total equals the sum of line totals. Error: expect(locator).toHaveText(expected) failed
+
+Locator: getByTestId('order-total')
+Expected: "$49.97"
+Received: "$34.98"",
+}
+`;

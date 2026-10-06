@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`parseCompanyProfile extracts a typed profile from a JSON-LD rich page 1`] = `
+{
+  "description": "Managed data pipelines for B2B SaaS teams.",
+  "employeeCount": 150,
+  "hasCareersPage": true,
+  "headings": [
+    "We run your data plumbing",
+    "Who we serve",
+    "Open roles",
+  ],
+  "industry": "Software",
+  "location": "Nairobi, KE",
+  "name": "Acme Data Cloud",
+  "socialLinks": [
+    "https://github.com/acme-example",
+    "https://www.linkedin.com/company/acme-example",
+    "https://x.com/acme_example",
+  ],
+  "textExcerpt": "We run your data plumbing Acme Data Cloud operates ingestion and transformation pipelines so product teams can ship analytics features. Who we serve Engineering teams at subscription software companies between Series A and Series C. Open roles We are hiring platform engineers in Nairobi and remotely.",
+  "url": "https://acme.example/about",
+}
+`;
+
+exports[`parseCompanyProfile falls back to meta tags when JSON-LD is malformed 1`] = `
+{
+  "description": "Independent strategy consultancy for retail brands.",
+  "employeeCount": null,
+  "hasCareersPage": false,
+  "headings": [
+    "Strategy for growth",
+  ],
+  "industry": null,
+  "location": null,
+  "name": "Globex Consulting",
+  "socialLinks": [],
+  "textExcerpt": "Strategy for growth We advise retail brands on market entry. Contact",
+  "url": "https://globex.example/",
+}
+`;
