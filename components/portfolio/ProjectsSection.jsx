@@ -1,7 +1,6 @@
-const REPO = 'https://github.com/MeFerdi/portfolio/tree/main/projects';
-
 // Ordered by build sequence. Only entries with `published: true` are shown; set it
-// when a project is in active development or shipped. Update `status`, and replace
+// when a project is in active development or shipped. Set `github` to the repository
+// URL once the repository is public. Update `status`, and replace
 // `target` with a measured result, only when the work is shipped and measured.
 const aiSystems = [
   {
@@ -15,7 +14,7 @@ const aiSystems = [
     proof: 'Contract tests for model output, fixture-based scraper tests and idempotent queue stages.',
     target: 'Research for 100 leads in approximately 20 minutes, compared with an estimated 12 hours of manual work.',
     tags: ['TypeScript', 'BullMQ', 'PostgreSQL', 'pgvector', 'Claude API', 'Zod'],
-    path: '01-growth-pipeline',
+    github: null,
   },
   {
     id: '02',
@@ -27,7 +26,7 @@ const aiSystems = [
     proof: 'Adversarial test suite confirming that the policy layer refuses out-of-scope actions independently of model behaviour.',
     target: 'Resolution of a refund status enquiry without human involvement.',
     tags: ['Fastify', 'Tool calling', 'PII redaction', 'Rate limiting', 'Jest'],
-    path: '02-support-agent',
+    github: null,
   },
   {
     id: '03',
@@ -39,7 +38,7 @@ const aiSystems = [
     proof: 'Automated measurement of retrieval recall, citation accuracy, factual consistency and prompt-injection resistance.',
     target: 'A comparative report quantifying the effect of reranking on retrieval quality.',
     tags: ['Hybrid search', 'Reranking', 'pgvector', 'Model-graded evaluation', 'GitHub Actions'],
-    path: '03-rag-assistant',
+    github: null,
   },
   {
     id: '04',
@@ -51,7 +50,7 @@ const aiSystems = [
     proof: 'Suspected file paths are verified against the repository before a report is filed.',
     target: 'Detection, diagnosis and reporting of an introduced defect within one minute.',
     tags: ['Playwright', 'Image analysis', 'Slack API', 'Flaky test detection'],
-    path: '04-qa-agent',
+    github: null,
   },
   {
     id: '05',
@@ -63,7 +62,7 @@ const aiSystems = [
     proof: 'Tests for event integrity, duplicate prevention and statistical comparison of user cohorts.',
     target: 'Improvement in onboarding completion relative to the control group, measured on synthetic data.',
     tags: ['Event streams', 'BullMQ', 'Experimentation', 'Resend'],
-    path: '05-retention-engine',
+    github: null,
   },
 ];
 
@@ -129,9 +128,13 @@ function AiSystemCard({ project }) {
         </div>
       </dl>
       <Tags items={project.tags} />
-      <a href={`${REPO}/${project.path}`} target="_blank" rel="noreferrer" className="project-link">
-        View repository
-      </a>
+      {project.github ? (
+        <a href={project.github} target="_blank" rel="noreferrer" className="project-link">
+          View repository
+        </a>
+      ) : (
+        <span className="project-link project-link-disabled">Repository coming soon</span>
+      )}
     </article>
   );
 }
@@ -168,7 +171,7 @@ export default function ProjectsSection() {
                   View code
                 </a>
               ) : (
-                <span className="project-link project-link-disabled">Repository to be published</span>
+                <span className="project-link project-link-disabled">Repository coming soon</span>
               )}
             </article>
           ))}
