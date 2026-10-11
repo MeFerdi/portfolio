@@ -1,21 +1,13 @@
-import Image from 'next/image';
-
 export default function PortfolioFooter() {
   return (
     <footer>
       <div className="wrap">
-        <span className="ft ft-signature">Design by Ferdynand</span>
-        <span className="ft ft-location" aria-label="Nairobi, Kenya">
-          <Image
-            src="/nairobi.png"
-            alt="Nairobi icon"
-            width={20}
-            height={20}
-            className="loc-icon"
-          />
-          <span className="loc-label">Nairobi, Kenya</span>
+        <span>© 2026 Ferdynand Odhiambo</span>
+        <span className="ft-location">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/nairobi-40.png" alt="" width="20" height="20" loading="lazy" decoding="async" className="loc-icon" />
+          Nairobi, Kenya
         </span>
-        <span className="ft">2026</span>
       </div>
     </footer>
   );

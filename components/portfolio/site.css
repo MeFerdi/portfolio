@@ -1,0 +1,957 @@
+/*
+Stylesheet for the main portfolio page. Every colour is a token defined once for
+light mode and once for dark mode; components use the tokens only. Surfaces are flat:
+hairline borders, no gradients, glows or drop shadows, one accent colour.
+Fonts come from app/layout.js: --font-serif for headings, --font-sans for text.
+*/
+
+:root {
+  --pf-bg: #ffffff;
+  --pf-surface: #f6f6f4;
+  --pf-text: #1b1b1b;
+  --pf-text-2: #474747;
+  --pf-text-3: #696969;
+  --pf-border: #dddcd8;
+  --pf-border-strong: #b9b8b3;
+  --pf-accent: #1f3a5f;
+  --pf-accent-hover: #142944;
+  --pf-on-accent: #ffffff;
+  --pf-focus: #1f3a5f;
+  --pf-desk: #efeeea;
+  --pf-sheet: #ffffff;
+  --pf-serif: var(--font-serif), Georgia, 'Times New Roman', serif;
+  --pf-sans: var(--font-sans), 'Segoe UI', Arial, sans-serif;
+  color-scheme: light;
+}
+
+html.dark {
+  --pf-bg: #131516;
+  --pf-surface: #1a1d1f;
+  --pf-text: #e9e7e3;
+  --pf-text-2: #bdbab4;
+  --pf-text-3: #94918b;
+  --pf-border: #2d3134;
+  --pf-border-strong: #484d51;
+  --pf-accent: #9db8d9;
+  --pf-accent-hover: #bccfe6;
+  --pf-on-accent: #131516;
+  --pf-focus: #9db8d9;
+  --pf-desk: #0d0f10;
+  --pf-sheet: #1a1d1f;
+  color-scheme: dark;
+}
+
+/* Overrides the Tailwind body background from app/globals.css on this page. */
+html, body {
+  margin: 0;
+  background: var(--pf-bg) !important;
+  -webkit-text-size-adjust: 100%;
+}
+
+.portfolio-page button {
+  font: inherit;
+}
+
+.portfolio-page img,
+.portfolio-page svg {
+  max-width: 100%;
+}
+
+.portfolio-page {
+  background: var(--pf-bg);
+  color: var(--pf-text);
+  font-family: var(--pf-sans);
+  font-size: 16px;
+  line-height: 1.65;
+  min-height: 100vh;
+}
+
+.portfolio-page *, .portfolio-page *::before, .portfolio-page *::after {
+  box-sizing: border-box;
+}
+
+.portfolio-page a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.portfolio-page a:focus-visible,
+.portfolio-page button:focus-visible {
+  outline: 2px solid var(--pf-focus);
+  outline-offset: 2px;
+}
+
+.portfolio-page h1, .portfolio-page h2, .portfolio-page h3, .portfolio-page h4 {
+  font-family: var(--pf-serif);
+  font-weight: 600;
+  color: var(--pf-text);
+  margin: 0;
+  letter-spacing: 0;
+}
+
+.portfolio-page p {
+  margin: 0;
+}
+
+.skip-link {
+  position: absolute;
+  left: 16px;
+  top: -48px;
+  z-index: 2000;
+  background: var(--pf-accent);
+  color: var(--pf-on-accent);
+  padding: 8px 14px;
+  border-radius: 3px;
+  font-family: var(--pf-sans);
+}
+
+.skip-link:focus {
+  top: 12px;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+.portfolio-page .wrap {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* Navigation */
+.portfolio-page .site-nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--pf-bg);
+  border-bottom: 1px solid var(--pf-border);
+}
+
+.portfolio-page .nav-shell {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  height: 60px;
+}
+
+.portfolio-page .nav-logo {
+  display: inline-flex;
+  align-items: center;
+  color: var(--pf-text);
+  white-space: nowrap;
+}
+
+.portfolio-page .nav-portrait {
+  display: block;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid var(--pf-border-strong);
+  object-fit: cover;
+}
+
+.portfolio-page .nav-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.portfolio-page .nav-links-desktop {
+  display: flex;
+  gap: 24px;
+}
+
+.portfolio-page .nav-links a {
+  font-size: 14px;
+  color: var(--pf-text-2);
+}
+
+.portfolio-page .nav-links a:hover {
+  color: var(--pf-text);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.portfolio-page .nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.portfolio-page .theme-toggle,
+.portfolio-page .nav-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background: transparent;
+  color: var(--pf-text-2);
+  border: 1px solid var(--pf-border);
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.portfolio-page .theme-toggle:hover,
+.portfolio-page .nav-toggle:hover {
+  color: var(--pf-text);
+  border-color: var(--pf-border-strong);
+}
+
+.portfolio-page .nav-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.portfolio-page .nav-toggle span {
+  display: block;
+  width: 16px;
+  height: 1.5px;
+  background: currentColor;
+}
+
+.portfolio-page .mobile-nav-backdrop,
+.portfolio-page .mobile-nav-card {
+  display: none;
+}
+
+/* Sections */
+.portfolio-page section {
+  padding: 64px 0;
+  border-top: 1px solid var(--pf-border);
+}
+
+.portfolio-page #hero {
+  border-top: 0;
+  padding: 88px 0 72px;
+}
+
+.portfolio-page .section-label {
+  font-family: var(--pf-serif);
+  font-size: 26px;
+  font-weight: 600;
+  color: var(--pf-text);
+  margin-bottom: 28px;
+}
+
+.portfolio-page .section-sublabel {
+  font-family: var(--pf-serif);
+  font-size: 19px;
+  font-weight: 600;
+  color: var(--pf-text);
+  margin: 48px 0 8px;
+}
+
+.portfolio-page .projects-note {
+  color: var(--pf-text-2);
+  max-width: 720px;
+  margin-bottom: 12px;
+}
+
+/* Hero */
+.portfolio-page .name {
+  font-size: 48px;
+  line-height: 1.1;
+  font-weight: 600;
+}
+
+.portfolio-page .hero-role {
+  margin-top: 14px;
+  font-size: 18px;
+  color: var(--pf-text-2);
+}
+
+.portfolio-page .hero-bio {
+  margin-top: 24px;
+  max-width: 660px;
+  font-size: 17px;
+  color: var(--pf-text-2);
+}
+
+.portfolio-page .hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 32px;
+}
+
+.portfolio-page .btn {
+  display: inline-flex;
+  align-items: center;
+  height: 40px;
+  padding: 0 18px;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--pf-text);
+  background: transparent;
+  border: 1px solid var(--pf-border-strong);
+  border-radius: 3px;
+}
+
+.portfolio-page .btn:hover {
+  border-color: var(--pf-text);
+}
+
+.portfolio-page .btn-primary {
+  background: var(--pf-accent);
+  border-color: var(--pf-accent);
+  color: var(--pf-on-accent);
+}
+
+.portfolio-page .btn-primary:hover {
+  background: var(--pf-accent-hover);
+  border-color: var(--pf-accent-hover);
+}
+
+/* About and stack */
+.portfolio-page .about-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 48px;
+}
+
+.portfolio-page .about-text p {
+  color: var(--pf-text-2);
+}
+
+.portfolio-page .about-text p + p {
+  margin-top: 16px;
+}
+
+.portfolio-page .stack-group + .stack-group {
+  margin-top: 24px;
+}
+
+.portfolio-page .stack-group h3 {
+  font-family: var(--pf-sans);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--pf-text-3);
+  margin-bottom: 10px;
+}
+
+.portfolio-page .stack-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(132px, 1fr));
+  gap: 8px;
+}
+
+.portfolio-page .stack-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  height: 40px;
+  padding: 0 12px;
+  font-size: 14px;
+  color: var(--pf-text);
+  border: 1px solid var(--pf-border);
+  border-radius: 3px;
+}
+
+.portfolio-page .stack-item svg {
+  flex: none;
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+}
+
+.portfolio-page .stack-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 6px 16px;
+  font-size: 14px;
+  color: var(--pf-text);
+}
+
+.portfolio-page .stack-list li {
+  padding-left: 14px;
+  position: relative;
+}
+
+.portfolio-page .stack-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.7em;
+  width: 5px;
+  height: 1px;
+  background: var(--pf-text-3);
+}
+
+/* Entries: research, case studies, experience */
+.portfolio-page .projects-grid {
+  display: block;
+}
+
+.portfolio-page .project-card {
+  padding: 28px 0;
+  border-bottom: 1px solid var(--pf-border);
+}
+
+.portfolio-page .project-card:first-child {
+  border-top: 1px solid var(--pf-border);
+  margin-top: 20px;
+}
+
+.portfolio-page .project-card-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 8px;
+}
+
+.portfolio-page .ai-index {
+  font-size: 13px;
+  color: var(--pf-text-3);
+  font-variant-numeric: tabular-nums;
+}
+
+.portfolio-page .project-status {
+  font-size: 13px;
+  color: var(--pf-text-3);
+}
+
+.portfolio-page .project-card h3 {
+  font-size: 21px;
+  line-height: 1.35;
+}
+
+.portfolio-page .ai-pattern {
+  margin-top: 6px;
+  font-size: 14px;
+  font-style: italic;
+  color: var(--pf-text-2);
+}
+
+.portfolio-page .ai-facts {
+  margin: 18px 0 0;
+}
+
+.portfolio-page .ai-facts > div {
+  display: grid;
+  grid-template-columns: 150px minmax(0, 1fr);
+  gap: 16px;
+  padding: 8px 0;
+}
+
+.portfolio-page .ai-facts dt {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--pf-text-3);
+  padding-top: 2px;
+}
+
+.portfolio-page .ai-facts dd {
+  margin: 0;
+  font-size: 15px;
+  color: var(--pf-text-2);
+}
+
+.portfolio-page .tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 16px;
+}
+
+.portfolio-page .tag {
+  font-size: 12px;
+  line-height: 1;
+  padding: 5px 8px;
+  color: var(--pf-text-2);
+  border: 1px solid var(--pf-border);
+  border-radius: 2px;
+}
+
+.portfolio-page .project-link {
+  display: inline-block;
+  margin-top: 16px;
+  margin-right: 20px;
+  font-size: 14px;
+  color: var(--pf-accent);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.portfolio-page .project-link-disabled {
+  color: var(--pf-text-3);
+  text-decoration: none;
+}
+
+/* Articles and lists */
+.portfolio-page .writing-item {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: baseline;
+  gap: 24px;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--pf-border);
+}
+
+.portfolio-page .section-sublabel + div .writing-item:first-child {
+  border-top: 1px solid var(--pf-border);
+  margin-top: 12px;
+}
+
+.portfolio-page .wt {
+  display: block;
+  font-size: 16px;
+  color: var(--pf-text);
+}
+
+.portfolio-page a.writing-item:hover .wt {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.portfolio-page .wm {
+  display: block;
+  margin-top: 2px;
+  font-size: 13px;
+  color: var(--pf-text-3);
+}
+
+.portfolio-page .wa {
+  font-size: 14px;
+  color: var(--pf-accent);
+  white-space: nowrap;
+}
+
+/* Standards */
+.portfolio-page .approach-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 32px 48px;
+}
+
+.portfolio-page .approach-num {
+  display: block;
+  font-size: 13px;
+  color: var(--pf-text-3);
+  font-variant-numeric: tabular-nums;
+  margin-bottom: 6px;
+}
+
+.portfolio-page .approach-item h3 {
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+
+.portfolio-page .approach-item p {
+  font-size: 15px;
+  color: var(--pf-text-2);
+}
+
+/* Experience and training */
+.portfolio-page .exp-item {
+  display: grid;
+  grid-template-columns: 200px minmax(0, 1fr);
+  gap: 32px;
+  padding: 28px 0;
+  border-bottom: 1px solid var(--pf-border);
+}
+
+.portfolio-page .exp-item:first-child {
+  border-top: 1px solid var(--pf-border);
+}
+
+.portfolio-page .exp-period {
+  font-size: 13px;
+  color: var(--pf-text-3);
+  font-variant-numeric: tabular-nums;
+}
+
+.portfolio-page .exp-company {
+  margin-top: 4px;
+  font-weight: 600;
+  color: var(--pf-text);
+}
+
+.portfolio-page .exp-loc {
+  font-size: 13px;
+  color: var(--pf-text-3);
+}
+
+.portfolio-page .exp-content h3 {
+  font-size: 19px;
+  margin-bottom: 8px;
+}
+
+.portfolio-page .exp-content p {
+  font-size: 15px;
+  color: var(--pf-text-2);
+}
+
+/* Contact */
+.portfolio-page .contact-block h3 {
+  font-size: 24px;
+  margin-bottom: 12px;
+}
+
+.portfolio-page .contact-block p {
+  max-width: 620px;
+  color: var(--pf-text-2);
+}
+
+.portfolio-page .contact-links {
+  margin-top: 24px;
+  border-top: 1px solid var(--pf-border);
+}
+
+.portfolio-page .contact-link {
+  display: grid;
+  grid-template-columns: 120px minmax(0, 1fr);
+  gap: 16px;
+  padding: 12px 0;
+  font-size: 15px;
+  color: var(--pf-text);
+  border-bottom: 1px solid var(--pf-border);
+}
+
+.portfolio-page .contact-link:hover {
+  color: var(--pf-accent);
+}
+
+.portfolio-page .clabel {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--pf-text-3);
+  padding-top: 2px;
+}
+
+/* Footer */
+.portfolio-page footer {
+  border-top: 1px solid var(--pf-border);
+  padding: 24px 0 32px;
+}
+
+.portfolio-page footer .wrap {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  font-size: 13px;
+  color: var(--pf-text-3);
+}
+
+/* Research list */
+.portfolio-page .paper-list {
+  margin-top: 20px;
+  border-top: 1px solid var(--pf-border);
+}
+
+.portfolio-page .paper-index {
+  display: block;
+  font-size: 13px;
+  color: var(--pf-text-3);
+  font-variant-numeric: tabular-nums;
+  margin-bottom: 2px;
+}
+
+.portfolio-page .paper-link .wt {
+  font-family: var(--pf-serif);
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.portfolio-page .paper-link:hover .wt {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* Paper page */
+.portfolio-page.paper-page {
+  background: var(--pf-desk);
+}
+
+.portfolio-page .paper-back {
+  font-size: 14px;
+  color: var(--pf-text-2);
+  margin-right: 8px;
+}
+
+.portfolio-page .paper-back:hover {
+  color: var(--pf-text);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.portfolio-page .paper-desk {
+  padding: 48px 16px 64px;
+}
+
+.portfolio-page .paper {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 64px 72px;
+  background: var(--pf-sheet);
+  border: 1px solid var(--pf-border);
+  font-family: var(--pf-serif);
+  font-size: 17px;
+  line-height: 1.7;
+  color: var(--pf-text);
+}
+
+.portfolio-page .paper-kicker {
+  font-family: var(--pf-sans);
+  font-size: 13px;
+  color: var(--pf-text-3);
+  text-align: center;
+}
+
+.portfolio-page .paper h1 {
+  margin-top: 16px;
+  font-size: 30px;
+  line-height: 1.3;
+  text-align: center;
+}
+
+.portfolio-page .paper-byline {
+  margin-top: 16px;
+  font-family: var(--pf-sans);
+  font-size: 14px;
+  color: var(--pf-text-2);
+  text-align: center;
+}
+
+.portfolio-page .paper-abstract {
+  margin: 40px 0 8px;
+  padding: 24px 0;
+  border-top: 1px solid var(--pf-border);
+  border-bottom: 1px solid var(--pf-border);
+}
+
+.portfolio-page .paper-abstract h2 {
+  font-size: 15px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.portfolio-page .paper-abstract p {
+  font-size: 16px;
+}
+
+.portfolio-page .paper-keywords {
+  margin-top: 14px;
+  font-size: 14px !important;
+  color: var(--pf-text-2);
+}
+
+.portfolio-page .paper-keywords span {
+  font-style: italic;
+}
+
+.portfolio-page .paper-section {
+  padding: 0;
+  border: 0;
+  margin-top: 32px;
+}
+
+.portfolio-page .paper-section h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.portfolio-page .paper-section p + p {
+  margin-top: 12px;
+}
+
+.portfolio-page .paper-section ul {
+  margin: 0;
+  padding-left: 22px;
+  list-style: disc;
+}
+
+.portfolio-page .paper-section li + li {
+  margin-top: 6px;
+}
+
+.portfolio-page .paper-status {
+  margin-top: 48px;
+  padding: 24px 28px;
+  border: 1px solid var(--pf-border-strong);
+  font-family: var(--pf-sans);
+  font-size: 15px;
+  color: var(--pf-text-2);
+}
+
+.portfolio-page .paper-status h2 {
+  font-family: var(--pf-serif);
+  font-size: 19px;
+  margin-bottom: 8px;
+}
+
+.portfolio-page .paper-status p + p {
+  margin-top: 10px;
+}
+
+.portfolio-page .paper-status .project-link {
+  margin-top: 0;
+}
+
+.portfolio-page .paper-pager {
+  max-width: 760px;
+  margin: 24px auto 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.portfolio-page .paper-pager-link {
+  display: block;
+  padding: 16px 0;
+  border-top: 1px solid var(--pf-border-strong);
+}
+
+.portfolio-page .paper-pager-next {
+  text-align: right;
+}
+
+.portfolio-page .paper-pager-link .wt {
+  font-family: var(--pf-serif);
+  font-size: 15px;
+}
+
+.portfolio-page .paper-pager-link:hover .wt {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.portfolio-page .paper-pager-link .wt {
+  overflow-wrap: anywhere;
+}
+
+.portfolio-page .ft-location {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* The KICC icon is drawn in dark greys; inverted so it reads on the dark theme. */
+.portfolio-page .loc-icon {
+  display: block;
+  width: 20px;
+  height: 20px;
+}
+
+html.dark .portfolio-page .loc-icon {
+  filter: invert(1) brightness(0.85);
+}
+
+@media (max-width: 860px) {
+  .portfolio-page .nav-links-desktop {
+    display: none;
+  }
+
+  .portfolio-page .nav-toggle {
+    display: inline-flex;
+  }
+
+  .portfolio-page .mobile-nav-card.open {
+    display: block;
+    position: fixed;
+    top: 60px;
+    left: 0;
+    right: 0;
+    z-index: 99;
+    background: var(--pf-bg);
+    border-bottom: 1px solid var(--pf-border);
+    padding: 8px 16px 16px;
+  }
+
+  .portfolio-page .mobile-nav-card .nav-links a {
+    display: block;
+    padding: 10px 0;
+    font-size: 16px;
+    color: var(--pf-text);
+    border-bottom: 1px solid var(--pf-border);
+  }
+
+  .portfolio-page .mobile-nav-backdrop {
+    display: block;
+    position: fixed;
+    inset: 60px 0 0;
+    z-index: 98;
+    background: transparent;
+    border: 0;
+  }
+
+  .portfolio-page .about-grid,
+  .portfolio-page .approach-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 32px;
+  }
+}
+
+@media (max-width: 640px) {
+  .portfolio-page .wrap {
+    padding: 0 16px;
+  }
+
+  .portfolio-page section {
+    padding: 48px 0;
+  }
+
+  .portfolio-page #hero {
+    padding: 56px 0 48px;
+  }
+
+  .portfolio-page .name {
+    font-size: 38px;
+  }
+
+  .portfolio-page .exp-item,
+  .portfolio-page .ai-facts > div,
+  .portfolio-page .contact-link {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 4px;
+  }
+
+  .portfolio-page .exp-item {
+    gap: 12px;
+  }
+
+  .portfolio-page footer .wrap {
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .portfolio-page .paper-desk {
+    padding: 16px 0 40px;
+  }
+
+  .portfolio-page .paper {
+    padding: 32px 20px;
+    border-left: 0;
+    border-right: 0;
+    font-size: 16px;
+  }
+
+  .portfolio-page .paper h1 {
+    font-size: 24px;
+  }
+
+  .portfolio-page .paper-pager {
+    grid-template-columns: minmax(0, 1fr);
+    padding: 0 16px;
+  }
+
+  .portfolio-page .paper-pager-next {
+    text-align: left;
+  }
+}
+  

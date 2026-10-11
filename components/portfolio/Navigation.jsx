@@ -3,7 +3,8 @@
 import { useState } from 'react';
 import ThemeToggle from './ThemeToggle';
 
-export default function Navigation() {
+// Receives `sections` as a prop so the portfolio data stays on the server.
+export default function Navigation({ sections }) {
   const [menuOpen, setMenuOpen] = useState(false);
 
   const closeMenu = () => setMenuOpen(false);
@@ -11,17 +12,14 @@ export default function Navigation() {
   return (
     <nav aria-label="Primary" className="site-nav">
       <div className="wrap nav-shell">
-        <a href="/" className="nav-logo nav-signature">Ferdynand</a>
+        <a href="/" className="nav-logo" aria-label="Ferdynand Odhiambo, home">{/* A pre-sized 80 px file (40 px at 2x); next/image would add client code for no gain. */}
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/ferdynand-80.jpg" alt="" width="40" height="40" decoding="async" className="nav-portrait" /></a>
 
         <ul className="nav-links nav-links-desktop">
-          <li><a href="#about">About</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#work">Experience</a></li>
-          <li><a href="#training">Training</a></li>
-          <li><a href="#writing">Writing</a></li>
-          <li><a href="#contact">Contact</a></li>
-          <li><a href="/webdev">Web Dev</a></li>
-          <li><a href="/brand">Creative</a></li>
+          {sections.map((section) => (
+            <li key={section.id}><a href={`#${section.id}`}>{section.label}</a></li>
+          ))}
         </ul>
 
         <div className="nav-actions">
@@ -44,14 +42,9 @@ export default function Navigation() {
 
       <div className={`mobile-nav-card${menuOpen ? ' open' : ''}`}>
         <ul className="nav-links nav-links-mobile">
-          <li><a href="#about" onClick={closeMenu}>About</a></li>
-          <li><a href="#projects" onClick={closeMenu}>Projects</a></li>
-          <li><a href="#work" onClick={closeMenu}>Experience</a></li>
-          <li><a href="#training" onClick={closeMenu}>Training</a></li>
-          <li><a href="#writing" onClick={closeMenu}>Writing</a></li>
-          <li><a href="#contact" onClick={closeMenu}>Contact</a></li>
-          <li><a href="/webdev" onClick={closeMenu}>Web Dev</a></li>
-          <li><a href="/brand" onClick={closeMenu}>Creative</a></li>
+          {sections.map((section) => (
+            <li key={section.id}><a href={`#${section.id}`} onClick={closeMenu}>{section.label}</a></li>
+          ))}
         </ul>
       </div>
     </nav>

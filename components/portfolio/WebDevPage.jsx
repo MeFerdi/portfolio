@@ -102,7 +102,7 @@ export default function WebDevPage() {
 						<a href="/" className="nav-logo nav-signature">Ferdynand</a>
 						<ul className="nav-links nav-links-desktop">
 							<li><a href="/">portfolio</a></li>
-							<li><a href="/#projects">projects</a></li>
+							<li><a href="/#research">research</a></li>
 							<li><a href="/brand">Creative</a></li>
 						</ul>
 						<div className="nav-actions">
@@ -126,7 +126,7 @@ export default function WebDevPage() {
 					<div className={`mobile-nav-card${menuOpen ? ' open' : ''}`}>
 						<ul className="nav-links nav-links-mobile">
 							<li><a href="/" onClick={closeMenu}>Portfolio</a></li>
-							<li><a href="/#projects" onClick={closeMenu}>Projects</a></li>
+							<li><a href="/#research" onClick={closeMenu}>Research</a></li>
 							<li><a href="/brand" onClick={closeMenu}>Creative</a></li>
 						</ul>
 					</div>
