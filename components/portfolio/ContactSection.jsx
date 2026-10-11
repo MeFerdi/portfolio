@@ -2,9 +2,9 @@ export default function ContactSection() {
   return (
     <section id="contact">
       <div className="wrap">
-        <div className="section-label">Contact</div>
+        <h2 className="section-label">Contact</h2>
         <div className="contact-block">
-          <h2>Open to AI product engineering roles.</h2>
+          <h3>Open to AI product engineering roles.</h3>
           <p>
             Available for full-time, contract and freelance positions, remote or based in Nairobi. Please get
             in touch by email or LinkedIn.

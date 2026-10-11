@@ -1,3 +1,4 @@
+import '../globals.css';
 import BrandPage from '../../components/portfolio/BrandPage';
 
 export const metadata = {

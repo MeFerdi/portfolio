@@ -1,3 +1,4 @@
+import '../globals.css';
 import WebDevPage from '../../components/portfolio/WebDevPage';
 
 export const metadata = {

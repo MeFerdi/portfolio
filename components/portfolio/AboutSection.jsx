@@ -1,12 +1,39 @@
+import { stackIcons } from './stackIcons';
+
+// Each item is a key of `stackIcons`, shown with its logo from the /stack-icons.svg
+// sprite, or plain text where no official mark is available.
 function StackGroup({ title, items }) {
   return (
     <div className="stack-group">
-      <h4>{title}</h4>
+      <h3>{title}</h3>
       <div className="stack-row">
-        {items.map((item) => (
-          <span key={item} className="stack-chip">{item}</span>
-        ))}
+        {items.map((item) => {
+          const icon = stackIcons[item];
+          return (
+            <span key={item} className="stack-item">
+              {icon && (
+                <svg aria-hidden="true" focusable="false">
+                  <use href={`/stack-icons.svg#${item}`} />
+                </svg>
+              )}
+              {icon ? icon.label : item}
+            </span>
+          );
+        })}
       </div>
+    </div>
+  );
+}
+
+function CapabilityList({ title, items }) {
+  return (
+    <div className="stack-group">
+      <h3>{title}</h3>
+      <ul className="stack-list">
+        {items.map((item) => (
+          <li key={item}>{item}</li>
+        ))}
+      </ul>
     </div>
   );
 }
@@ -15,7 +42,7 @@ export default function AboutSection() {
   return (
     <section id="about">
       <div className="wrap">
-        <div className="section-label">About</div>
+        <h2 className="section-label">About</h2>
         <div className="about-grid">
           <div className="about-text">
             <p>
@@ -30,10 +57,11 @@ export default function AboutSection() {
             </p>
           </div>
           <div>
-            <StackGroup title="AI engineering" items={["LLM integration", "Tool calling", "Structured output", "Retrieval-augmented generation", "pgvector", "Evaluation"]} />
-            <StackGroup title="Backend" items={["Java", "Go", "Python", "Node.js", "PostgreSQL", "Redis", "Kafka"]} />
-            <StackGroup title="Frontend" items={["TypeScript", "React", "Next.js"]} />
-            <StackGroup title="Quality and delivery" items={["Jest", "Playwright", "GitHub Actions", "Docker"]} />
+            <CapabilityList title="AI engineering" items={["LLM integration", "Tool calling", "Structured output", "Retrieval-augmented generation", "pgvector", "Evaluation"]} />
+            <StackGroup title="Models and validation" items={["claude", "zod"]} />
+            <StackGroup title="Backend" items={["java", "go", "python", "node", "postgresql", "redis", "kafka"]} />
+            <StackGroup title="Frontend" items={["typescript", "angular"]} />
+            <StackGroup title="Quality and delivery" items={["jest", "Playwright", "githubactions", "docker"]} />
           </div>
         </div>
       </div>

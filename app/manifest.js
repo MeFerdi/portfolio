@@ -2,11 +2,11 @@ export default function manifest() {
   return {
     name: 'Ferdynand Odhiambo Portfolio',
     short_name: 'Ferdynand',
-    description: 'Portfolio showcasing backend, web, and product work.',
+    description: 'Portfolio of Ferdynand Odhiambo, AI-native product engineer.',
     start_url: '/',
     display: 'standalone',
-    background_color: '#0f172a',
-    theme_color: '#1d4ed8',
+    background_color: '#ffffff',
+    theme_color: '#1f3a5f',
     orientation: 'portrait',
     icons: [
       {

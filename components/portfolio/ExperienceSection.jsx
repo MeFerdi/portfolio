@@ -17,22 +17,13 @@ const experiences = [
       'Contributed to Go-based financial microservices at a Kenyan fintech company. Worked on payment event processing, service-to-service communication, and PostgreSQL-backed transaction workflows. Debugged production issues by tracing data flow across distributed services under the guidance of senior engineers.',
     tags: ['Go', 'PostgreSQL', 'System Design', 'Data Modelling'],
   },
-  {
-    period: 'Apr 2024 - Feb 2026',
-    company: 'Zone01 Kisumu',
-    location: 'Kisumu, Kenya',
-    role: 'Software Developer',
-    description:
-      'Built backend systems for a talent management platform - REST APIs, candidate management, and evaluation workflows. Reduced PostgreSQL query latency by 20% on a high-row-count table by identifying sequential scans with EXPLAIN ANALYZE and adding targeted indexes.',
-    tags: ['Python', 'Go', 'PostgreSQL', 'Docker', 'Django REST'],
-  },
 ];
 
 export default function ExperienceSection() {
   return (
     <section id="work">
       <div className="wrap">
-        <div className="section-label">Experience</div>
+        <h2 className="section-label">Experience</h2>
         <div>
           {experiences.map((exp) => (
             <div key={`${exp.company}-${exp.period}`} className="exp-item">

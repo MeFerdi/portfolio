@@ -1,19 +1,19 @@
 const principles = [
   {
     title: 'Validated model output',
-    body: 'All model responses are validated against a defined schema before they are used. Responses that do not conform are rejected and retried.',
+    body: 'All model responses are validated against a defined schema before use. Decisions that move or reconcile money are made by deterministic rules, and the model supplies inputs to those rules only.',
   },
   {
     title: 'Controlled actions',
-    body: 'AI agents have read access to the data they require. Any action that modifies data passes through a permission layer that enforces confirmation, customer scoping and rate limits.',
+    body: 'Agents have read access to the data they require. Any action that modifies data passes through a permission layer outside the model, which enforces confirmation, customer scoping and rate limits.',
   },
   {
     title: 'Continuous evaluation',
-    body: 'Answer quality is measured against a reference dataset in the CI pipeline, covering retrieval accuracy, factual consistency and resistance to prompt injection.',
+    body: 'Quality is measured against a labelled reference set in the CI pipeline, covering extraction accuracy, retrieval quality, faithfulness and resistance to prompt injection.',
   },
   {
-    title: 'Measured outcomes',
-    body: 'Each system is assessed against a business metric such as time saved, tickets resolved or user retention, using benchmarks and control groups where appropriate.',
+    title: 'Reported cost and failure data',
+    body: 'Each system is published with its cost per run, p95 latency, pinned model versions and documented failure modes, with a test for each documented failure.',
   },
 ];
 
@@ -21,7 +21,7 @@ export default function ApproachSection() {
   return (
     <section id="approach">
       <div className="wrap">
-        <div className="section-label">Engineering principles</div>
+        <h2 className="section-label">Engineering standards</h2>
         <div className="approach-grid">
           {principles.map((p, i) => (
             <div key={p.title} className="approach-item">
