@@ -5,42 +5,107 @@
   "copyrightYear": "2026",
   "site": {
     "title": "Ferdynand Odhiambo",
-    "description": "Portfolio of Ferdynand Odhiambo, AI-native product engineer."
+    "description": "Portfolio of Ferdynand Odhiambo, AI-Native Product Engineer building applications, platforms and developer tools."
   },
   "meta": {
     "title": "Ferdynand Odhiambo - AI-Native Product Engineer",
-    "description": "AI-native product engineer based in Nairobi, Kenya. Software products with integrated LLM agents, retrieval systems and automated workflows."
+    "description": "AI-Native Product Engineer in Nairobi, Kenya, building cross-platform applications, backend platforms and tools for distributed systems."
   },
   "hero": {
     "role": "AI-Native Product Engineer",
-    "bio": "AI-native product engineer. I build software products with AI capabilities integrated into the core of the system, including LLM agents, retrieval systems and automated workflows. My background is in backend engineering for fintech and talent platforms, and my current research concerns the evaluation and security of AI systems that handle financial data.",
+    "bio": "I work across product and engineering: finding workflows where AI can create business value, then building the applications, services and platform capabilities to deliver it. I’m growing my open-source work around tools for testing distributed and network-dependent software.",
     "actions": [
-      { "label": "Research", "href": "#research", "primary": true },
+      { "label": "Selected work", "href": "/case-studies", "primary": true },
       { "label": "Experience", "href": "#work", "primary": false },
-      { "label": "Contact", "href": "mailto:oferdinaddev112@gmail.com", "primary": false }
+      {
+        "label": "Contact",
+        "href": "mailto:oferdinaddev112@gmail.com",
+        "primary": false
+      }
     ]
   },
   "about": {
     "paragraphs": [
-      "I am a product engineer with a background in backend development. I have built and maintained Go and Python services for fintech and talent management platforms, including payment event processing, transaction workflows and data pipelines.",
-      "My current focus is the integration of large language models into production software. I apply the standards expected of financial systems to this work: validated inputs and outputs, controlled access to data and actions, automated testing and measurable results."
+      "I build across the product stack: turning business workflows into cross-platform applications, then supporting them with backend services, integrations and infrastructure designed to remain reliable as products grow. My experience includes Go and Python services for payment processing, event-driven workflows, data pipelines and microservices.",
+      "AI is one capability I apply where it can improve a workflow. I use validated outputs, deterministic controls and clear evaluation; my work includes financial document processing and stablecoin risk systems. My next open-source focus is developer tooling that helps teams test and operate distributed applications under slow, unreliable or unavailable network conditions."
     ],
     "skills": [
-      { "title": "AI engineering", "display": "list", "items": ["LLM integration", "Tool calling", "Structured output", "Retrieval-augmented generation", "pgvector", "Evaluation"] },
-      { "title": "Models and validation", "display": "icons", "items": ["claude", "zod"] },
-      { "title": "Backend", "display": "icons", "items": ["java", "go", "python", "node", "postgresql", "redis", "kafka"] },
-      { "title": "Frontend", "display": "icons", "items": ["typescript", "angular"] },
-      { "title": "Quality and delivery", "display": "icons", "items": ["jest", "Playwright", "githubactions", "docker"] }
+      {
+        "title": "AI engineering",
+        "display": "list",
+        "items": [
+          "LLM integration",
+          "Tool calling",
+          "Structured output",
+          "Retrieval-augmented generation",
+          "pgvector",
+          "Evaluation"
+        ]
+      },
+      {
+        "title": "Models and validation",
+        "display": "icons",
+        "items": ["claude", "zod"]
+      },
+      {
+        "title": "Backend",
+        "display": "icons",
+        "items": [
+          "java",
+          "go",
+          "python",
+          "node",
+          "postgresql",
+          "redis",
+          "kafka"
+        ]
+      },
+      {
+        "title": "Platform engineering",
+        "display": "list",
+        "items": [
+          "Service APIs",
+          "Event-driven systems",
+          "Data pipelines",
+          "Distributed service debugging"
+        ]
+      },
+      {
+        "title": "Frontend",
+        "display": "icons",
+        "items": ["typescript", "angular"]
+      },
+      {
+        "title": "Quality and delivery",
+        "display": "icons",
+        "items": ["jest", "Playwright", "githubactions", "docker"]
+      }
     ]
   },
   "contact": {
-    "heading": "Open to AI product engineering roles.",
-    "body": "Available for full-time, contract and freelance positions, remote or based in Nairobi. Please get in touch by email or LinkedIn.",
+    "heading": "Open to AI-native product, platform and developer tooling roles.",
+    "body": "Interested in building valuable applications and reliable systems for distributed software. Available for full-time, contract and freelance work, remote or based in Nairobi.",
     "links": [
-      { "label": "email", "text": "oferdinaddev112@gmail.com", "href": "mailto:oferdinaddev112@gmail.com" },
-      { "label": "github", "text": "github.com/MeFerdi", "href": "https://github.com/MeFerdi" },
-      { "label": "linkedin", "text": "in/ferdynand-odhiambo", "href": "https://linkedin.com/in/ferdynand-odhiambo" },
-      { "label": "writing", "text": "dev.to/ferdinandodhiambo", "href": "https://dev.to/ferdinandodhiambo" }
+      {
+        "label": "email",
+        "text": "oferdinaddev112@gmail.com",
+        "href": "mailto:oferdinaddev112@gmail.com"
+      },
+      {
+        "label": "github",
+        "text": "github.com/MeFerdi",
+        "href": "https://github.com/MeFerdi"
+      },
+      {
+        "label": "linkedin",
+        "text": "in/ferdynand-odhiambo",
+        "href": "https://linkedin.com/in/ferdynand-odhiambo"
+      },
+      {
+        "label": "writing",
+        "text": "dev.to/ferdinandodhiambo",
+        "href": "https://dev.to/ferdinandodhiambo"
+      }
     ]
   }
 }

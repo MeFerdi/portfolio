@@ -2,13 +2,17 @@
   "sections": [
     { "id": "about", "nav": "About", "heading": "About" },
     {
+      "id": "case-studies",
+      "nav": "Case studies",
+      "heading": "Case studies"
+    },
+    {
       "id": "research",
       "nav": "Technical reports",
       "heading": "Technical reports",
       "intro": "My technical work examines the evaluation and security of AI systems that handle financial data. The current programme documents three studies on a single domain: the financial records of a goods distributor, comprising statements, invoices and payments. Each study is documented as a technical report with its evaluation data, cost per run, latency figures and documented failure modes, together with the code required to reproduce the results.",
       "articlesHeading": "Articles"
     },
-    { "id": "case-studies", "nav": "Case studies", "heading": "Case studies" },
     { "id": "open-source", "nav": "Open source", "heading": "Open source" },
     { "id": "approach", "nav": null, "heading": "Engineering standards" },
     { "id": "work", "nav": "Experience", "heading": "Experience" },

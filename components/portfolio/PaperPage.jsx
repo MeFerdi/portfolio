@@ -39,7 +39,7 @@ export default function PaperPage({ report }) {
               />
             </Link>
             <div className="nav-actions">
-              <Link href="/#research" className="paper-back">
+              <Link href="/case-studies" className="paper-back">
                 Technical reports
               </Link>
               <ThemeToggle />

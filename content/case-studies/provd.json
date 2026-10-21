@@ -1,7 +1,7 @@
 {
   "slug": "provd",
   "order": 1,
-  "status": "draft",
+  "status": "published",
   "lifecycle": "archived",
   "title": "Explainable pre-release risk checks for stablecoin payments, with signed and anchored decision records",
   "client": "Provd (own product)",

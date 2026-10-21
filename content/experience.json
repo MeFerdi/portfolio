@@ -1,5 +1,13 @@
 [
   {
+    "period": "Current",
+    "company": "Independent",
+    "location": "Nairobi, Kenya",
+    "role": "Independent Contractor",
+    "description": "Taking on client projects as needs arise, with scope defined by each engagement.",
+    "tags": ["Node.js", "TypeScript", "Contract", "Client projects"]
+  },
+  {
     "period": "Oct 2025 - Dec 2025",
     "company": "LD Talent",
     "location": "Remote",
