@@ -1,9 +1,12 @@
 import { Source_Serif_4, Source_Sans_3 } from 'next/font/google'
 import PWARegister from '../components/portfolio/PWARegister';
+import { getProfile } from '../lib/content';
+
+const { site } = getProfile();
 
 export const metadata = {
-  title: 'Ferdynand Odhiambo',
-  description: 'Portfolio of Ferdynand Odhiambo, AI-native product engineer.',
+  title: site.title,
+  description: site.description,
   manifest: '/manifest.webmanifest',
   icons: { icon: '/icon-192.svg', apple: '/icon-192.svg' },
   themeColor: [
