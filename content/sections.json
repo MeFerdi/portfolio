@@ -14,7 +14,7 @@
       "articlesHeading": "Articles"
     },
     { "id": "open-source", "nav": "Open source", "heading": "Open source" },
-    { "id": "approach", "nav": null, "heading": "Engineering standards" },
+    { "id": "approach", "nav": null, "heading": "Engineering principles" },
     { "id": "work", "nav": "Experience", "heading": "Experience" },
     {
       "id": "training",
