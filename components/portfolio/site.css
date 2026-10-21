@@ -19,8 +19,8 @@ Fonts come from app/layout.js: --font-serif for headings, --font-sans for text.
   --pf-focus: #1f3a5f;
   --pf-desk: #efeeea;
   --pf-sheet: #ffffff;
-  --pf-serif: var(--font-serif), Georgia, 'Times New Roman', serif;
-  --pf-sans: var(--font-sans), 'Segoe UI', Arial, sans-serif;
+  --pf-serif: var(--font-serif), Georgia, "Times New Roman", serif;
+  --pf-sans: var(--font-sans), "Segoe UI", Arial, sans-serif;
   color-scheme: light;
 }
 
@@ -42,7 +42,8 @@ html.dark {
 }
 
 /* Overrides the Tailwind body background from app/globals.css on this page. */
-html, body {
+html,
+body {
   margin: 0;
   background: var(--pf-bg) !important;
   -webkit-text-size-adjust: 100%;
@@ -66,7 +67,9 @@ html, body {
   min-height: 100vh;
 }
 
-.portfolio-page *, .portfolio-page *::before, .portfolio-page *::after {
+.portfolio-page *,
+.portfolio-page *::before,
+.portfolio-page *::after {
   box-sizing: border-box;
 }
 
@@ -81,7 +84,10 @@ html, body {
   outline-offset: 2px;
 }
 
-.portfolio-page h1, .portfolio-page h2, .portfolio-page h3, .portfolio-page h4 {
+.portfolio-page h1,
+.portfolio-page h2,
+.portfolio-page h3,
+.portfolio-page h4 {
   font-family: var(--pf-serif);
   font-weight: 600;
   color: var(--pf-text);
@@ -382,7 +388,7 @@ html, body {
 }
 
 .portfolio-page .stack-list li::before {
-  content: '';
+  content: "";
   position: absolute;
   left: 0;
   top: 0.7em;
@@ -490,6 +496,18 @@ html, body {
 .portfolio-page .project-link-disabled {
   color: var(--pf-text-3);
   text-decoration: none;
+}
+
+.portfolio-page .repository-link,
+.portfolio-page .repository-read {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 8px;
+  margin-top: 12px;
+  color: var(--pf-accent);
+  font-size: 14px;
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
 
 /* Articles and lists */
@@ -835,6 +853,215 @@ html, body {
   overflow-wrap: anywhere;
 }
 
+/* Case-study repository */
+.portfolio-page.repository-page {
+  background: var(--pf-bg);
+}
+
+.portfolio-page .repository-content {
+  width: min(100% - 48px, 880px);
+  margin: 0 auto;
+  padding: 72px 0 88px;
+}
+
+.portfolio-page .repository-header {
+  max-width: 680px;
+  padding-bottom: 36px;
+}
+
+.portfolio-page .repository-eyebrow {
+  margin-bottom: 12px;
+  color: var(--pf-text-3);
+  font-size: 12px;
+  font-variant-numeric: tabular-nums;
+  text-transform: uppercase;
+}
+
+.portfolio-page .repository-header h1 {
+  font-size: 38px;
+  line-height: 1.2;
+}
+
+.portfolio-page .repository-header > p:last-child {
+  margin-top: 14px;
+  max-width: 620px;
+  color: var(--pf-text-2);
+}
+
+.portfolio-page .repository-tabs {
+  position: sticky;
+  top: 60px;
+  z-index: 10;
+  display: flex;
+  gap: 28px;
+  padding: 12px 0;
+  background: var(--pf-bg);
+  border-top: 1px solid var(--pf-border);
+  border-bottom: 1px solid var(--pf-border);
+}
+
+.portfolio-page .repository-tabs a {
+  color: var(--pf-text-2);
+  font-size: 14px;
+}
+
+.portfolio-page .repository-tabs a:hover {
+  color: var(--pf-text);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.portfolio-page .repository-tabs span {
+  margin-left: 5px;
+  color: var(--pf-text-3);
+  font-size: 12px;
+  font-variant-numeric: tabular-nums;
+}
+
+.portfolio-page .repository-section {
+  padding: 44px 0 12px;
+  border-top: 0;
+  scroll-margin-top: 120px;
+}
+
+.portfolio-page .repository-section-heading {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--pf-border-strong);
+}
+
+.portfolio-page .repository-section-heading h2 {
+  font-size: 23px;
+}
+
+.portfolio-page .repository-section-heading span {
+  color: var(--pf-text-3);
+  font-size: 13px;
+  font-variant-numeric: tabular-nums;
+}
+
+.portfolio-page .repository-item {
+  padding: 24px 0;
+  border-bottom: 1px solid var(--pf-border);
+}
+
+.portfolio-page .repository-item-meta {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 4px 18px;
+  margin-bottom: 7px;
+  color: var(--pf-text-3);
+  font-size: 12px;
+}
+
+.portfolio-page .repository-item h3 {
+  font-size: 19px;
+  line-height: 1.4;
+}
+
+.portfolio-page .repository-item h3 a:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.portfolio-page .repository-item > p {
+  max-width: 720px;
+  margin-top: 9px;
+  color: var(--pf-text-2);
+  font-size: 14px;
+}
+
+.portfolio-page .repository-item .repository-result {
+  padding-left: 12px;
+  border-left: 2px solid var(--pf-border-strong);
+}
+
+.portfolio-page .repository-result strong {
+  color: var(--pf-text);
+}
+
+.portfolio-page .repository-result a {
+  color: var(--pf-accent);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.portfolio-page .repository-read {
+  margin-top: 10px;
+  font-size: 13px;
+}
+
+.portfolio-page .repository-empty {
+  padding: 22px 0;
+  color: var(--pf-text-3);
+  font-size: 14px;
+}
+
+.portfolio-page .case-study-paper {
+  font-family: var(--pf-sans);
+}
+
+.portfolio-page .case-study-paper h1,
+.portfolio-page .case-study-paper .paper-kicker,
+.portfolio-page .case-study-paper .paper-byline,
+.portfolio-page .case-study-paper .paper-abstract h2 {
+  text-align: left;
+}
+
+.portfolio-page .case-study-paper .paper-byline {
+  line-height: 1.5;
+}
+
+.portfolio-page .case-study-paper .paper-section h2 {
+  font-family: var(--pf-serif);
+}
+
+.portfolio-page .case-study-paper .paper-section p,
+.portfolio-page .case-study-paper .paper-section li {
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.portfolio-page .case-study-paper .paper-section ul {
+  margin: 0;
+  padding-left: 22px;
+  list-style: disc;
+}
+
+.portfolio-page .case-study-paper .paper-section li + li {
+  margin-top: 8px;
+}
+
+.portfolio-page .case-study-outcomes {
+  padding: 20px 24px;
+  border: 1px solid var(--pf-border);
+}
+
+.portfolio-page .case-study-outcome + .case-study-outcome {
+  margin-top: 20px;
+  padding-top: 18px;
+  border-top: 1px solid var(--pf-border);
+}
+
+.portfolio-page .case-study-outcome h3 {
+  margin-bottom: 5px;
+  font-family: var(--pf-sans);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.portfolio-page .case-study-outcome a {
+  display: inline-block;
+  margin-top: 7px;
+  color: var(--pf-accent);
+  font-size: 14px;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
 .portfolio-page .ft-location {
   display: inline-flex;
   align-items: center;
@@ -934,6 +1161,23 @@ html.dark .portfolio-page .loc-icon {
     padding: 16px 0 40px;
   }
 
+  .portfolio-page .repository-content {
+    width: calc(100% - 32px);
+    padding: 48px 0 60px;
+  }
+
+  .portfolio-page .repository-header h1 {
+    font-size: 30px;
+  }
+
+  .portfolio-page .repository-tabs {
+    top: 60px;
+  }
+
+  .portfolio-page .repository-item-meta {
+    flex-direction: column;
+  }
+
   .portfolio-page .paper {
     padding: 32px 20px;
     border-left: 0;
@@ -945,6 +1189,10 @@ html.dark .portfolio-page .loc-icon {
     font-size: 24px;
   }
 
+  .portfolio-page .case-study-outcomes {
+    padding: 16px;
+  }
+
   .portfolio-page .paper-pager {
     grid-template-columns: minmax(0, 1fr);
     padding: 0 16px;
@@ -954,4 +1202,3 @@ html.dark .portfolio-page .loc-icon {
     text-align: left;
   }
 }
-  
