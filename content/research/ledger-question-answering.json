@@ -1,6 +1,7 @@
 {
   "id": "02",
   "slug": "ledger-question-answering",
+  "lifecycle": "active",
   "title": "Retrieval Quality, Faithfulness and Refusal in Question Answering over a Reconciled Ledger",
   "type": "Technical report",
   "status": "Planned",
@@ -44,11 +45,6 @@
   "question": "The effect of hybrid search and reranking on retrieval quality over financial records, and the conditions under which an assistant correctly declines to answer for lack of evidence.",
   "method": "A comparative evaluation with and without reranking that measures retrieval recall, citation accuracy, answer faithfulness and refusal accuracy, run in continuous integration on every commit.",
   "deliverables": "An evaluation report, the evaluation dataset and the evaluation harness.",
-  "tags": [
-    "Hybrid search",
-    "Reranking",
-    "pgvector",
-    "Model-graded evaluation"
-  ],
+  "tags": ["Hybrid search", "Reranking", "pgvector", "Model-graded evaluation"],
   "github": null
 }

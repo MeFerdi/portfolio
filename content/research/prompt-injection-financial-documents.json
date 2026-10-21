@@ -1,6 +1,7 @@
 {
   "id": "03",
   "slug": "prompt-injection-financial-documents",
+  "lifecycle": "active",
   "title": "Prompt Injection through Financial Documents: An Attack Study of Two Language Model Agents",
   "type": "Technical report and threat model",
   "status": "Planned",

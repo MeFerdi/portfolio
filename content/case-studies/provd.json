@@ -2,6 +2,7 @@
   "slug": "provd",
   "order": 1,
   "status": "draft",
+  "lifecycle": "archived",
   "title": "Explainable pre-release risk checks for stablecoin payments, with signed and anchored decision records",
   "client": "Provd (own product)",
   "role": "Founder and sole engineer: backend, risk engine, proof layer, contracts, infrastructure and frontend",
@@ -19,12 +20,36 @@
     "Earlier iterations (April to September 2026) included an ML trust-score prototype (ensemble, LSTM and GNN models trained on synthetic data). It was not wired into the production engine, which stayed rule-based so that every decision could be explained."
   ],
   "outcomes": [
-    { "label": "Backend test suite", "value": "172 pytest tests across 15 test files, all passing in about 23 seconds (local run, October 2026). They cover auth and keys, sanctions, lookalike detection, proof units, attestations, evidence packs, the sandbox, secret handling and HTTP hardening.", "evidence": "https://github.com/MeFerdi/provd/tree/032ec24f276a99f7df5d054d95ea748ac8b98ad3/provd/backend/tests" },
-    { "label": "Risk signals", "value": "7 live signals and 2 registered stubs, which are reported as not_implemented", "evidence": "https://github.com/MeFerdi/provd/blob/032ec24f276a99f7df5d054d95ea748ac8b98ad3/provd/backend/app/engine/config.json" },
-    { "label": "Explainable flag codes", "value": "27 named flag codes, each with a severity and a reason, for example SANCTIONED_ADDRESS, CP_ADDRESS_FROZEN, LOOKALIKE_DESTINATION, SIM_SWAP_RECENT and AMOUNT_STRUCTURING", "evidence": "https://github.com/MeFerdi/provd/blob/032ec24f276a99f7df5d054d95ea748ac8b98ad3/provd/backend/app/engine/signals.py" },
-    { "label": "Decision proof chain", "value": "SHA-256 over canonical JSON, a secp256k1 signature, Merkle batching and an OpenTimestamps Bitcoin anchor, with a public verifier script", "evidence": "https://provd.tech/verify" },
-    { "label": "Chains supported", "value": "USDT on Tron, and USDC and USDT on Solana. Other chains and intent types return not_yet_supported and are not charged.", "evidence": "https://provd.tech" },
-    { "label": "Public tools on the live site", "value": "A free counterparty check, an address-poisoning check and a decision verifier", "evidence": "https://provd.tech/check" }
+    {
+      "label": "Backend test suite",
+      "value": "172 pytest tests across 15 test files, all passing in about 23 seconds (local run, October 2026). They cover auth and keys, sanctions, lookalike detection, proof units, attestations, evidence packs, the sandbox, secret handling and HTTP hardening.",
+      "evidence": "https://github.com/MeFerdi/provd/tree/032ec24f276a99f7df5d054d95ea748ac8b98ad3/provd/backend/tests"
+    },
+    {
+      "label": "Risk signals",
+      "value": "7 live signals and 2 registered stubs, which are reported as not_implemented",
+      "evidence": "https://github.com/MeFerdi/provd/blob/032ec24f276a99f7df5d054d95ea748ac8b98ad3/provd/backend/app/engine/config.json"
+    },
+    {
+      "label": "Explainable flag codes",
+      "value": "27 named flag codes, each with a severity and a reason, for example SANCTIONED_ADDRESS, CP_ADDRESS_FROZEN, LOOKALIKE_DESTINATION, SIM_SWAP_RECENT and AMOUNT_STRUCTURING",
+      "evidence": "https://github.com/MeFerdi/provd/blob/032ec24f276a99f7df5d054d95ea748ac8b98ad3/provd/backend/app/engine/signals.py"
+    },
+    {
+      "label": "Decision proof chain",
+      "value": "SHA-256 over canonical JSON, a secp256k1 signature, Merkle batching and an OpenTimestamps Bitcoin anchor, with a public verifier script",
+      "evidence": "https://provd.tech/verify"
+    },
+    {
+      "label": "Chains supported",
+      "value": "USDT on Tron, and USDC and USDT on Solana. Other chains and intent types return not_yet_supported and are not charged.",
+      "evidence": "https://provd.tech"
+    },
+    {
+      "label": "Public tools on the live site",
+      "value": "A free counterparty check, an address-poisoning check and a decision verifier",
+      "evidence": "https://provd.tech/check"
+    }
   ],
   "security_and_data": [
     "API keys are stored only as SHA-256 hashes. Admin tokens are JWTs checked for audience and issuer, and endpoints declare the scopes and roles they require. Bootstrap credentials are compared in constant time.",
@@ -61,12 +86,30 @@
     "repo": "https://github.com/MeFerdi/provd",
     "live": "https://provd.tech",
     "commits": [
-      { "label": "Proof layer: signed, Merkle-batched, Bitcoin-anchored decision records", "url": "https://github.com/MeFerdi/provd/commit/7f36ceea6a06d37be7b9d967b1d69e1c0023b2e3" },
-      { "label": "Payout and OTC scoring with amount, timing and account-takeover signals", "url": "https://github.com/MeFerdi/provd/commit/d101a643f01f04be9f2e9a640cb356b87f5007b8" },
-      { "label": "Solana support and lookalike-destination (address poisoning) detection", "url": "https://github.com/MeFerdi/provd/commit/1664f3271bbd3f926b2c92e9b5ec55fdbd5f1f54" },
-      { "label": "OFAC sanctions screening from the official SDN list", "url": "https://github.com/MeFerdi/provd/commit/845f846a8a283a4568b7c91905b42a3ac70c87eb" },
-      { "label": "API security hardening and scale-readiness fixes", "url": "https://github.com/MeFerdi/provd/commit/4d92d1b40a567dcdf86e89203bd8e2a8e3cb2954" },
-      { "label": "Centralize secrets in one registry, no hardcoded keys or passwords", "url": "https://github.com/MeFerdi/provd/commit/4d4f4d26a1f871db56378a144d267c8455008e49" }
+      {
+        "label": "Proof layer: signed, Merkle-batched, Bitcoin-anchored decision records",
+        "url": "https://github.com/MeFerdi/provd/commit/7f36ceea6a06d37be7b9d967b1d69e1c0023b2e3"
+      },
+      {
+        "label": "Payout and OTC scoring with amount, timing and account-takeover signals",
+        "url": "https://github.com/MeFerdi/provd/commit/d101a643f01f04be9f2e9a640cb356b87f5007b8"
+      },
+      {
+        "label": "Solana support and lookalike-destination (address poisoning) detection",
+        "url": "https://github.com/MeFerdi/provd/commit/1664f3271bbd3f926b2c92e9b5ec55fdbd5f1f54"
+      },
+      {
+        "label": "OFAC sanctions screening from the official SDN list",
+        "url": "https://github.com/MeFerdi/provd/commit/845f846a8a283a4568b7c91905b42a3ac70c87eb"
+      },
+      {
+        "label": "API security hardening and scale-readiness fixes",
+        "url": "https://github.com/MeFerdi/provd/commit/4d92d1b40a567dcdf86e89203bd8e2a8e3cb2954"
+      },
+      {
+        "label": "Centralize secrets in one registry, no hardcoded keys or passwords",
+        "url": "https://github.com/MeFerdi/provd/commit/4d4f4d26a1f871db56378a144d267c8455008e49"
+      }
     ]
   },
   "confidential": false,

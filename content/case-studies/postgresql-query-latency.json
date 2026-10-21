@@ -2,6 +2,7 @@
   "slug": "postgresql-query-latency",
   "order": 2,
   "status": "published",
+  "lifecycle": "archived",
   "title": "Query Latency Reduction on a High-Volume PostgreSQL Table",
   "client": "Zone01 Kisumu",
   "role": "Software Development Apprenticeship",
@@ -12,7 +13,11 @@
     "Query plans were analysed with EXPLAIN ANALYZE, which identified sequential scans on the affected queries. Targeted indexes were added for the access patterns concerned."
   ],
   "outcomes": [
-    { "label": "Result", "value": "Query latency on the affected table was reduced by 20 per cent.", "evidence": null }
+    {
+      "label": "Result",
+      "value": "Query latency on the affected table was reduced by 20 per cent.",
+      "evidence": null
+    }
   ],
   "security_and_data": [],
   "stack": ["PostgreSQL"],
