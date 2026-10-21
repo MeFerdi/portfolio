@@ -1,0 +1,54 @@
+{
+  "id": "02",
+  "slug": "ledger-question-answering",
+  "title": "Retrieval Quality, Faithfulness and Refusal in Question Answering over a Reconciled Ledger",
+  "type": "Technical report",
+  "status": "Planned",
+  "date": "October 2026",
+  "abstract": "Question answering over financial records is useful only when every answer can be traced to the records that support it. This study examines an assistant that answers plain-language questions about a reconciled ledger, cites the ledger rows on which each answer relies, and declines to answer when the evidence is insufficient. It compares retrieval with and without reranking, and measures faithfulness and the accuracy of refusals.",
+  "sections": [
+    {
+      "heading": "Motivation",
+      "body": [
+        "Business owners and accountants ask questions of their records in plain language. An assistant that answers fluently but without evidence is a liability in a financial setting. The design therefore treats a cited refusal as a correct outcome whenever the ledger does not support an answer."
+      ]
+    },
+    {
+      "heading": "Research question",
+      "body": [
+        "The effect of hybrid search and reranking on retrieval quality over financial records, and the conditions under which an assistant correctly declines to answer for lack of evidence."
+      ]
+    },
+    {
+      "heading": "Method",
+      "body": [
+        "A reference set of questions is prepared over the reconciled ledger produced by the first study, each with its supporting rows or an expected refusal. Two retrieval configurations, hybrid search with and without reranking, are evaluated against the same set. An answer is withheld when any of its citations cannot be resolved to a ledger row. The evaluation suite runs in continuous integration on every commit."
+      ]
+    },
+    {
+      "heading": "Measures",
+      "list": [
+        "Retrieval recall of the supporting rows.",
+        "Citation accuracy.",
+        "Answer faithfulness to the cited rows.",
+        "Refusal accuracy on questions the ledger cannot answer."
+      ]
+    },
+    {
+      "heading": "Deliverables",
+      "body": [
+        "An evaluation report, the evaluation dataset and the evaluation harness."
+      ]
+    }
+  ],
+  "question": "The effect of hybrid search and reranking on retrieval quality over financial records, and the conditions under which an assistant correctly declines to answer for lack of evidence.",
+  "method": "A comparative evaluation with and without reranking that measures retrieval recall, citation accuracy, answer faithfulness and refusal accuracy, run in continuous integration on every commit.",
+  "deliverables": "An evaluation report, the evaluation dataset and the evaluation harness.",
+  "tags": [
+    "Hybrid search",
+    "Reranking",
+    "pgvector",
+    "Model-graded evaluation"
+  ],
+  "github": null
+}

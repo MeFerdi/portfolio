@@ -1,0 +1,22 @@
+{
+  "slug": "postgresql-query-latency",
+  "order": 2,
+  "status": "published",
+  "title": "Query Latency Reduction on a High-Volume PostgreSQL Table",
+  "client": "Zone01 Kisumu",
+  "role": "Software Development Apprenticeship",
+  "period": { "start": "2024-04", "end": "2026-02" },
+  "summary": "Backend services for a talent management platform, including REST APIs, candidate management and evaluation workflows.",
+  "problem": "Queries against a table with a high row count were slow enough to affect the responsiveness of the platform.",
+  "approach": [
+    "Query plans were analysed with EXPLAIN ANALYZE, which identified sequential scans on the affected queries. Targeted indexes were added for the access patterns concerned."
+  ],
+  "outcomes": [
+    { "label": "Result", "value": "Query latency on the affected table was reduced by 20 per cent.", "evidence": null }
+  ],
+  "security_and_data": [],
+  "stack": ["PostgreSQL"],
+  "links": { "repo": null, "live": null, "commits": [] },
+  "confidential": false,
+  "tags": ["Query planning", "Indexing"]
+}

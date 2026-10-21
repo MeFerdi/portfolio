@@ -1,0 +1,85 @@
+{
+  "slug": "provd",
+  "order": 1,
+  "status": "draft",
+  "title": "Explainable pre-release risk checks for stablecoin payments, with signed and anchored decision records",
+  "client": "Provd (own product)",
+  "role": "Founder and sole engineer: backend, risk engine, proof layer, contracts, infrastructure and frontend",
+  "period": { "start": "2026-04", "end": "2026-10" },
+  "summary": "Provd is an API that a P2P desk, ramp, payout platform or escrow calls before it releases stablecoins. It scores the counterparty and the transaction, lists every signal that moved the score, and keeps a signed, tamper-evident record of each decision. It runs on USDT on Tron and USDC and USDT on Solana. The venture is now parked.",
+  "problem": "A platform that sends stablecoins against a local payment (M-Pesa, Pix, UPI or a bank transfer) carries the risk on its own: the fiat side can be reversed after the crypto has gone, and on-chain there is no undo. The release decision needs to account for sanctioned and issuer-frozen wallets, lookalike addresses planted by address-poisoning dust, account-takeover signals and the platform's own fraud history. It also has to be explainable to an operator and provable to a bank partner or auditor afterwards. All of this has to work while handling partial chain data and without collecting customer personal data.",
+  "approach": [
+    "Built a deterministic, rule-based scoring engine instead of an opaque model. Signals live in a registry (config.json) with weights, cost units and the intent types they apply to. Results are combined into a 0 to 1000 score with severity floors, so a critical flag always forces at least a reject-level score. Each level maps to an action: release, manual_review, hold or reject.",
+    "Seven signals are live: counterparty graph exposure (sanctioned, issuer-frozen and platform-confirmed fraud wallets, weighted by volume share), lookalike destination (address poisoning), the platform's own reversal history, token safety, account-takeover proxies, float and timing, and amount patterns. Two more (asset_backing and venue_risk) are registered but disabled, and responses report them as not_implemented rather than hiding the gap.",
+    "Each check reports coverage. If chain data is unavailable the check degrades with a REDUCED_SIGNAL_COVERAGE flag instead of returning a falsely clean score.",
+    "Risk lists are refreshed from primary sources: US Treasury OFAC SDN digital-currency addresses from the official XML (daily), Tether USDT freeze events on Tron, and Circle and Tether frozen accounts on Solana (hourly). Sanctions take precedence over issuer freezes.",
+    "Proof layer: each decision record is serialized as canonical JSON, hashed with SHA-256, signed with ECDSA secp256k1 (public key published at /v1/proof/keys), sealed into a Merkle batch, and the batch root is timestamped on Bitcoin through OpenTimestamps. A standalone verifier script checks a record without trusting Provd.",
+    "Release attestations for non-custodial escrows: EIP-712 signatures, made with a separate key, that a Solidity verifier contract checks on-chain before releasing funds. An end-to-end test runs this on a local chain.",
+    "Chain access sits behind a ChainAdapter protocol with Tron and Solana adapters. An import-boundary test fails the build if the scoring engine imports chain-specific code.",
+    "Earlier iterations (April to September 2026) included an ML trust-score prototype (ensemble, LSTM and GNN models trained on synthetic data). It was not wired into the production engine, which stayed rule-based so that every decision could be explained."
+  ],
+  "outcomes": [
+    { "label": "Backend test suite", "value": "172 pytest tests across 15 test files, all passing in about 23 seconds (local run, October 2026). They cover auth and keys, sanctions, lookalike detection, proof units, attestations, evidence packs, the sandbox, secret handling and HTTP hardening.", "evidence": "https://github.com/MeFerdi/provd/tree/032ec24f276a99f7df5d054d95ea748ac8b98ad3/provd/backend/tests" },
+    { "label": "Risk signals", "value": "7 live signals and 2 registered stubs, which are reported as not_implemented", "evidence": "https://github.com/MeFerdi/provd/blob/032ec24f276a99f7df5d054d95ea748ac8b98ad3/provd/backend/app/engine/config.json" },
+    { "label": "Explainable flag codes", "value": "27 named flag codes, each with a severity and a reason, for example SANCTIONED_ADDRESS, CP_ADDRESS_FROZEN, LOOKALIKE_DESTINATION, SIM_SWAP_RECENT and AMOUNT_STRUCTURING", "evidence": "https://github.com/MeFerdi/provd/blob/032ec24f276a99f7df5d054d95ea748ac8b98ad3/provd/backend/app/engine/signals.py" },
+    { "label": "Decision proof chain", "value": "SHA-256 over canonical JSON, a secp256k1 signature, Merkle batching and an OpenTimestamps Bitcoin anchor, with a public verifier script", "evidence": "https://provd.tech/verify" },
+    { "label": "Chains supported", "value": "USDT on Tron, and USDC and USDT on Solana. Other chains and intent types return not_yet_supported and are not charged.", "evidence": "https://provd.tech" },
+    { "label": "Public tools on the live site", "value": "A free counterparty check, an address-poisoning check and a decision verifier", "evidence": "https://provd.tech/check" }
+  ],
+  "security_and_data": [
+    "API keys are stored only as SHA-256 hashes. Admin tokens are JWTs checked for audience and issuer, and endpoints declare the scopes and roles they require. Bootstrap credentials are compared in constant time.",
+    "Rate limiting runs per IP globally and per endpoint class (public, auth, webhook), with a Redis backend and an in-memory fallback. Logins lock out per client and IP after repeated failures. Proxy headers are trusted only when TRUST_PROXY_HEADERS is set.",
+    "HTTP hardening on every response: nosniff, frame denial, no-referrer, a restrictive CSP, HSTS in production and no-store on authenticated responses. Request bodies have a size limit, and error responses never echo request data or internals.",
+    "Input validation: strict Pydantic schemas with length limits and character patterns on addresses and ids. Phone numbers must arrive as client-side hashes, and a KYC reference that looks like a phone number is refused, so no raw personal data enters the decision record.",
+    "Each platform's checks use only its own history plus public chain data. Nothing is pooled across platforms.",
+    "Secrets are declared in a single registry (secret_store.py). Production reads them from the platform's secret store or from *_FILE mounts, and a check command lists which secrets are set without printing their values. The decision-signing key and the attestation key are kept separate.",
+    "Paystack webhooks are verified with HMAC-SHA512 over the raw body and compared in constant time. The amount and currency are checked before any credit, and missed webhooks are re-verified by the indexer.",
+    "The tamper-evident decision log works as the audit trail: any later change to a record breaks its hash, its signature or its Merkle inclusion proof."
+  ],
+  "stack": [
+    "Python",
+    "FastAPI",
+    "Pydantic",
+    "SQLAlchemy",
+    "Alembic",
+    "PostgreSQL",
+    "Redis",
+    "pytest",
+    "Next.js",
+    "TypeScript",
+    "Solidity",
+    "EIP-712",
+    "OpenTimestamps",
+    "Tron",
+    "Solana",
+    "Docker",
+    "Terraform",
+    "Nginx",
+    "PyTorch"
+  ],
+  "links": {
+    "repo": "https://github.com/MeFerdi/provd",
+    "live": "https://provd.tech",
+    "commits": [
+      { "label": "Proof layer: signed, Merkle-batched, Bitcoin-anchored decision records", "url": "https://github.com/MeFerdi/provd/commit/7f36ceea6a06d37be7b9d967b1d69e1c0023b2e3" },
+      { "label": "Payout and OTC scoring with amount, timing and account-takeover signals", "url": "https://github.com/MeFerdi/provd/commit/d101a643f01f04be9f2e9a640cb356b87f5007b8" },
+      { "label": "Solana support and lookalike-destination (address poisoning) detection", "url": "https://github.com/MeFerdi/provd/commit/1664f3271bbd3f926b2c92e9b5ec55fdbd5f1f54" },
+      { "label": "OFAC sanctions screening from the official SDN list", "url": "https://github.com/MeFerdi/provd/commit/845f846a8a283a4568b7c91905b42a3ac70c87eb" },
+      { "label": "API security hardening and scale-readiness fixes", "url": "https://github.com/MeFerdi/provd/commit/4d92d1b40a567dcdf86e89203bd8e2a8e3cb2954" },
+      { "label": "Centralize secrets in one registry, no hardcoded keys or passwords", "url": "https://github.com/MeFerdi/provd/commit/4d4f4d26a1f871db56378a144d267c8455008e49" }
+    ]
+  },
+  "confidential": false,
+  "tags": [
+    "risk scoring",
+    "fraud detection",
+    "explainability",
+    "sanctions screening",
+    "stablecoins",
+    "tamper-evident logs",
+    "cryptographic signing",
+    "API security",
+    "rate limiting",
+    "secrets management"
+  ]
+}

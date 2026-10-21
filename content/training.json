@@ -1,0 +1,18 @@
+[
+  {
+    "period": "Current",
+    "institution": "Kood/Nairobi",
+    "location": "Nairobi, Kenya",
+    "programme": "Product Engineering",
+    "description": "Training in end-to-end product engineering, covering product design, backend development in Java and frontend development in TypeScript.",
+    "tags": ["Java", "TypeScript", "Product engineering"]
+  },
+  {
+    "period": "Apr 2024 - Feb 2026",
+    "institution": "Zone01 Kisumu",
+    "location": "Kisumu, Kenya",
+    "programme": "Software Development Apprenticeship",
+    "description": "Built backend systems for a talent management platform, including REST APIs, candidate management and evaluation workflows. Reduced PostgreSQL query latency by 20 per cent on a high-row-count table by identifying sequential scans with EXPLAIN ANALYZE and adding targeted indexes.",
+    "tags": ["Python", "Go", "PostgreSQL", "Docker", "Django REST"]
+  }
+]

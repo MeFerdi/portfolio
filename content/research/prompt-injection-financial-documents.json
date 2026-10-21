@@ -1,0 +1,53 @@
+{
+  "id": "03",
+  "slug": "prompt-injection-financial-documents",
+  "title": "Prompt Injection through Financial Documents: An Attack Study of Two Language Model Agents",
+  "type": "Technical report and threat model",
+  "status": "Planned",
+  "date": "October 2026",
+  "abstract": "Financial documents carry free text, such as statement memos and invoice descriptions, that a language model agent reads as part of its input. This study treats that text as an attack surface. It tests whether instructions concealed in such documents can cause the systems from the two preceding studies to disclose data or to call tools beyond their permissions, and it evaluates authorisation enforced outside the model as the principal control.",
+  "sections": [
+    {
+      "heading": "Motivation",
+      "body": [
+        "An agent that processes documents from third parties receives input that its operator does not control. Where that agent has access to financial records or to actions, a successful injection has direct consequences. Controls that rely on the model to refuse are not sufficient on their own."
+      ]
+    },
+    {
+      "heading": "Research question",
+      "body": [
+        "The extent to which instructions concealed in statement memos and invoice text can cause data exfiltration or unauthorised tool calls, and the controls that prevent them."
+      ]
+    },
+    {
+      "heading": "Method",
+      "body": [
+        "A threat model enumerates the attack classes relevant to the two systems. A red-team suite contains at least one automated test for each class and runs against the production model configuration. Authorisation is enforced by a policy layer outside the model, and the suite records whether each attack was prevented by the model, by the policy layer or not at all."
+      ]
+    },
+    {
+      "heading": "Measures",
+      "list": [
+        "Attack success rate by attack class and model version.",
+        "Proportion of attacks stopped by the policy layer rather than the model.",
+        "Data disclosed and actions attempted in each successful attack."
+      ]
+    },
+    {
+      "heading": "Deliverables",
+      "body": [
+        "A threat model, the attack suite and a report of results by model version."
+      ]
+    }
+  ],
+  "question": "The extent to which instructions concealed in statement memos and invoice text can cause data exfiltration or unauthorised tool calls, and the controls that prevent them.",
+  "method": "A red-team suite with at least one test for each documented attack class, run against the production model configuration of the two preceding systems. Authorisation is enforced by a policy layer outside the model.",
+  "deliverables": "A threat model, the attack suite and a report of results by model version.",
+  "tags": [
+    "Prompt injection",
+    "Authorisation",
+    "Threat modelling",
+    "Red-team testing"
+  ],
+  "github": null
+}

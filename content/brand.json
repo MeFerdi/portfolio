@@ -1,0 +1,20 @@
+{
+  "meta": {
+    "title": "Kynara Labs - Brand",
+    "description": "Kynara Labs: products built to solve niche problems, especially in energy."
+  },
+  "nav": [
+    { "label": "portfolio", "mobileLabel": "Portfolio", "href": "/" },
+    { "label": "kynaralabs.com", "mobileLabel": "kynaralabs.com", "href": "https://kynaralabs.com" }
+  ],
+  "hero": {
+    "eyebrow": "Brand",
+    "title": "Kynara Labs",
+    "role": "Niche products",
+    "bio": "By the side, I like exploring and building products that solve niche problems. Kynara Labs is where I prototype, test, and ship those ideas.",
+    "actions": [
+      { "label": "Visit site", "href": "https://kynaralabs.com", "primary": true },
+      { "label": "Back to portfolio", "href": "/", "primary": false }
+    ]
+  }
+}
