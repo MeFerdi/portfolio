@@ -4,8 +4,11 @@ import { useState } from 'react';
 import PortfolioStyles from './PortfolioStyles';
 import PortfolioFooter from './PortfolioFooter';
 import ThemeToggle from './ThemeToggle';
+import { externalProps } from './links';
 
-export default function BrandPage() {
+// Content comes from content/brand.json via app/brand/page.js.
+export default function BrandPage({ brand, profile }) {
+  const { nav, hero } = brand;
   const [menuOpen, setMenuOpen] = useState(false);
 
   const closeMenu = () => setMenuOpen(false);
@@ -24,8 +27,9 @@ export default function BrandPage() {
             <a href="/" className="nav-logo nav-signature">Ferdynand</a>
 
             <ul className="nav-links nav-links-desktop">
-              <li><a href="/">portfolio</a></li>
-              <li><a href="https://kynaralabs.com" target="_blank" rel="noreferrer">kynaralabs.com</a></li>
+              {nav.map((item) => (
+                <li key={item.href}><a href={item.href} {...externalProps(item.href)}>{item.label}</a></li>
+              ))}
             </ul>
 
             <div className="nav-actions">
@@ -48,30 +52,32 @@ export default function BrandPage() {
 
           <div className={`mobile-nav-card${menuOpen ? ' open' : ''}`}>
             <ul className="nav-links nav-links-mobile">
-              <li><a href="/" onClick={closeMenu}>Portfolio</a></li>
-              <li><a href="https://kynaralabs.com" target="_blank" rel="noreferrer" onClick={closeMenu}>kynaralabs.com</a></li>
+              {nav.map((item) => (
+                <li key={item.href}><a href={item.href} {...externalProps(item.href)} onClick={closeMenu}>{item.mobileLabel}</a></li>
+              ))}
             </ul>
           </div>
         </nav>
 
         <section id="hero" aria-labelledby="main-content">
           <div className="wrap">
-            <div className="hero-eyebrow fi">Brand</div>
-            <h1 className="name fi" id="main-content">Kynara Labs</h1>
-            <p className="hero-role fi">Niche products</p>
-            <p className="hero-bio fi">
-              By the side, I like exploring and building products that solve niche problems. Kynara Labs is where I prototype, test, and ship those ideas.
-            </p>
-            <div className="hero-actions fi">
-              <a href="https://kynaralabs.com" target="_blank" rel="noreferrer" className="btn btn-primary">Visit site</a>
-              <a href="/" className="btn">Back to portfolio</a>
-            </div>
+            <div className="hero-eyebrow fi">{hero.eyebrow}</div>
+            <h1 className="name fi" id="main-content">{hero.title}</h1>
+            <p className="hero-role fi">{hero.role}</p>
+            <p className="hero-bio fi">{hero.bio}</p>
+            {hero.actions.length > 0 && (
+              <div className="hero-actions fi">
+                {hero.actions.map((a) => (
+                  <a key={a.href} href={a.href} {...externalProps(a.href)} className={a.primary ? 'btn btn-primary' : 'btn'}>{a.label}</a>
+                ))}
+              </div>
+            )}
           </div>
         </section>
 
 
 
-        <PortfolioFooter />
+        <PortfolioFooter profile={profile} />
       </main>
     </>
   );

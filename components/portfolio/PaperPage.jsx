@@ -2,11 +2,14 @@ import Link from 'next/link';
 import './site.css';
 import ThemeToggle from './ThemeToggle';
 import PortfolioFooter from './PortfolioFooter';
-import { research } from './portfolioData';
+import { getResearch, getSections, getProfile } from '../../lib/content';
 
 // A study presented in paper format. The closing notice states what has and has not
 // been done; replace it with results once they are measured.
 export default function PaperPage({ report }) {
+  const research = getResearch();
+  const { paper } = getSections();
+  const profile = getProfile();
   const position = research.findIndex((item) => item.slug === report.slug);
   const previous = research[position - 1];
   const next = research[position + 1];
@@ -31,12 +34,12 @@ export default function PaperPage({ report }) {
           <article className="paper" id="paper">
             <p className="paper-kicker">{report.type} · No. {report.id}</p>
             <h1>{report.title}</h1>
-            <p className="paper-byline">Ferdynand Odhiambo · Nairobi, Kenya · {report.date}</p>
+            <p className="paper-byline">{profile.name} · {profile.location} · {report.date}</p>
 
             <div className="paper-abstract">
               <h2>Abstract</h2>
               <p>{report.abstract}</p>
-              <p className="paper-keywords"><span>Keywords:</span> {report.tags.join(', ')}</p>
+              {report.tags.length > 0 && <p className="paper-keywords"><span>Keywords:</span> {report.tags.join(', ')}</p>}
             </div>
 
             {report.sections.map((section, index) => (
@@ -56,19 +59,13 @@ export default function PaperPage({ report }) {
             ))}
 
             <aside className="paper-status" aria-label="Status of this study">
-              <h2>Development and research in progress</h2>
-              <p>
-                Status: {report.status}. This paper sets out the design of the study. The evaluation results, the
-                dataset and the code required to reproduce them will be published here when the study is complete.
-                No results are reported until they have been measured.
-              </p>
-              <p>
-                {report.github ? (
-                  <a href={report.github} target="_blank" rel="noreferrer" className="project-link">View repository</a>
-                ) : (
-                  'The repository will be published with the results.'
-                )}
-              </p>
+              <h2>{paper.statusHeading}</h2>
+              <p>{paper.statusBody.replace('{status}', report.status)}</p>
+              {report.github ? (
+                <p><a href={report.github} target="_blank" rel="noreferrer" className="project-link">View repository</a></p>
+              ) : (
+                paper.repositoryPending && <p>{paper.repositoryPending}</p>
+              )}
             </aside>
           </article>
 
@@ -88,7 +85,7 @@ export default function PaperPage({ report }) {
           </div>
         </div>
 
-        <PortfolioFooter />
+        <PortfolioFooter profile={profile} />
       </main>
     </>
   );
