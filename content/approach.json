@@ -1,18 +1,18 @@
 [
   {
-    "title": "Validated model output",
-    "body": "All model responses are validated against a defined schema before use. Decisions that move or reconcile money are made by deterministic rules, and the model supplies inputs to those rules only."
+    "title": "Start with the workflow",
+    "body": "Understand the user, business goal and operating constraints before choosing a solution. Use AI where it improves the workflow; prefer simpler, deterministic behavior where it does not."
   },
   {
-    "title": "Controlled actions",
-    "body": "Agents have read access to the data they require. Any action that modifies data passes through a permission layer outside the model, which enforces confirmation, customer scoping and rate limits."
+    "title": "Make system boundaries explicit",
+    "body": "Define clear contracts between applications, services and external dependencies. Set deliberate rules for timeouts, retries, permissions and partial failure instead of relying on happy-path behavior."
   },
   {
-    "title": "Continuous evaluation",
-    "body": "Quality is measured against a labelled reference set in the CI pipeline, covering extraction accuracy, retrieval quality, faithfulness and resistance to prompt injection."
+    "title": "Test real dependencies and failure modes",
+    "body": "Combine focused unit tests with integration tests against the systems an application depends on. Exercise conditions such as slow, unavailable or unreliable network connections, and make those checks repeatable in CI."
   },
   {
-    "title": "Reported cost and failure data",
-    "body": "Each system is published with its cost per run, p95 latency, pinned model versions and documented failure modes, with a test for each documented failure."
+    "title": "Measure what matters",
+    "body": "Track the outcomes that matter to users and operators, including task success, reliability, latency and cost. State what has been measured, document limitations, and do not present planned results as proven."
   }
 ]
