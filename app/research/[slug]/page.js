@@ -1,8 +1,8 @@
-import { notFound } from 'next/navigation';
-import PaperPage from '../../../components/portfolio/PaperPage';
-import { getResearch, getPaper, getProfile } from '../../../lib/content';
+import { notFound } from "next/navigation";
+import PaperPage from "../../../components/portfolio/PaperPage";
+import { getResearch, getPaper, getProfile } from "../../../lib/content";
 
-// Every paper is generated at build time; any other slug is a 404.
+// Every technical report is generated at build time; any other slug is a 404.
 export const dynamicParams = false;
 
 export function generateStaticParams() {
