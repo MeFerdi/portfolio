@@ -1,6 +1,7 @@
 {
   "id": "01",
   "slug": "extraction-and-deterministic-reconciliation",
+  "lifecycle": "active",
   "title": "Language Model Extraction with Deterministic Reconciliation of Financial Statements",
   "type": "Technical report and specification",
   "status": "In progress",

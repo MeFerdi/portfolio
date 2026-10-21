@@ -2,22 +2,30 @@
   "sections": [
     { "id": "about", "nav": "About", "heading": "About" },
     {
+      "id": "case-studies",
+      "nav": "Case studies",
+      "heading": "Case studies"
+    },
+    {
       "id": "research",
-      "nav": "Research",
-      "heading": "Research",
-      "intro": "My research concerns the evaluation and security of AI systems that handle financial data. The current programme is a series of three studies on a single domain, the financial records of a goods distributor, comprising statements, invoices and payments. Each study is published as a technical report with its evaluation data, cost per run, latency figures and documented failure modes, together with the code required to reproduce the results.",
+      "nav": "Technical reports",
+      "heading": "Technical reports",
+      "intro": "My technical work examines the evaluation and security of AI systems that handle financial data. The current programme documents three studies on a single domain: the financial records of a goods distributor, comprising statements, invoices and payments. Each study is documented as a technical report with its evaluation data, cost per run, latency figures and documented failure modes, together with the code required to reproduce the results.",
       "articlesHeading": "Articles"
     },
-    { "id": "case-studies", "nav": "Case studies", "heading": "Case studies" },
     { "id": "open-source", "nav": "Open source", "heading": "Open source" },
     { "id": "approach", "nav": null, "heading": "Engineering standards" },
     { "id": "work", "nav": "Experience", "heading": "Experience" },
-    { "id": "training", "nav": "Training", "heading": "Training and apprenticeship" },
+    {
+      "id": "training",
+      "nav": "Training",
+      "heading": "Training and apprenticeship"
+    },
     { "id": "contact", "nav": "Contact", "heading": "Contact" }
   ],
   "paper": {
     "statusHeading": "Development and research in progress",
-    "statusBody": "Status: {status}. This paper sets out the design of the study. The evaluation results, the dataset and the code required to reproduce them will be published here when the study is complete. No results are reported until they have been measured.",
-    "repositoryPending": "The repository will be published with the results."
+    "statusBody": "Status: {status}. This technical report documents the study design and current progress. Results, evaluation data and reproducibility materials will be added here when available. No results are reported until they have been measured.",
+    "repositoryPending": "Repository and results will be added here when available."
   }
 }
