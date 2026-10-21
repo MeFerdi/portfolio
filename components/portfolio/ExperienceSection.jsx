@@ -1,29 +1,13 @@
-const experiences = [
-  {
-    period: 'Oct 2025 - Present',
-    company: 'LD Talent',
-    location: 'Remote',
-    role: 'Freelance Backend Engineer',
-    description:
-      'Maintaining and extending Python microservices for an internal talent and job management platform. Work covers service reliability, test coverage, and API design.',
-    tags: ['Python', 'Microservices', 'Testing'],
-  },
-  {
-    period: 'Jun 2025 - Oct 2025',
-    company: 'Payd HQ',
-    location: 'Nairobi, Kenya',
-    role: 'Backend Software Engineer',
-    description:
-      'Contributed to Go-based financial microservices at a Kenyan fintech company. Worked on payment event processing, service-to-service communication, and PostgreSQL-backed transaction workflows. Debugged production issues by tracing data flow across distributed services under the guidance of senior engineers.',
-    tags: ['Go', 'PostgreSQL', 'System Design', 'Data Modelling'],
-  },
-];
+import { getExperience, getSections } from '../../lib/content';
 
 export default function ExperienceSection() {
+  const experiences = getExperience();
+  const { heading } = getSections().byId.work;
+
   return (
     <section id="work">
       <div className="wrap">
-        <h2 className="section-label">Experience</h2>
+        <h2 className="section-label">{heading}</h2>
         <div>
           {experiences.map((exp) => (
             <div key={`${exp.company}-${exp.period}`} className="exp-item">
@@ -35,11 +19,13 @@ export default function ExperienceSection() {
               <div className="exp-content">
                 <h3>{exp.role}</h3>
                 <p>{exp.description}</p>
-                <div className="tags">
-                  {exp.tags.map((tag) => (
-                    <span key={tag} className="tag">{tag}</span>
-                  ))}
-                </div>
+                {exp.tags.length > 0 && (
+                  <div className="tags">
+                    {exp.tags.map((tag) => (
+                      <span key={tag} className="tag">{tag}</span>
+                    ))}
+                  </div>
+                )}
               </div>
             </div>
           ))}

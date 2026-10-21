@@ -1,19 +1,21 @@
+import { getProfile, getSections } from '../../lib/content';
+import { externalProps } from './links';
+
 export default function ContactSection() {
+  const { contact } = getProfile();
+  const { heading } = getSections().byId.contact;
+
   return (
     <section id="contact">
       <div className="wrap">
-        <h2 className="section-label">Contact</h2>
+        <h2 className="section-label">{heading}</h2>
         <div className="contact-block">
-          <h3>Open to AI product engineering roles.</h3>
-          <p>
-            Available for full-time, contract and freelance positions, remote or based in Nairobi. Please get
-            in touch by email or LinkedIn.
-          </p>
+          <h3>{contact.heading}</h3>
+          <p>{contact.body}</p>
           <div className="contact-links">
-            <a href="mailto:oferdinaddev112@gmail.com" className="contact-link"><span className="clabel">email</span>oferdinaddev112@gmail.com</a>
-            <a href="https://github.com/MeFerdi" className="contact-link" target="_blank" rel="noreferrer"><span className="clabel">github</span>github.com/MeFerdi</a>
-            <a href="https://linkedin.com/in/ferdynand-odhiambo" className="contact-link" target="_blank" rel="noreferrer"><span className="clabel">linkedin</span>in/ferdynand-odhiambo</a>
-            <a href="https://dev.to/ferdinandodhiambo" className="contact-link" target="_blank" rel="noreferrer"><span className="clabel">writing</span>dev.to/ferdinandodhiambo</a>
+            {contact.links.map((l) => (
+              <a key={l.href} href={l.href} className="contact-link" {...externalProps(l.href)}><span className="clabel">{l.label}</span>{l.text}</a>
+            ))}
           </div>
         </div>
       </div>

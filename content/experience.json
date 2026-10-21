@@ -1,0 +1,18 @@
+[
+  {
+    "period": "Oct 2025 - Dec 2025",
+    "company": "LD Talent",
+    "location": "Remote",
+    "role": "Freelance Backend Engineer",
+    "description": "Maintaining and extending Python microservices for an internal talent and job management platform. Work covers service reliability, test coverage, and API design.",
+    "tags": ["Python", "Microservices", "Testing"]
+  },
+  {
+    "period": "Jun 2025 - Oct 2025",
+    "company": "Payd HQ",
+    "location": "Nairobi, Kenya",
+    "role": "Backend Software Engineer",
+    "description": "Contributed to Go-based financial microservices at a Kenyan fintech company. Worked on payment event processing, service-to-service communication, and PostgreSQL-backed transaction workflows. Debugged production issues by tracing data flow across distributed services under the guidance of senior engineers.",
+    "tags": ["Go", "PostgreSQL", "System Design", "Data Modelling"]
+  }
+]

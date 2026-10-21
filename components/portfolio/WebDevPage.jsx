@@ -5,49 +5,8 @@ import Image from 'next/image';
 import PortfolioStyles from './PortfolioStyles';
 import PortfolioFooter from './PortfolioFooter';
 import ThemeToggle from './ThemeToggle';
+import { externalProps } from './links';
 
-const webProjects = [
-	{
-		title: 'Somot\u00e9ch Africa',
-		url: 'https://somotechafrica.org',
-		displayUrl: 'somotechafrica.org',
-		logoSrc: '/logos/somotechafrica-logo.png',
-		fallbackLabel: 'SA',
-		description:
-			'Somotéch Africa is a platform dedicated to technology education and innovation across the African continent, connecting learners and builders with resources, opportunities, and community.',
-		tags: ['Web', 'Education', 'Africa', 'Tech'],
-	},
-	{
-		title: 'Employa',
-		url: 'https://employa.pages.dev',
-		displayUrl: 'employa.pages.dev',
-		logoSrc: '/logos/employa-logo.jpg',
-		fallbackLabel: 'EM',
-		description:
-			'WhatsApp-native payout operations for scheduled M-Pesa disbursements. Employa helps finance and operations teams execute M-Pesa disbursements with stronger control, clearer communication, and a more dependable audit trail across every payout cycle.',
-		tags: ['M-Pesa', 'Payouts', 'Finance Ops', 'WhatsApp'],
-	},
-	{
-		title: 'DePesa',
-		url: 'https://depesa.pages.dev',
-		displayUrl: 'depesa.pages.dev',
-		logoSrc: '/logos/depesa-logo.png',
-		fallbackLabel: 'DP',
-		description:
-			'DePesa automates contribution proof, gives treasurers a real-time record, and helps savings groups protect value. Group funds stay in a licensed Kenyan bank account, M-Pesa pool, or SACCO channel chosen by the group. Timestamped receipts, dispute logs, and payout confirmations are built in.',
-		tags: ['Chama', 'M-Pesa', 'Receipts', 'Dispute Resolution', 'Finance'],
-	},
-	{
-		title: 'Provd',
-		url: 'https://provd.pages.dev',
-		displayUrl: 'provd.pages.dev',
-		logoSrc: '/logos/provd-logo.svg',
-		fallbackLabel: 'PV',
-		description:
-			'Provd helps African exchanges, wallets, and OTC desks block repeat fraud before funds move. Query one API call and get network-backed counterparty risk, dispute signals, and recommended actions across P2P stablecoin flows.',
-		tags: ['Risk', 'Fraud', 'API', 'P2P', 'Africa'],
-	},
-];
 
 function WebDevLogoCard({ title, url, displayUrl, logoSrc, fallbackLabel }) {
 	const [logoError, setLogoError] = useState(false);
@@ -83,7 +42,9 @@ function WebDevLogoCard({ title, url, displayUrl, logoSrc, fallbackLabel }) {
 	);
 }
 
-export default function WebDevPage() {
+// Content comes from content/webdev.json via app/webdev/page.js.
+export default function WebDevPage({ webdev, profile }) {
+	const { nav, hero, projectsHeading, projects } = webdev;
 	const [menuOpen, setMenuOpen] = useState(false);
 	const closeMenu = () => setMenuOpen(false);
 
@@ -101,9 +62,9 @@ export default function WebDevPage() {
 					<div className="wrap nav-shell">
 						<a href="/" className="nav-logo nav-signature">Ferdynand</a>
 						<ul className="nav-links nav-links-desktop">
-							<li><a href="/">portfolio</a></li>
-							<li><a href="/#research">research</a></li>
-							<li><a href="/brand">Creative</a></li>
+							{nav.map((item) => (
+								<li key={item.href}><a href={item.href} {...externalProps(item.href)}>{item.label}</a></li>
+							))}
 						</ul>
 						<div className="nav-actions">
 							<button
@@ -125,30 +86,27 @@ export default function WebDevPage() {
 
 					<div className={`mobile-nav-card${menuOpen ? ' open' : ''}`}>
 						<ul className="nav-links nav-links-mobile">
-							<li><a href="/" onClick={closeMenu}>Portfolio</a></li>
-							<li><a href="/#research" onClick={closeMenu}>Research</a></li>
-							<li><a href="/brand" onClick={closeMenu}>Creative</a></li>
+							{nav.map((item) => (
+								<li key={item.href}><a href={item.href} {...externalProps(item.href)} onClick={closeMenu}>{item.mobileLabel}</a></li>
+							))}
 						</ul>
 					</div>
 				</nav>
 
 				<section id="hero" aria-labelledby="main-content">
 					<div className="wrap">
-						<div className="hero-eyebrow fi">Web Development</div>
-						<h1 className="name fi" id="main-content">Web Projects</h1>
-						<p className="hero-role fi">Sites & web applications I&apos;ve built or contributed to</p>
-						<p className="hero-bio fi">
-							A collection of web development work from full-stack platforms to client sites.
-							Each project is built with attention to performance, usability, and clean code.
-						</p>
+						<div className="hero-eyebrow fi">{hero.eyebrow}</div>
+						<h1 className="name fi" id="main-content">{hero.title}</h1>
+						<p className="hero-role fi">{hero.role}</p>
+						<p className="hero-bio fi">{hero.bio}</p>
 					</div>
 				</section>
 
 				<section id="web-projects">
 					<div className="wrap">
-						<div className="section-label">Projects</div>
+						<div className="section-label">{projectsHeading}</div>
 						<div className="webdev-logos-grid-only">
-							{webProjects.map((project) => (
+							{projects.map((project) => (
 								<WebDevLogoCard
 									key={project.title}
 									title={project.title}
@@ -162,7 +120,7 @@ export default function WebDevPage() {
 					</div>
 				</section>
 
-				<PortfolioFooter />
+				<PortfolioFooter profile={profile} />
 			</main>
 
 			{/* Add styles for the animated logo grid */}

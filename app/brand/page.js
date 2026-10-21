@@ -1,11 +1,11 @@
 import '../globals.css';
 import BrandPage from '../../components/portfolio/BrandPage';
+import { getBrand, getProfile } from '../../lib/content';
 
-export const metadata = {
-  title: 'Kynara Labs - Brand',
-  description: 'Kynara Labs: products built to solve niche problems, especially in energy.',
-};
+export function generateMetadata() {
+  return getBrand().meta;
+}
 
 export default function Brand() {
-  return <BrandPage />;
+  return <BrandPage brand={getBrand()} profile={getProfile()} />;
 }

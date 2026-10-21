@@ -1,11 +1,11 @@
 import '../globals.css';
 import WebDevPage from '../../components/portfolio/WebDevPage';
+import { getWebDev, getProfile } from '../../lib/content';
 
-export const metadata = {
-  title: 'Web Projects - Ferdynand Odhiambo',
-  description: 'Web development projects built by Ferdynand Odhiambo - sites and web applications.',
-};
+export function generateMetadata() {
+  return getWebDev().meta;
+}
 
 export default function WebDev() {
-  return <WebDevPage />;
+  return <WebDevPage webdev={getWebDev()} profile={getProfile()} />;
 }

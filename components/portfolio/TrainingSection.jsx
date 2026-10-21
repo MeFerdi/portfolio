@@ -1,29 +1,13 @@
-const training = [
-  {
-    period: 'Current',
-    institution: 'Kood/Nairobi',
-    location: 'Nairobi, Kenya',
-    programme: 'Product Engineering',
-    description:
-      'Training in end-to-end product engineering, covering product design, backend development in Java and frontend development in TypeScript.',
-    tags: ['Java', 'TypeScript', 'Product engineering'],
-  },
-  {
-    period: 'Apr 2024 - Feb 2026',
-    institution: 'Zone01 Kisumu',
-    location: 'Kisumu, Kenya',
-    programme: 'Software Development Apprenticeship',
-    description:
-      'Built backend systems for a talent management platform, including REST APIs, candidate management and evaluation workflows. Reduced PostgreSQL query latency by 20 per cent on a high-row-count table by identifying sequential scans with EXPLAIN ANALYZE and adding targeted indexes.',
-    tags: ['Python', 'Go', 'PostgreSQL', 'Docker', 'Django REST'],
-  },
-];
+import { getTraining, getSections } from '../../lib/content';
 
 export default function TrainingSection() {
+  const training = getTraining();
+  const { heading } = getSections().byId.training;
+
   return (
     <section id="training">
       <div className="wrap">
-        <h2 className="section-label">Training and apprenticeship</h2>
+        <h2 className="section-label">{heading}</h2>
         <div>
           {training.map((item) => (
             <div key={item.institution} className="exp-item">
@@ -35,11 +19,13 @@ export default function TrainingSection() {
               <div className="exp-content">
                 <h3>{item.programme}</h3>
                 <p>{item.description}</p>
-                <div className="tags">
-                  {item.tags.map((tag) => (
-                    <span key={tag} className="tag">{tag}</span>
-                  ))}
-                </div>
+                {item.tags.length > 0 && (
+                  <div className="tags">
+                    {item.tags.map((tag) => (
+                      <span key={tag} className="tag">{tag}</span>
+                    ))}
+                  </div>
+                )}
               </div>
             </div>
           ))}

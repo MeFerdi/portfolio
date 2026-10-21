@@ -1,4 +1,5 @@
 import { stackIcons } from './stackIcons';
+import { getProfile, getSections } from '../../lib/content';
 
 // Each item is a key of `stackIcons`, shown with its logo from the /stack-icons.svg
 // sprite, or plain text where no official mark is available.
@@ -39,29 +40,25 @@ function CapabilityList({ title, items }) {
 }
 
 export default function AboutSection() {
+  const { about } = getProfile();
+  const { heading } = getSections().byId.about;
+
   return (
     <section id="about">
       <div className="wrap">
-        <h2 className="section-label">About</h2>
+        <h2 className="section-label">{heading}</h2>
         <div className="about-grid">
           <div className="about-text">
-            <p>
-              I am a product engineer with a background in backend development. I have built and maintained
-              Go and Python services for fintech and talent management platforms, including payment event
-              processing, transaction workflows and data pipelines.
-            </p>
-            <p>
-              My current focus is the integration of large language models into production software. I apply
-              the standards expected of financial systems to this work: validated inputs and outputs,
-              controlled access to data and actions, automated testing and measurable results.
-            </p>
+            {about.paragraphs.map((p) => (
+              <p key={p.slice(0, 40)}>{p}</p>
+            ))}
           </div>
           <div>
-            <CapabilityList title="AI engineering" items={["LLM integration", "Tool calling", "Structured output", "Retrieval-augmented generation", "pgvector", "Evaluation"]} />
-            <StackGroup title="Models and validation" items={["claude", "zod"]} />
-            <StackGroup title="Backend" items={["java", "go", "python", "node", "postgresql", "redis", "kafka"]} />
-            <StackGroup title="Frontend" items={["typescript", "angular"]} />
-            <StackGroup title="Quality and delivery" items={["jest", "Playwright", "githubactions", "docker"]} />
+            {about.skills.filter((g) => g.items.length > 0).map((group) =>
+              group.display === 'list'
+                ? <CapabilityList key={group.title} title={group.title} items={group.items} />
+                : <StackGroup key={group.title} title={group.title} items={group.items} />
+            )}
           </div>
         </div>
       </div>

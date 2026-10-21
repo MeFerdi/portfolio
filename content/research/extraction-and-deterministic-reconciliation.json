@@ -1,0 +1,55 @@
+{
+  "id": "01",
+  "slug": "extraction-and-deterministic-reconciliation",
+  "title": "Language Model Extraction with Deterministic Reconciliation of Financial Statements",
+  "type": "Technical report and specification",
+  "status": "In progress",
+  "date": "October 2026",
+  "abstract": "Language models are increasingly used to read unstructured financial documents, yet their outputs are probabilistic and difficult to audit. This study separates the two tasks involved in reconciliation. A language model extracts transactions from mobile money, bank and sales representative statements into a validated schema, and a deterministic rule decides whether each transaction matches an invoice. The study measures whether extraction under this arrangement is accurate enough for reconciliation, and at what cost and latency.",
+  "sections": [
+    {
+      "heading": "Motivation",
+      "body": [
+        "Distributors reconcile payments received through several channels against the invoices they have issued. The statements arrive in inconsistent formats, and manual reconciliation is slow and prone to error. A language model can read these formats, but a reconciliation decision made by a model cannot be explained or reproduced with the certainty that financial records require."
+      ]
+    },
+    {
+      "heading": "Research question",
+      "body": [
+        "Whether a language model can extract transactions from mobile money, bank and sales representative statements with sufficient accuracy for reconciliation, when every matching decision is reserved for a deterministic rule."
+      ]
+    },
+    {
+      "heading": "Method",
+      "body": [
+        "A labelled evaluation set of statements is prepared, with the expected transactions recorded for each. Each model version extracts transactions into a schema, and records that fail validation are routed to manual review rather than reconciled. A deterministic matcher then pairs the extracted transactions with invoices. Results are compared across model versions with all other conditions held constant."
+      ]
+    },
+    {
+      "heading": "Measures",
+      "list": [
+        "Field-level extraction accuracy for amount, date, reference and counterparty.",
+        "Reconciliation match rate against the labelled expectation.",
+        "Proportion of records routed to manual review.",
+        "Cost per statement and p95 latency for each model version."
+      ]
+    },
+    {
+      "heading": "Deliverables",
+      "body": [
+        "A specification of the matching rule, an evaluation report and a reference implementation."
+      ]
+    }
+  ],
+  "question": "Whether a language model can extract transactions from mobile money, bank and sales representative statements with sufficient accuracy for reconciliation, when every matching decision is reserved for a deterministic rule.",
+  "method": "A labelled evaluation set measures field-level extraction accuracy and the reconciliation match rate across model versions, together with cost per statement and p95 latency.",
+  "deliverables": "A specification of the matching rule, an evaluation report and a reference implementation.",
+  "tags": [
+    "Structured extraction",
+    "Reconciliation",
+    "Evaluation",
+    "TypeScript",
+    "PostgreSQL"
+  ],
+  "github": null
+}

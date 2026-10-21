@@ -1,12 +1,14 @@
-import { openSource } from './portfolioData';
+import { getOpenSource, getSections } from '../../lib/content';
 
 export default function OpenSourceSection() {
+  const openSource = getOpenSource();
   if (openSource.length === 0) return null;
+  const { heading } = getSections().byId['open-source'];
 
   return (
     <section id="open-source">
       <div className="wrap">
-        <h2 className="section-label">Open source</h2>
+        <h2 className="section-label">{heading}</h2>
         <div>
           {openSource.map((item) => (
             <a key={item.link} href={item.link} className="writing-item" target="_blank" rel="noreferrer">
